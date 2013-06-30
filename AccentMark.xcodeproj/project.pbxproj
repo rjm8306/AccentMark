@@ -18,6 +18,32 @@
 		4022B4AD177492A20021ADF0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4022B4AC177492A20021ADF0 /* Default-568h@2x.png */; };
 		4022B4B0177492A20021ADF0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4022B4AE177492A20021ADF0 /* MainStoryboard.storyboard */; };
 		4022B4B3177492A20021ADF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4B2177492A20021ADF0 /* ViewController.m */; };
+		4022B4BB177493DD0021ADF0 /* LearnToMarkWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4BA177493DD0021ADF0 /* LearnToMarkWordsViewController.m */; };
+		4022B4C01774A85B0021ADF0 /* Sylibifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4BF1774A85B0021ADF0 /* Sylibifier.m */; };
+		4022B4C31774A8780021ADF0 /* WordCatagory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4C21774A8780021ADF0 /* WordCatagory.m */; };
+		4022B4C61774D4CD0021ADF0 /* EnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */; };
+		40A78F2917788F0A0070039D /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A78F2817788F0A0070039D /* WordViewController.m */; };
+		40A78F2E177A07850070039D /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F2B177A07850070039D /* blueButton.png */; };
+		40A78F2F177A07850070039D /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F2C177A07850070039D /* greenButton.png */; };
+		40A78F30177A07850070039D /* redButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F2D177A07850070039D /* redButton.png */; };
+		40A78F39177A07B70070039D /* AppStoreIcon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F31177A07B70070039D /* AppStoreIcon-512.png */; };
+		40A78F3A177A07B70070039D /* AppStoreIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F32177A07B70070039D /* AppStoreIcon-1024.png */; };
+		40A78F3B177A07B70070039D /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F33177A07B70070039D /* icon-57.png */; };
+		40A78F3C177A07B70070039D /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F34177A07B70070039D /* icon-114.png */; };
+		40A78F3D177A07B70070039D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F35177A07B70070039D /* logo.png */; };
+		40A78F3E177A07B70070039D /* Splashscreen-320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F36177A07B70070039D /* Splashscreen-320x480.png */; };
+		40A78F3F177A07B70070039D /* Splashscreen-640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F37177A07B70070039D /* Splashscreen-640x960.png */; };
+		40A78F40177A07B70070039D /* Splashscreen-640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F38177A07B70070039D /* Splashscreen-640x1136.png */; };
+		40A78F42177A08180070039D /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F41177A08180070039D /* icon-57.png */; };
+		40A78F44177A08290070039D /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F43177A08290070039D /* icon-114.png */; };
+		40A78F46177A08360070039D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F45177A08360070039D /* Default.png */; };
+		40A78F48177A083D0070039D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F47177A083D0070039D /* Default-568h@2x.png */; };
+		40A78F4A177A084D0070039D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F49177A084D0070039D /* Default@2x.png */; };
+		40A78F4C177DC6D60070039D /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F4B177DC6D60070039D /* home.png */; };
+		40A78F4F177DF0800070039D /* FAQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A78F4E177DF0800070039D /* FAQTableViewController.m */; };
+		40A78F52177DF09E0070039D /* FAQAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A78F51177DF09E0070039D /* FAQAnswerViewController.m */; };
+		40A78F55177DF0CB0070039D /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A78F54177DF0CA0070039D /* AboutUsViewController.m */; };
+		40A78F5A177E04810070039D /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A78F59177E04810070039D /* alert.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +63,40 @@
 		4022B4AF177492A20021ADF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4022B4B1177492A20021ADF0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4022B4B2177492A20021ADF0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4022B4B9177493DD0021ADF0 /* LearnToMarkWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnToMarkWordsViewController.h; sourceTree = "<group>"; };
+		4022B4BA177493DD0021ADF0 /* LearnToMarkWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnToMarkWordsViewController.m; sourceTree = "<group>"; };
+		4022B4BE1774A85B0021ADF0 /* Sylibifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sylibifier.h; sourceTree = "<group>"; };
+		4022B4BF1774A85B0021ADF0 /* Sylibifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sylibifier.m; sourceTree = "<group>"; };
+		4022B4C11774A8780021ADF0 /* WordCatagory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCatagory.h; sourceTree = "<group>"; };
+		4022B4C21774A8780021ADF0 /* WordCatagory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCatagory.m; sourceTree = "<group>"; };
+		4022B4C41774D4CD0021ADF0 /* EnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWordViewController.h; sourceTree = "<group>"; };
+		4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWordViewController.m; sourceTree = "<group>"; };
+		40A78F2717788F0A0070039D /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
+		40A78F2817788F0A0070039D /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
+		40A78F2B177A07850070039D /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		40A78F2C177A07850070039D /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		40A78F2D177A07850070039D /* redButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redButton.png; sourceTree = "<group>"; };
+		40A78F31177A07B70070039D /* AppStoreIcon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppStoreIcon-512.png"; sourceTree = "<group>"; };
+		40A78F32177A07B70070039D /* AppStoreIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppStoreIcon-1024.png"; sourceTree = "<group>"; };
+		40A78F33177A07B70070039D /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
+		40A78F34177A07B70070039D /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
+		40A78F35177A07B70070039D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		40A78F36177A07B70070039D /* Splashscreen-320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splashscreen-320x480.png"; sourceTree = "<group>"; };
+		40A78F37177A07B70070039D /* Splashscreen-640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splashscreen-640x960.png"; sourceTree = "<group>"; };
+		40A78F38177A07B70070039D /* Splashscreen-640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splashscreen-640x1136.png"; sourceTree = "<group>"; };
+		40A78F41177A08180070039D /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57.png"; sourceTree = "<group>"; };
+		40A78F43177A08290070039D /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114.png"; sourceTree = "<group>"; };
+		40A78F45177A08360070039D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		40A78F47177A083D0070039D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		40A78F49177A084D0070039D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		40A78F4B177DC6D60070039D /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		40A78F4D177DF0800070039D /* FAQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQTableViewController.h; sourceTree = "<group>"; };
+		40A78F4E177DF0800070039D /* FAQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQTableViewController.m; sourceTree = "<group>"; };
+		40A78F50177DF09E0070039D /* FAQAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQAnswerViewController.h; sourceTree = "<group>"; };
+		40A78F51177DF09E0070039D /* FAQAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQAnswerViewController.m; sourceTree = "<group>"; };
+		40A78F53177DF0CA0070039D /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		40A78F54177DF0CA0070039D /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		40A78F59177E04810070039D /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +116,12 @@
 		4022B48A177492A20021ADF0 = {
 			isa = PBXGroup;
 			children = (
+				40A78F49177A084D0070039D /* Default@2x.png */,
+				40A78F47177A083D0070039D /* Default-568h@2x.png */,
+				40A78F45177A08360070039D /* Default.png */,
+				40A78F43177A08290070039D /* icon-114.png */,
+				40A78F41177A08180070039D /* icon-57.png */,
+				40A78F2A177A076F0070039D /* media */,
 				4022B49C177492A20021ADF0 /* AccentMark */,
 				4022B495177492A20021ADF0 /* Frameworks */,
 				4022B494177492A20021ADF0 /* Products */,
@@ -83,11 +149,11 @@
 		4022B49C177492A20021ADF0 /* AccentMark */ = {
 			isa = PBXGroup;
 			children = (
+				4022B4AE177492A20021ADF0 /* MainStoryboard.storyboard */,
 				4022B4A5177492A20021ADF0 /* AppDelegate.h */,
 				4022B4A6177492A20021ADF0 /* AppDelegate.m */,
-				4022B4AE177492A20021ADF0 /* MainStoryboard.storyboard */,
-				4022B4B1177492A20021ADF0 /* ViewController.h */,
-				4022B4B2177492A20021ADF0 /* ViewController.m */,
+				4022B4BD1774A8020021ADF0 /* Objects */,
+				4022B4BC1774A7BE0021ADF0 /* View Controllers */,
 				4022B49D177492A20021ADF0 /* Supporting Files */,
 			);
 			path = AccentMark;
@@ -105,6 +171,59 @@
 				4022B4AC177492A20021ADF0 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4022B4BC1774A7BE0021ADF0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4022B4B1177492A20021ADF0 /* ViewController.h */,
+				4022B4B2177492A20021ADF0 /* ViewController.m */,
+				40A78F2717788F0A0070039D /* WordViewController.h */,
+				40A78F2817788F0A0070039D /* WordViewController.m */,
+				4022B4B9177493DD0021ADF0 /* LearnToMarkWordsViewController.h */,
+				4022B4BA177493DD0021ADF0 /* LearnToMarkWordsViewController.m */,
+				4022B4C41774D4CD0021ADF0 /* EnterWordViewController.h */,
+				4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */,
+				40A78F53177DF0CA0070039D /* AboutUsViewController.h */,
+				40A78F54177DF0CA0070039D /* AboutUsViewController.m */,
+				40A78F4D177DF0800070039D /* FAQTableViewController.h */,
+				40A78F4E177DF0800070039D /* FAQTableViewController.m */,
+				40A78F50177DF09E0070039D /* FAQAnswerViewController.h */,
+				40A78F51177DF09E0070039D /* FAQAnswerViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4022B4BD1774A8020021ADF0 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4022B4BE1774A85B0021ADF0 /* Sylibifier.h */,
+				4022B4BF1774A85B0021ADF0 /* Sylibifier.m */,
+				4022B4C11774A8780021ADF0 /* WordCatagory.h */,
+				4022B4C21774A8780021ADF0 /* WordCatagory.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		40A78F2A177A076F0070039D /* media */ = {
+			isa = PBXGroup;
+			children = (
+				40A78F59177E04810070039D /* alert.png */,
+				40A78F4B177DC6D60070039D /* home.png */,
+				40A78F31177A07B70070039D /* AppStoreIcon-512.png */,
+				40A78F32177A07B70070039D /* AppStoreIcon-1024.png */,
+				40A78F33177A07B70070039D /* icon-57.png */,
+				40A78F34177A07B70070039D /* icon-114.png */,
+				40A78F35177A07B70070039D /* logo.png */,
+				40A78F36177A07B70070039D /* Splashscreen-320x480.png */,
+				40A78F37177A07B70070039D /* Splashscreen-640x960.png */,
+				40A78F38177A07B70070039D /* Splashscreen-640x1136.png */,
+				40A78F2B177A07850070039D /* blueButton.png */,
+				40A78F2C177A07850070039D /* greenButton.png */,
+				40A78F2D177A07850070039D /* redButton.png */,
+			);
+			name = media;
+			path = AccentMark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +282,24 @@
 				4022B4AB177492A20021ADF0 /* Default@2x.png in Resources */,
 				4022B4AD177492A20021ADF0 /* Default-568h@2x.png in Resources */,
 				4022B4B0177492A20021ADF0 /* MainStoryboard.storyboard in Resources */,
+				40A78F2E177A07850070039D /* blueButton.png in Resources */,
+				40A78F2F177A07850070039D /* greenButton.png in Resources */,
+				40A78F30177A07850070039D /* redButton.png in Resources */,
+				40A78F39177A07B70070039D /* AppStoreIcon-512.png in Resources */,
+				40A78F3A177A07B70070039D /* AppStoreIcon-1024.png in Resources */,
+				40A78F3B177A07B70070039D /* icon-57.png in Resources */,
+				40A78F3C177A07B70070039D /* icon-114.png in Resources */,
+				40A78F3D177A07B70070039D /* logo.png in Resources */,
+				40A78F3E177A07B70070039D /* Splashscreen-320x480.png in Resources */,
+				40A78F3F177A07B70070039D /* Splashscreen-640x960.png in Resources */,
+				40A78F40177A07B70070039D /* Splashscreen-640x1136.png in Resources */,
+				40A78F42177A08180070039D /* icon-57.png in Resources */,
+				40A78F44177A08290070039D /* icon-114.png in Resources */,
+				40A78F46177A08360070039D /* Default.png in Resources */,
+				40A78F48177A083D0070039D /* Default-568h@2x.png in Resources */,
+				40A78F4A177A084D0070039D /* Default@2x.png in Resources */,
+				40A78F4C177DC6D60070039D /* home.png in Resources */,
+				40A78F5A177E04810070039D /* alert.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +313,14 @@
 				4022B4A3177492A20021ADF0 /* main.m in Sources */,
 				4022B4A7177492A20021ADF0 /* AppDelegate.m in Sources */,
 				4022B4B3177492A20021ADF0 /* ViewController.m in Sources */,
+				4022B4BB177493DD0021ADF0 /* LearnToMarkWordsViewController.m in Sources */,
+				4022B4C01774A85B0021ADF0 /* Sylibifier.m in Sources */,
+				4022B4C31774A8780021ADF0 /* WordCatagory.m in Sources */,
+				4022B4C61774D4CD0021ADF0 /* EnterWordViewController.m in Sources */,
+				40A78F2917788F0A0070039D /* WordViewController.m in Sources */,
+				40A78F4F177DF0800070039D /* FAQTableViewController.m in Sources */,
+				40A78F52177DF09E0070039D /* FAQAnswerViewController.m in Sources */,
+				40A78F55177DF0CB0070039D /* AboutUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +443,7 @@
 				4022B4B8177492A20021ADF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
