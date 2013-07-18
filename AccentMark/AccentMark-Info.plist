@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Regular.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -50,11 +54,11 @@
 			<key>TintColor</key>
 			<dict>
 				<key>Blue</key>
-				<real>0.0</real>
+				<real>0.3750395476818085</real>
 				<key>Green</key>
-				<real>0.0</real>
+				<real>0.3674388825893402</real>
 				<key>Red</key>
-				<real>1</real>
+				<real>0.04690029099583626</real>
 			</dict>
 			<key>Translucent</key>
 			<false/>

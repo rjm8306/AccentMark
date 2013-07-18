@@ -5,15 +5,23 @@
 //  Created by Robert Millar on 6/24/13.
 //  Copyright (c) 2013 Robert Millar. All rights reserved.
 //
-
+#import "alertView.h"
 #import "WordViewController.h"
-@interface WordViewController ()
+#import <CoreText/CoreText.h>
+#import "JSON.h"
+#import "EnterWordViewController.h"
+#import "LearnToMarkWordsViewController.h"
 
+@interface WordViewController ()
+//-(NSArray *)word;
 
 @end
 
 @implementation WordViewController
 
+
+@synthesize wordType;
+#define int i = 0
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,41 +32,95 @@
 }
 
 - (void)viewDidLoad
-{
-    
-    NSLog(@"wordType: %@" ,wordType);
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [super viewDidLoad];
+{    [super viewDidLoad];
+    NSLog(@"wordType:: %@" ,wordType);
+        // Do any additional setup after loading the view.
         // Do any additional setup after loading the view, typically from a nib.
-    jsonDict = [[NSDictionary alloc] init];
-    wordArray = [[NSMutableArray alloc] init];
-   // NSString *apiKey= 0694ca6ec483864e11d4e8867d0ca4db;
+   
+        // NSString *apiKey= 0694ca6ec483864e11d4e8867d0ca4db;
     urlString= [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=%@ ", wordType];
-    //urlString = 5;
+        //urlString = 5;
     url = [NSURL URLWithString:urlString];
     
     
         // Setup the URL with the JSON URL.
     
     NSLog(@"id: %@", url ); //TEST CODE
+   // if ([wordArray isEqual:nil])
+   // {
+        NSLog(@"parsing 1st");
     [self parseJSONWithURL:url];
-   
+    NSLog(@"parsing 1st");
+   // }
+      //  [self newWord];
+        //next 2 lines are the method call.
+    //JSON *request = [[JSON alloc] init];
+   // [request parseJSONWithURL:url];
     
-}
+   // jsonDict = request;
+  //  wordArray = request;
+  //  NSLog(@"wordarray %@"), wordArray;
+    NSLog(@"%@", wordArray);
+    firstquestion=TRUE;
+    secondquestion = TRUE;
+    
+
+//_wordLabel.text = word;
+    
+    //set text for last button
+    if ([wordType isEqual: @"1"]) {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+    } else if ([wordType isEqual: @"3"]) {
+    [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"4"]) {
+    [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"7"]) {
+    [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"9"]) {
+    [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"10"]) {
+    [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"13"]) {
+    [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"14"]) {
+    [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"17"]) {
+    [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"19"]) {
+    [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"23"]) {
+    [_markOutlet setTitle:@"Place Mark Over 2nd UpperVowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"6"]) {
+    [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"12"]) {
+    [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else if ([wordType isEqual: @"20"]) {
+    [_markOutlet setTitle:@"Place Mark Over Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+} else {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+    }
+    _markOutlet.titleLabel.textAlignment= NSTextAlignmentCenter;
+    audioUrl = [wordArray lastObject][@"audioURL"];
+    
+    
+    }
+
+
 - (void) parseJSONWithURL:(NSURL *) jsonURL
 {
+    jsonDict = [[NSDictionary alloc] init];
+    wordArray = [[NSMutableArray alloc] init];
         // Set the queue to the background queue.
         // Runs on a background thread to keep the UI Responsive.
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+  //  dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         // Run request on background queue (thread).
-    dispatch_async(queue, ^{
+   // dispatch_async(queue, ^{
         NSError *error = nil;
         
             // Request the data and store in a string.
         NSString *json = [NSString stringWithContentsOfURL:jsonURL encoding:NSASCIIStringEncoding error:&error];
-            NSLog(@"A json: %@", json); //TEST CODE
+        NSLog(@"A json: %@", json); //TEST CODE
         
         if (error == nil){
                 // Convert the String into an NSData object.
@@ -68,8 +130,12 @@
                 // Parse that data object using NSJSONSerialization without options.
             jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
             wordArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+            if ([wordArray isKindOfClass:[NSNull class]])
+            {    NSLog(@"check internet");                // Parsing success.
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"This app requires internet connection.  Please check your connection and try again later." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                
+                [alertView show];            }
             
-                // Parsing success.
             if (error == nil)
             {
                     // Go back to the main thread and update the table with the json data.
@@ -78,13 +144,21 @@
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     
                         //MOVE ARRAY FILL TO HERE
-                        //  [jsonTable reloadData];
-                        //NSLog(@"A Affiliates Array: %@", affiliatesArray); //TEST CODE
-                 
-                    _wordLabel.text  = wordArray.lastObject [@"word"];
-                    wordSet=wordArray.lastObject[@"word_group"];
-                    NSLog(@"wordSet: %@", wordSet);
+                //    [jsonTable reloadData];
+                    
+                    NSLog(@"reload");
+                 //   [self.tableView reloadData];
                 });
+                word = [wordArray lastObject] [@"word"];
+                _wordLabel.text = word;
+                wordSet=[wordArray lastObject][@"word_group"];
+                NSLog(@"wordSet: %@", wordSet);
+                modifiedWord = [word mutableCopy];
+                NSLog(@"wordVC Array %@", wordArray);
+                title =  [NSString stringWithFormat:@"Word Group %@ ", wordType];
+                self.navigationItem.title = title;
+                
+
             }
             
                 // Parsing failed, display error as alert.
@@ -103,154 +177,245 @@
             
             [alertView show];
         }
-    });
+ //   });
 }
 
+//   -(void)newWord
+//{
+//    NSLog(@"inside newWord");
+//    NSLog(@"url %@", url);
+//     // [wordArray removeLastObject];
+//    if (!(wordArray=NULL)) {
+//        [self parseJSONWithURL:url];
+//        NSLog(@"worng");
+//        NSLog(@"getting new word");
+//        NSLog(@"%@", wordArray);
+//        word = [wordArray lastObject] [@"word"];
+//        NSLog(@"word = %@", word);
+//        _wordLabel.text = word;
+//        wordSet=[wordArray lastObject][@"word_group"];
+//        NSLog(@"wordSet: %@", wordSet);
+//        modifiedWord = [word mutableCopy];
+//        NSLog(@"wordVC Array %@", wordArray);
+//        
+//    } else {
+//        //out of words
+//        [self parseJSONWithURL:url];
+//        NSLog(@"parsing");
+//        word = [wordArray lastObject] [@"word"];
+//        _wordLabel.text = word;
+//        wordSet=[wordArray lastObject][@"word_group"];
+//        NSLog(@"wordSet: %@", wordSet);
+//        modifiedWord = [word mutableCopy];
+//        NSLog(@"wordVC Array %@", wordArray);
+//                
+//    }
+//}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)wordConstantYesButton:(UIButton *)sender{
+    if (firstquestion==TRUE) {
 
-- (IBAction)wordConstantYesButton:(UIButton *)sender {
     if ([wordSet characterAtIndex:0] == 'C')
     {
-        [self createAlert];
+        [self incorrectAlert];
           }
     else if ([wordSet characterAtIndex:0] == 'D')
     {
-       [self createAlert];
+       [self incorrectAlert];
     }
     else
     {
-        [_stressLabel setTextColor:[UIColor redColor]];
+        [_stressLabel setTextColor:[UIColor blackColor]];
         
         _stressLabel.text=@"Is the stess on the second to the last syllable?";
         _stressLabel.hidden = NO;
         _stressYesOutlet.hidden = NO;
         _stressNoOutlet.hidden = NO;
-      _wordConstantNoOutlet.hidden = YES;
-        _wordConstantYesOutlet.enabled=NO;
+        _wordConstantNoOutlet.hidden = YES;
+       // _wordConstantYesOutlet.enabled=NO;
+        _wordConstantYesOutlet.alpha = 1.0;
+        _arrow1Image.hidden=NO;
+        firstquestion = FALSE;
+        
     }
 }
-
-- (IBAction)stressYesButton:(UIButton *)sender {
-  if ([wordSet characterAtIndex:0] == 'A')
-  {
-  _noMarkOutlet.hidden = NO;
-    _markOutlet.hidden = NO;
-    _accentMarkOutlet.hidden = NO;
-    _stressNoOutlet.hidden = YES;
-      
-      
-}
-   else if ([wordSet characterAtIndex:0] == 'C')
-    {
-        _noMarkOutlet.hidden = NO;
-        _markOutlet.hidden = NO;
-        _accentMarkOutlet.hidden = NO;
-        _stressNoOutlet.hidden = YES;
-    }
-    else
-      [self createAlert];  
-}
-- (IBAction)stressNoButton:(UIButton *)sender {
-    if ([wordSet characterAtIndex:0] == 'B')
-    {
-        _noMarkOutlet.hidden = NO;
-        _markOutlet.hidden = NO;
-        _accentMarkOutlet.hidden = NO;
-        _stressYesOutlet.hidden = YES;
-    }
-    else
-     [self createAlert];      
-    
 }
 
 - (IBAction)constantNoButton:(UIButton *)sender {
-    if ([wordSet characterAtIndex:0] == 'C')
-    {
-        _stressLabel.hidden = NO;
-        _stressYesOutlet.hidden = NO;
-        _stressNoOutlet.hidden = NO;
-        _wordConstantYesOutlet.hidden= YES;
-    }
-    else if ([wordSet characterAtIndex:0] == 'D')
-    {
+    if (firstquestion==TRUE) {
+        if ([wordSet characterAtIndex:0] == 'C')
+        {
+            _stressLabel.hidden = NO;
+            _stressYesOutlet.hidden = NO;
+            _stressNoOutlet.hidden = NO;
+            _wordConstantYesOutlet.hidden= YES;
+            firstquestion = FALSE;
+            _wordConstantNoOutlet.alpha = 1.0;
+        }
+        else if ([wordSet characterAtIndex:0] == 'D')
+        {
+            
+            _stressLabel.hidden = NO;
+            _stressYesOutlet.hidden = NO;
+            _stressNoOutlet.hidden = NO;
+            _wordConstantYesOutlet.hidden= YES;
+            _wordConstantNoOutlet.alpha = 1.0;
+            firstquestion = FALSE;
+            
+        }
+        else
+        {
+            [self incorrectAlert];
+        }
         
-        _stressLabel.hidden = NO;
-        _stressYesOutlet.hidden = NO;
-        _stressNoOutlet.hidden = NO;
-        _wordConstantYesOutlet.hidden= YES;
     }
-    else
-    {
-[self createAlert];
+}
+   
+
+
+
+- (IBAction)stressYesButton:(UIButton *)sender {
+    if (secondquestion == TRUE) {
+        if ([wordSet characterAtIndex:0] == 'A')
+        {
+            _noMarkOutlet.hidden = NO;
+            _markOutlet.hidden = NO;
+            _accentMarkOutlet.hidden = NO;
+            _stressNoOutlet.hidden = YES;
+           // _stressYesOutlet.enabled = NO;
+            _stressYesOutlet.alpha=1.0;
+            _arrow2mage.hidden = NO;
+            secondquestion = FALSE;
+            
+            
+        }
+        else if ([wordSet characterAtIndex:0] == 'C')
+        {
+            _noMarkOutlet.hidden = NO;
+            _markOutlet.hidden = NO;
+            _accentMarkOutlet.hidden = NO;
+            _stressNoOutlet.hidden = YES;
+            _stressYesOutlet.enabled = NO;
+            _stressYesOutlet.alpha=1.0;
+            _arrow2mage.hidden=NO;
+            secondquestion = FALSE;
+        }
+        else
+            [self incorrectAlert];
     }
 
+    }
+ - (IBAction)stressNoButton:(UIButton *)sender {
+     if (secondquestion == TRUE) {
+         if ([wordSet characterAtIndex:0] == 'B')
+         {
+             _noMarkOutlet.hidden = NO;
+             _markOutlet.hidden = NO;
+             _accentMarkOutlet.hidden = NO;
+             _stressYesOutlet.hidden = YES;
+             _stressNoOutlet.hidden = YES;
+             secondquestion = FALSE;
+             //_arrow2Image.hidden=NO;
+         }
+         else
+             [self incorrectAlert];
+
+     }
+     
 }
+
 - (IBAction)noMarkButton:(UIButton *)sender {
-    if ([wordSet characterAtIndex:0] == 'B')
-[self correctAlert];
-    else if ([wordSet characterAtIndex:0] == 'D')
-        [self correctAlert];
-    else
-        [self createAlert];
-   
+    if ([wordSet characterAtIndex:0] == 'A')
+    {
+        _noMarkOutlet.alpha = 1;
+        _markOutlet.hidden = YES;
     
+[self correctAlert];
+    } else if ([wordSet characterAtIndex:0] == 'C'){
+        _noMarkOutlet.alpha = 1;
+        _markOutlet.hidden = YES;
+        [self correctAlert];
+    }
+    else
+        [self incorrectAlert];
 }
 
 - (IBAction)markButton:(UIButton *)sender {
-    if ([wordSet characterAtIndex:0] == 'A') 
+    if (([wordSet characterAtIndex:0] == 'B') || ([wordSet characterAtIndex:0] == 'B')) {
+        _markOutlet.alpha = 1;
+        _noMarkOutlet.hidden = YES;
         [self correctAlert];
-    else if ([wordSet characterAtIndex:0] == 'C')
-        [self correctAlert];
+    }
+ //  else if ([wordSet characterAtIndex:0] == 'C')
+   //     [self correctAlert];
     else
-        [self createAlert];
+        [self incorrectAlert];
 }
-- (void)createAlert {
-   // UIImage *ActionSheetBg = [UIImage imageNamed:@"redButton.png"];
-  //  UIImageView *BgImgView = [[UIImageView alloc] initWithImage:ActionSheetBg];
-  
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Accent Mark" message:@"Incorrect" delegate:self cancelButtonTitle:@"Try Again"  otherButtonTitles:nil];
-                    [alert show];
-
+- (void)incorrectAlert {
+    alertView *alert;
+    
+    
+        ////// Alert
+    alert = [[alertView alloc] initWithTitle:word
+                                     message:@"Incorrect Please try again!"
+                                    delegate:self
+                           cancelButtonTitle:nil
+                           otherButtonTitles:@"Try Again", nil];
+    alert.style = alertStyleAlert;
+    [alert setImage:@"alert.png"];
+      [alert show];    
+    
+    
 }
 - (void)correctAlert {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:(@"@%", wordArray.lastObject [@"word"]) message:@"Congradulations, You are correct!!!"delegate:self cancelButtonTitle:@"Practice with anouther word?"  otherButtonTitles:nil];
-    [alert show];
+    alertView *alert;
+    alert = [[alertView alloc] initWithTitle:word
+                                     message:@"Congratulations, you marked the word correct!           "
+                                    delegate:self
+                           cancelButtonTitle:nil
+                           otherButtonTitles:@"Practice with a different word?",@"Word Groups",@"Enter Any Word",nil];
+    alert.style = alertStyleCorrect;
+    [alert setImage:@"accept.png"];
+     title=@"correct";
+      [alert show];
 }
-- (void)alertView:(UIAlertView *)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0){
-        NSLog(@"test");
-            //cancel clicked ...do your action
-       // remove(wordArray.lastObject);
-      // NSNumber *index = wordArray.lastObject;
-      //  [wordArray removeObjectAtIndex:0];
 
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"Buttonnnn pushed: %@, index %i", alertView.title, buttonIndex);
+    if ([title characterAtIndex:0] == 'c'){
+        NSLog(@"works");
+        {
+            if(buttonIndex == 0)
+            {
+              //  [wordArray removeLastObject];
+               // [self newWord];
+                [self viewDidLoad];
+                WordViewController *wordViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"wordViewController"];
+                wordViewController->wordType = wordType;
+                [self.navigationController pushViewController:wordViewController animated:YES];
+                
+                
+            }
+            if (buttonIndex== 1) {
+                //load view with word groups
+               LearnToMarkWordsViewController *learnToMarkWords = [self.storyboard instantiateViewControllerWithIdentifier:@"learnToMarkWords"];
+                [self.navigationController pushViewController:learnToMarkWords animated:YES];
+            }
+            if (buttonIndex ==2) {
+                //load enter word view
+               EnterWordViewController *enterWord = [self.storyboard instantiateViewControllerWithIdentifier:@"enterWord"];                [self.navigationController pushViewController:enterWord animated:YES];
+            }
+        }
     }
 }
-    -(void) remove
-    {
-        
-    }
-
-//    UILabel *theTitle = [alert valueForKey:@"_titleLabel"];
-//    [theTitle setTextColor:[UIColor redColor]];
-//UILabel *theBody = [alert valueForKey:@"_bodyTextLabel"];
-//[theBody setTextColor:[UIColor redColor]];
-//
-//UIImage *theImage = [UIImage imageNamed:@"Background.png"];
-//theImage = [theImage stretchableImageWithLeftCapWidth:16 topCapHeight:16];
-//CGSize theSize = [alert frame].size;
-//
-//UIGraphicsBeginImageContext(theSize);
-//[theImage drawInRect:CGRectMake(0, 0, theSize.width, theSize.height)];
-//theImage = UIGraphicsGetImageFromCurrentImageContext();
-//UIGraphicsEndImageContext();
-
-//[[alert layer] setContents:[theImage CGImage]];
- 
+    
+- (IBAction)speakerButton:(UIButton *)sender {
+}
 @end
