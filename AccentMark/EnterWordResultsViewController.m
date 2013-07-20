@@ -8,6 +8,7 @@
 
 #import "EnterWordResultsViewController.h"
 #import "WordViewController.h"
+#import "EnterAccentViewController.h"
 
 @interface EnterWordResultsViewController ()
 
@@ -29,7 +30,6 @@
     [super viewDidLoad];
     NSLog(@"in new View");
     NSLog(@"%@",word);
-// NSString *apiKey= 0694ca6ec483864e11d4e8867d0ca4db;
     urlString= [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word];
         //urlString = 5;
     url = [NSURL URLWithString:urlString];
@@ -150,9 +150,13 @@
     }
     cell.textLabel.text = wordArray[indexPath.row][@"word"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    selectedWord=wordArray[indexPath.row][@"word"];
-    selectedType=wordArray[indexPath.row][@"word_group"];
-    selectedcat = wordArray[indexPath.row][@"category"];
+   // selectedWord=wordArray[indexPath.row][@"word"];
+    //selectedType=wordArray[indexPath.row][@"word_group"];
+    //selectedcat = wordArray[indexPath.row][@"category"];
+    //wArray = wordArray[indexPath.row];
+   
+    
+    
     return cell;
 
 }
@@ -163,10 +167,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    WordViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
-    wordResults->word = selectedWord;
+    EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+    wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
+   wordResults.cat = wordArray[indexPath.row][@"category"];
+    wordResults->word = wordArray[indexPath.row][@"word"];
+    wordResults->wordSet = wordArray[indexPath.row][@"word_group"];
+   // aUrl=wordArray[indexPath.row][@"audioURL"];
+   // NSLog(@"aUrl %@", aUrl);
+  // wordResults-> wordArray= wordArray;
+  // NSLog(@"selectedWord  %@", selectedWord);
+  // NSLog(@"wordResults->word  %@", wordResults->word);
         //diyDetail->title = wordArray[indexPath.row][@"title"];
-        [self.navigationController pushViewController:wordResults animated:YES];
+        [self.navigationController pushViewController:wordResults animated:NO];
 
 }
 

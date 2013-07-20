@@ -13,7 +13,7 @@
 #define FONT                @"HelveticaNeue-Bold"
 
 typedef enum {
-    red,
+    gold,
     blue,
     green,
     alpha,
@@ -21,8 +21,7 @@ typedef enum {
 
 @interface alertView () {
     int moveFactor;
-   // NSTimer *timer;
-  //  CAShapeLayer *shapeLayer;
+
 }
 
 @property (strong) UIColor *bottomColor;
@@ -48,7 +47,7 @@ typedef enum {
         switch (_style)
         {
             case alertStyleAlert:
-                [self setTopColor:RGBA(224, 76, 76, 1) middleColor:RGBA(222, 67, 67, 1) bottomColor:RGBA(222, 67, 67, 1) lineColor:RGBA(224, 76, 76, 1)];
+                [self setTopColor:RGBA(224, 176, 40, 1) middleColor:RGBA(222, 167, 40, 1) bottomColor:RGBA(222, 167, 40, 1) lineColor:RGBA(224, 176, 40, 1)];
                 break;
                 
             case alertStyleCorrect:
@@ -127,9 +126,9 @@ typedef enum {
 	size_t count = 3;
 	CGFloat locations[3] = {0.0f, 0.57f, 1.0f};
 	CGFloat components[12] =
-	{	getColor(_topColor, red), getColor(_topColor, green), getColor(_topColor, blue), getColor(_topColor, alpha),
-		getColor(_middleColor, red), getColor(_middleColor, green), getColor(_middleColor, blue), getColor(_middleColor, alpha),
-        getColor(_bottomColor, red), getColor(_bottomColor, green), getColor(_bottomColor, blue), getColor(_bottomColor, alpha)};
+	{	getColor(_topColor, gold), getColor(_topColor, green), getColor(_topColor, blue), getColor(_topColor, alpha),
+		getColor(_middleColor, gold), getColor(_middleColor, green), getColor(_middleColor, blue), getColor(_middleColor, alpha),
+        getColor(_bottomColor, gold), getColor(_bottomColor, green), getColor(_bottomColor, blue), getColor(_bottomColor, alpha)};
 	CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, count);
     
 	CGPoint startPoint = CGPointMake(activeBounds.size.width * 0.5f, 0.0f);
@@ -191,12 +190,12 @@ typedef enum {
 }
 
 float getColor(UIColor *color, colorComponent comp) {
-    CGFloat redColor = 0.0, greenColor = 0.0, blueColor = 0.0, alphaValue = 0.0;
+    CGFloat goldColor = 0.0, greenColor = 0.0, blueColor = 0.0, alphaValue = 0.0;
     if ([color respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
-        [color getRed:&redColor green:&greenColor blue:&blueColor alpha:&alphaValue];
+        [color getRed:&goldColor green:&greenColor blue:&blueColor alpha:&alphaValue];
         switch (comp) {
-            case red:
-                return redColor;
+            case gold:
+                return goldColor;
                 break;
             case green:
                 return greenColor;

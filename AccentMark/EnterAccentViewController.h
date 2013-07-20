@@ -10,26 +10,35 @@
 
 @interface EnterAccentViewController : UIViewController
 {
-    __strong NSURL *url;
-    NSMutableArray *wordArray;
+  @public  NSArray *wordArray;
     NSDictionary *jsonDict;
+    
+    
     NSString *wordSet;
     NSString *wordCatagory;
-@public __strong NSString *wordType;
     NSString *urlString;
-    int i;
-    NSMutableAttributedString *modifiedWord;
+    NSString *sylibifiedWord;
     NSString *word;
+    NSString *title;
+    NSString *audioUrl;
     NSMutableAttributedString *lastDigit;
+    NSMutableAttributedString *modifiedWord;
+    @public __strong NSString *wordType;
+    int i;
     NSRange range;
     NSData *request;
-    NSString *title;
+    BOOL firstquestion;
+    BOOL secondquestion;
+    IBOutlet UIWebView *Webview;
 }
+
+@property (weak, nonatomic) id cat;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 - (IBAction)wordConstantYesButton:(UIButton *)sender;
 - (IBAction)constantNoButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *wordConstantYesOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *wordConstantNoOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *speakerOutlet;
 
 @property (weak, nonatomic) IBOutlet UILabel *stressLabel;
 @property (weak, nonatomic) IBOutlet UIButton *stressYesOutlet;
@@ -39,6 +48,7 @@
 @property (strong, nonatomic) NSString *wordType;
 
 
+- (IBAction)speakerButton:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *accentMarkOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *markOutlet;

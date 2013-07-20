@@ -10,17 +10,16 @@
 
 @interface EnterWordResultsViewController : UITableViewController
 {
-   @public NSString *word;
-    NSString *urlString;
     NSURL *url;
     NSArray *wordArray;
+    NSArray *wArray;
     NSDictionary *jsonDict;
     NSString *selectedWord;
-    
+    NSString *aUrl;
+    NSString *urlString;
     NSString *selectedType;
+@public NSString *word;
     int selectedcat;
-    
-    
-    
+  
 }
 @end

@@ -10,23 +10,24 @@
 
 @interface WordViewController : UIViewController <UIActionSheetDelegate>
 {
-__strong NSURL *url;
     NSMutableArray *wordArray;
     NSDictionary *jsonDict;
-    NSString *wordSet;
+    NSString *wordGroup;
     NSString *wordCatagory;
-  @public __strong NSString *wordType;
-    NSString *urlString;
-    int i;
-  NSMutableAttributedString *modifiedWord;
-    NSString *word;
-    NSMutableAttributedString *lastDigit;
-   NSRange range;
-    NSData *request;
     NSString *title;
+    NSString *urlString;
+    NSString *audioUrl;
+    NSMutableAttributedString *modifiedWord;
+    NSMutableAttributedString *lastDigit;
+    @public __strong NSString *wordType;
+    int i;
+    NSRange range;
+    NSData *request;
     BOOL firstquestion;
     BOOL secondquestion;
-    NSURL *audioUrl;
+    IBOutlet UIWebView *Webview;
+    NSURLRequest *urlrequest;
+    __strong NSURL *url;
 }
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 - (IBAction)wordConstantYesButton:(UIButton *)sender;
@@ -52,7 +53,7 @@ __strong NSURL *url;
 - (IBAction)markButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow2mage;
-
+@property (weak, nonatomic) NSString *word;
 
 @property (weak, nonatomic) UIActionSheet *actionSheet;
 @end

@@ -44,22 +44,6 @@
                                     <segue destination="DuM-fn-JFR" kind="push" id="BnH-iA-1Zm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-kb-xCP">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="y3W-5I-ZDH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Content" backgroundImage="bGround.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="P17-20-mWB" kind="push" id="tTe-MC-cLi"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="AppStoreIcon-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-AH-iMu">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="iCQ-0a-lqb"/>
@@ -68,11 +52,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="z1e-kb-xCP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6fa-DD-Zee"/>
-                            <constraint firstItem="z1e-kb-xCP" firstAttribute="leading" secondItem="hbw-Kc-K2Q" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EId-jf-W4i"/>
                             <constraint firstItem="JUu-eQ-KY2" firstAttribute="top" secondItem="4uu-AH-iMu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Isn-nR-kfE"/>
                             <constraint firstItem="b2o-cq-irw" firstAttribute="top" secondItem="hbw-Kc-K2Q" secondAttribute="top" constant="380" id="Rm5-fh-ygS"/>
-                            <constraint firstItem="z1e-kb-xCP" firstAttribute="top" secondItem="hbw-Kc-K2Q" secondAttribute="top" constant="437" id="do1-OI-0Y8"/>
                             <constraint firstItem="JUu-eQ-KY2" firstAttribute="leading" secondItem="hbw-Kc-K2Q" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fIY-Yw-UdF"/>
                             <constraint firstAttribute="trailing" secondItem="JUu-eQ-KY2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fLs-Vd-0ln"/>
                             <constraint firstItem="b2o-cq-irw" firstAttribute="top" secondItem="JUu-eQ-KY2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iyY-PJ-FD6"/>
@@ -186,7 +167,7 @@
             <objects>
                 <viewController id="P17-20-mWB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NrD-Js-LTx">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Content will be coming soon.  Please check back." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="m5Q-0f-mRu">
@@ -893,7 +874,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loading Word" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-oB-dEF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loading Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOp-oB-dEF">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bhl-b7-cfr"/>
                                     <constraint firstAttribute="width" constant="170" id="qUG-OD-rtG"/>
@@ -926,9 +907,10 @@
                                 </attributedString>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zsn-Sx-npi">
+                            <button hidden="YES" autoresizesSubviews="NO" opaque="NO" alpha="0.5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zsn-Sx-npi">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gym-AH-H1F"/>
+                                    <constraint firstAttribute="width" constant="573" id="kyW-g8-T9S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
@@ -937,7 +919,7 @@
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -946,7 +928,7 @@
                                     <action selector="noMarkButton:" destination="flz-eN-Kjt" eventType="touchUpInside" id="Ptp-nc-vG2"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-x3-aiW">
+                            <button hidden="YES" autoresizesSubviews="NO" opaque="NO" alpha="0.5" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-x3-aiW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Mqs-lA-hQS"/>
                                 </constraints>
@@ -957,7 +939,7 @@
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -966,7 +948,7 @@
                                     <action selector="markButton:" destination="flz-eN-Kjt" eventType="touchUpInside" id="TQR-0o-VZd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-Gy-OiQ">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-Gy-OiQ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="ecN-Pm-iWA"/>
@@ -988,7 +970,7 @@
                                     <action selector="wordConstantYesButton:" destination="flz-eN-Kjt" eventType="touchUpInside" id="W0S-fx-OG0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-0p-o8E">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBn-0p-o8E">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="HUw-1H-K5C"/>
@@ -1009,7 +991,7 @@
                                     <action selector="constantNoButton:" destination="flz-eN-Kjt" eventType="touchUpInside" id="3dG-VX-oqx"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Al3-Vp-qeA">
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Al3-Vp-qeA">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="E1o-Z0-20f"/>
                                 </constraints>
@@ -1020,7 +1002,7 @@
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -1029,7 +1011,7 @@
                                     <action selector="stressYesButton:" destination="flz-eN-Kjt" eventType="touchUpInside" id="6Vy-dF-Kej"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVT-Zg-TNe">
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVT-Zg-TNe">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
                                     <attributedString key="attributedTitle">
@@ -1037,7 +1019,7 @@
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -1084,6 +1066,7 @@
                             <constraint firstItem="IBZ-x3-aiW" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9eq-8w-uDO"/>
                             <constraint firstItem="Al3-Vp-qeA" firstAttribute="leading" secondItem="OpB-Gy-OiQ" secondAttribute="leading" type="default" id="CbU-2X-Bo8"/>
                             <constraint firstItem="Etv-pH-WbX" firstAttribute="top" secondItem="OP2-9V-SAe" secondAttribute="top" constant="150" id="FJ8-cx-UFn"/>
+                            <constraint firstItem="IBZ-x3-aiW" firstAttribute="trailing" secondItem="Zsn-Sx-npi" secondAttribute="trailing" type="default" id="G0H-cx-Vhn"/>
                             <constraint firstItem="Al3-Vp-qeA" firstAttribute="leading" secondItem="Etv-pH-WbX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ka1-c2-i7U"/>
                             <constraint firstItem="IBn-0p-o8E" firstAttribute="bottom" secondItem="OpB-Gy-OiQ" secondAttribute="bottom" type="default" id="Kee-SG-AWQ"/>
                             <constraint firstItem="Al3-Vp-qeA" firstAttribute="top" secondItem="fVT-Zg-TNe" secondAttribute="top" type="default" id="MgA-Pg-o4I"/>
@@ -1094,7 +1077,6 @@
                             <constraint firstItem="iOp-oB-dEF" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZFH-Hs-D1Z"/>
                             <constraint firstItem="IBn-0p-o8E" firstAttribute="top" secondItem="OpB-Gy-OiQ" secondAttribute="top" type="default" id="aQf-cb-s3J"/>
                             <constraint firstItem="Al3-Vp-qeA" firstAttribute="centerY" secondItem="Etv-pH-WbX" secondAttribute="centerY" type="default" id="c1y-0g-ORU"/>
-                            <constraint firstAttribute="trailing" secondItem="IBZ-x3-aiW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cA8-Eo-l6B"/>
                             <constraint firstItem="XwI-zZ-BI9" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="85" id="cQ3-Rv-pkg"/>
                             <constraint firstItem="Zsn-Sx-npi" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="flU-4H-Xbp"/>
                             <constraint firstAttribute="trailing" secondItem="zkm-sU-bB8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="h7S-jQ-rTb"/>
@@ -1107,7 +1089,6 @@
                             <constraint firstAttribute="trailing" secondItem="IBn-0p-o8E" secondAttribute="trailing" constant="182" id="nPU-67-3ZE"/>
                             <constraint firstItem="OpB-Gy-OiQ" firstAttribute="top" secondItem="OP2-9V-SAe" secondAttribute="top" constant="56" id="nx5-4M-zUX"/>
                             <constraint firstItem="KW4-Xf-H39" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="178" id="vOJ-tb-eGk"/>
-                            <constraint firstAttribute="trailing" secondItem="Zsn-Sx-npi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w7t-gp-W4z"/>
                             <constraint firstItem="zkm-sU-bB8" firstAttribute="leading" secondItem="OP2-9V-SAe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wFc-Oa-Ubp"/>
                             <constraint firstItem="fVT-Zg-TNe" firstAttribute="trailing" secondItem="IBn-0p-o8E" secondAttribute="trailing" type="default" id="wRX-1D-foL"/>
                             <constraint firstItem="Zsn-Sx-npi" firstAttribute="top" secondItem="zkm-sU-bB8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xas-hm-C3q"/>
