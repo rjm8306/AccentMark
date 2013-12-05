@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "EnterAccentViewController.h"
 @interface Catagory : NSObject
 {
     NSString *wordGroup;
+    NSString *catagory;
     
 }
 

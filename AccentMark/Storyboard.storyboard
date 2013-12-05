@@ -162,39 +162,6 @@
             </objects>
             <point key="canvasLocation" x="41" y="156"/>
         </scene>
-        <!--View Controller - Lesson-->
-        <scene sceneID="GHX-eC-zr0">
-            <objects>
-                <viewController id="P17-20-mWB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NrD-Js-LTx">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Content will be coming soon.  Please check back." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="728" translatesAutoresizingMaskIntoConstraints="NO" id="m5Q-0f-mRu">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="MQP-CM-JP7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="m5Q-0f-mRu" firstAttribute="top" secondItem="NrD-Js-LTx" secondAttribute="top" constant="20" symbolic="YES" type="default" id="EG2-OE-d9Q"/>
-                            <constraint firstItem="m5Q-0f-mRu" firstAttribute="leading" secondItem="NrD-Js-LTx" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FMt-CJ-Ecb"/>
-                            <constraint firstAttribute="trailing" secondItem="m5Q-0f-mRu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Hae-Yy-WQ6"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Lesson" id="CpD-c7-PJF">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="FBL-Ik-CLZ"/>
-                    </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uhg-qr-HK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1036" y="1443"/>
-        </scene>
         <!--Learn To Mark Words View Controller - Learn To Mark Words-->
         <scene sceneID="qOo-79-Bcv">
             <objects>

@@ -14,26 +14,44 @@
     NSDictionary *jsonDict;
     
     
-    NSString *wordSet;
-    NSString *wordCatagory;
-    NSString *urlString;
-    NSString *sylibifiedWord;
-    NSString *word;
-    NSString *title;
-    NSString *audioUrl;
-    NSMutableAttributedString *lastDigit;
-    NSMutableAttributedString *modifiedWord;
-    @public __strong NSString *wordType;
-    int i;
-    NSRange range;
-    NSData *request;
+    NSString *wordGroup;//A,B,C,D
+    NSString *cat;//1-23
+    //NSString *urlString;
+    NSString *sylibifiedWord;//return from sylibifier method
+    NSMutableString *word;//word from database  NEVER TO BE CHANGED
+    NSString *modifiedWord;
+    NSString *title;//USED TO DISPLAY TITLE
+    NSString *audioUrl;//url of audio file if it exists
+    NSMutableAttributedString *lastDigit;//used to underline last char
+    //NSMutableAttributedString *modifiedWord;
+   // @public __strong NSString *cat;
+    int i;//iterator for 4 loop
+    int l;//iterator for 4 loop
+    //NSRange range;
+    //NSData *request;
     BOOL firstquestion;
     BOOL secondquestion;
     IBOutlet UIWebView *Webview;
+    NSString *wordCat;
+    int wordLength;
+    int cata;
+    int lastChar;
+    int spaceOne;
+    int spaceTwo;
+    int count;
+    //NSMutableAttributedString *attributedString;
+    //NSString *string;
+    NSArray *wordList;
+    NSMutableArray *charList;
+     NSString *temp;
+   // NSString temp;
+    int wordMark;// Show what array index has the accent mark  so I can underline it.
+    NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
 }
 
-@property (weak, nonatomic) id cat;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wordEndOutlet;
+
 - (IBAction)wordConstantYesButton:(UIButton *)sender;
 - (IBAction)constantNoButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *wordConstantYesOutlet;
@@ -45,8 +63,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *stressNoOutlet;
 - (IBAction)stressYesButton:(UIButton *)sender;
 - (IBAction)stressNoButton:(UIButton *)sender;
-@property (strong, nonatomic) NSString *wordType;
-
+@property (strong, nonatomic) NSString *cat;
+@property int cata;
 
 - (IBAction)speakerButton:(UIButton *)sender;
 

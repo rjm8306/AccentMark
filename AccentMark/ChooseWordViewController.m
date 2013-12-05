@@ -1,49 +1,44 @@
 //
-//  EnterWordResultsViewController.m
+//  ChooseWordViewController.m
 //  AccentMark
 //
-//  Created by Robert Millar on 7/6/13.
+//  Created by Robert Millar on 7/21/13.
 //  Copyright (c) 2013 Robert Millar. All rights reserved.
 //
 
-#import "EnterWordResultsViewController.h"
+#import "ChooseWordViewController.h"
 #import "EnterAccentViewController.h"
 
-@interface EnterWordResultsViewController ()
+@interface ChooseWordViewController ()
 
 @end
 
-@implementation EnterWordResultsViewController 
+@implementation ChooseWordViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+            // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    title =  [NSString stringWithFormat:@"Word type %d",cat];
+    self.navigationItem.title = title;
     [super viewDidLoad];
-   //NSLog(@"in new View");
-   // NSLog(@"%@",word);
-    urlString= [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word];
+    urlString= [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=%d ", cat];
         //urlString = 5;
     url = [NSURL URLWithString:urlString];
-    
-    
         // Setup the URL with the JSON URL.
     
-   // NSLog(@"id: %@", url );
-        //TEST CODE
-        // if ([wordArray isEqual:nil])
-        // {
+  
+      
     [self parseJSONWithURL:url];
     
-   // NSLog(@"%@", wordArray);
-    
+
 }
 
 
@@ -55,89 +50,142 @@
     jsonDict = [[NSDictionary alloc] init];
     wordArray = [[NSMutableArray alloc] init];
           [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+         NSError *error = nil;
     
-    NSError *error = nil;
+        // Request the data and store in a string.
     NSString *json = [NSString stringWithContentsOfURL:jsonURL encoding:NSASCIIStringEncoding error:&error];
-   // NSLog(@"A json: %@", json); //TEST CODE
     
     if (error == nil){
             // Convert the String into an NSData object.
         NSData *jsonData = [json dataUsingEncoding:NSASCIIStringEncoding];
-
         jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
         wordArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
         if ([wordArray isKindOfClass:[NSNull class]])
         {    NSLog(@"check internet");                // Parsing success.
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"This app requires internet connection.  Please check your connection and try again later." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
             
-            [alertView show];            }
+            [alertView show];
+        }
         
         if (error == nil)
         {
-                
-            dispatch_async(dispatch_get_main_queue(), ^{
+                            dispatch_async(dispatch_get_main_queue(), ^{
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-          //      NSLog(@"reload");
             });
             
-            
-          //  NSLog(@"wordVC Array %@", wordArray);
-            
         }
-        
-            // Parsing failed, display error as alert.
-        else
+                else
         {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Uh Oh, Parsing Failed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
             
             [alertView show];
         }
-    }
-    
+   }    
         // Request Failed, display error as alert.
     else
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Request Error! Check that you are connected to wifi or 3G/4G with internet access." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         
         [alertView show];
+        
     }
-      
+  
+    NSUInteger position;
+    NSMutableString *wordWithoutAccentMark;
+    
+removedAccentMarkArray = [[NSMutableArray alloc] init];
+for (i=0; i<[wordArray count]; i++) {
+    
+    NSMutableString *temp = wordArray[i][@"word"];
+    wordWithoutAccentMark= [temp mutableCopy];
+    if((position = NSNotFound)) {
+        position = [wordWithoutAccentMark rangeOfString:@"á"].location;
+        if(position !=NSNotFound){
+            NSRange range1;
+            range1.location= position;
+            range1.length = 1;
+            [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"a"];
+        }
+    }//end  if((position = NSNotFound)) for a
+    
+    if((position = NSNotFound)) {
+        position = [wordWithoutAccentMark rangeOfString:@"é"].location;
+        if(position !=NSNotFound){
+            NSRange range1;
+            range1.location= position;
+            range1.length = 1;
+            [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"e"];
+        }
+    }//end  if((position = NSNotFound)) for e
+    if((position = NSNotFound)) {
+        position = [wordWithoutAccentMark rangeOfString:@"í"].location;
+        if(position !=NSNotFound){
+            NSRange range;
+            range.location= position;
+            range.length = 1;
+            [wordWithoutAccentMark replaceCharactersInRange:range withString:@"i"];
+        }
+    }//end  if((position = NSNotFound)) for i
+    if((position = NSNotFound)) {
+        position = [wordWithoutAccentMark rangeOfString:@"ó"].location;
+        if(position !=NSNotFound){
+            NSRange range1;
+            range1.location= position;
+            range1.length = 1;
+            [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"o"];
+        }
+    }//end  if((position = NSNotFound)) for o
+    if((position = NSNotFound)) {
+        position = [wordWithoutAccentMark rangeOfString:@"ú"].location;
+        if(position !=NSNotFound){
+            NSRange range1;
+            range1.location= position;
+            range1.length = 1;
+            [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"u"];
+        }
+    }//end  if((position = NSNotFound)) for u
+    
+    [removedAccentMarkArray addObject: wordWithoutAccentMark];
+}//end for loop
+
 }
+
 
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+        // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+        // Return the number of rows in the section.
     return [wordArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MainCell"];
     }
-    cell.textLabel.text = wordArray[indexPath.row][@"word"];
+    cell.textLabel.text = removedAccentMarkArray[indexPath.row];
+    //cell.textLabel.text = wordArray[indexPath.row][@"word"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+  
     return cell;
-
+    
 }
-
 
 #pragma mark - Table view delegate
 
@@ -146,12 +194,12 @@
     
     EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
     wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
-   wordResults.cat = wordArray[indexPath.row][@"category"];
+    wordResults.cat = wordArray[indexPath.row][@"category"];
     wordResults->word = wordArray[indexPath.row][@"word"];
     wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
-
-        [self.navigationController pushViewController:wordResults animated:NO];
-
+    wordResults.cata = (int)wordArray[indexPath.row][@"category"];
+    [self.navigationController pushViewController:wordResults animated:NO];
+    
 }
 
 @end
