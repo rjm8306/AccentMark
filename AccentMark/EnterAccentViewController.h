@@ -48,6 +48,8 @@
     int wordMark;// Show what array index has the accent mark  so I can underline it.
     NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
 }
+- (IBAction)helpButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *helpButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordEndOutlet;

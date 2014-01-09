@@ -37,9 +37,9 @@
    sylibifiedWord = [Sylibifier sylibify:word];
   //  NSLog(@"in view controller");
     cata = [cat intValue];
-
+    NSLog(@"audio = %@", audioUrl);
     //NSLog(@"mWord = %@", modifiedWord);
-    
+
     [self selectedChar];
   _wordLabel.text = modifiedWord;
     [self addSelectedCharAttributes:@{ NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)}];
@@ -58,18 +58,41 @@
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"7"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+            _helpButton.hidden = NO;
+         } else if ([cat isEqual: @"8"]) {
+           _helpButton.hidden = NO;
     } else if ([cat isEqual: @"9"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+            _helpButton.hidden = NO;
     } else if ([cat isEqual: @"10"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
+           _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"11"]) {
+        _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"12"]) {
+        _helpButton.hidden = NO;
     } else if ([cat isEqual: @"13"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _helpButton.hidden = NO;
     } else if ([cat isEqual: @"14"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+    } else if ([cat isEqual: @"15"]) {
+        _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"16"]) {
+        _helpButton.hidden = NO;
     } else if ([cat isEqual: @"17"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"18"]) {
+        _helpButton.hidden = NO;
     } else if ([cat isEqual: @"19"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+    } else if ([cat isEqual: @"20"]) {
+        _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"21"]) {
+        _helpButton.hidden = NO;
+    } else if ([cat isEqual: @"22"]) {
+        _helpButton.hidden = NO;
     } else if ([cat isEqual: @"23"]) {
         [_markOutlet setTitle:@"Place Mark Over 2nd UpperVowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"6"]) {
@@ -87,6 +110,7 @@
     if ([audioUrl hasPrefix:@"http"]) {
         _speakerOutlet.hidden = NO;
     }
+    
     //NSLog(@"1wordGroup %@",wordGroup);
     if ([wordGroup isEqual:@"null"])
     {
@@ -570,12 +594,43 @@
 - (IBAction)speakerButton:(UIButton *)sender {    
     NSURL *url = [NSURL URLWithString:audioUrl];
     NSURLRequest *urlrequest = [NSURLRequest requestWithURL:url];
+   //added 01/08/14 to hide the webView
+    Webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 1024,768)];
+    
+    
     [Webview loadRequest:urlrequest];
      Webview.hidden=YES;
     
 }
 
 
+- (IBAction)helpButton:(UIButton *)sender {
+    if(cata == 15 || cata == 16 || cata == 17)
+    {
+        
+    EnterAccentViewController *HelpScreenOne = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenOne"];
+        [self.navigationController pushViewController:HelpScreenOne animated:NO];
+    }
+    else if (cata ==  13 || cata == 20)
+    {
+        
+        EnterAccentViewController *HelpScreenOne = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenTwo"];
+        [self.navigationController pushViewController:HelpScreenOne animated:NO];
+    }
+    else if (cata ==  22)
+    {
+        
+        EnterAccentViewController *HelpScreenOne = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenThree"];
+        [self.navigationController pushViewController:HelpScreenOne animated:NO];
+    }
+    else if (cata ==  7 || cata == 8 || cata ==  9 || cata == 10 || cata == 11 || cata == 12 || cata == 18 || cata == 21)
+    {
+        EnterAccentViewController *HelpScreenOne = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenFour"];
+        [self.navigationController pushViewController:HelpScreenOne animated:NO];
+    }
+    
+
+}
 @end
 
 

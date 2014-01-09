@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/AccentMark.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>comRobertMillar.AccentMark</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+		<key>CFBundleVersion</key>
+		<string>1.0</string>
+		<key>IconPaths</key>
+		<array>
+			<string>Applications/AccentMark.app/icon-57.png</string>
+			<string>Applications/AccentMark.app/icon-114.png</string>
+		</array>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: Robert Millar (2M83BZ9446)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2013-09-05T16:10:13Z</date>
+	<key>Name</key>
+	<string>AccentMark</string>
+	<key>SchemeName</key>
+	<string>AccentMark</string>
+</dict>
+</plist>

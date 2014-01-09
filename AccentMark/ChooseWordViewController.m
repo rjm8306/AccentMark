@@ -17,7 +17,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
+      self = [super initWithStyle:style];
     if (self) {
             // Custom initialization
     }
@@ -28,75 +28,47 @@
 {
     title =  [NSString stringWithFormat:@"Word type %d",cat];
     self.navigationItem.title = title;
+    if (cat != nil) {
+    urlString = [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=%d", cat];
+    }
+    
     [super viewDidLoad];
-    urlString= [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=%d ", cat];
-        //urlString = 5;
     url = [NSURL URLWithString:urlString];
         // Setup the URL with the JSON URL.
+    //NSLog(@"urlString = %@", urlString);
+    NSLog(@"url = %@", url);
     
-  
-      
-    [self parseJSONWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:
+                                  ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                      wordArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                      NSLog(@"wordArray = %@", wordArray);
+                                  }];
+    [task resume];
+    
+    while (wordArray == nil) {
+      //waiting for array to load
+    }
+    NSLog(@"parse");
+      [self parseJSONWithURL:url];
 }
 
 
-
-
-
 - (void) parseJSONWithURL:(NSURL *) jsonURL
-{
-    jsonDict = [[NSDictionary alloc] init];
-    wordArray = [[NSMutableArray alloc] init];
-          [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-         NSError *error = nil;
-    
-        // Request the data and store in a string.
-    NSString *json = [NSString stringWithContentsOfURL:jsonURL encoding:NSASCIIStringEncoding error:&error];
-    
-    if (error == nil){
-            // Convert the String into an NSData object.
-        NSData *jsonData = [json dataUsingEncoding:NSASCIIStringEncoding];
-        jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-        wordArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-        if ([wordArray isKindOfClass:[NSNull class]])
-        {    NSLog(@"check internet");                // Parsing success.
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"This app requires internet connection.  Please check your connection and try again later." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            
-            [alertView show];
-        }
-        
-        if (error == nil)
-        {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            });
-            
-        }
-                else
-        {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Uh Oh, Parsing Failed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            
-            [alertView show];
-        }
-   }    
-        // Request Failed, display error as alert.
-    else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Request Error! Check that you are connected to wifi or 3G/4G with internet access." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        
-        [alertView show];
-        
-    }
-  
+{    NSLog(@"in Parse");
     NSUInteger position;
     NSMutableString *wordWithoutAccentMark;
     
 removedAccentMarkArray = [[NSMutableArray alloc] init];
+    NSLog(@"1removedAccentMarkArray");
 for (i=0; i<[wordArray count]; i++) {
-    
+    NSLog(@"i = %d", i);
     NSMutableString *temp = wordArray[i][@"word"];
+    NSLog(@"word %@", word);
+    NSLog(@"temp %@", temp);
     wordWithoutAccentMark= [temp mutableCopy];
     if((position = NSNotFound)) {
         position = [wordWithoutAccentMark rangeOfString:@"á"].location;
@@ -143,11 +115,14 @@ for (i=0; i<[wordArray count]; i++) {
             range1.length = 1;
             [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"u"];
         }
+        NSLog(@"end");
     }//end  if((position = NSNotFound)) for u
     
     [removedAccentMarkArray addObject: wordWithoutAccentMark];
 }//end for loop
-
+    NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
+    NSLog(@"Test");
+    [self.tableView reloadData];
 }
 
 
@@ -170,7 +145,7 @@ for (i=0; i<[wordArray count]; i++) {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
         // Return the number of rows in the section.
-    return [wordArray count];
+   return [wordArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -186,7 +161,7 @@ for (i=0; i<[wordArray count]; i++) {
     return cell;
     
 }
-
+//
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -1,0 +1,253 @@
+//
+//  Sylibifier.m
+//  AccentMark
+//
+//  Created by Robert Millar on 6/21/13.
+//  Copyright (c) 2013 Robert Millar. All rights reserved.
+//
+
+#import "Sylibifier.h"
+#import "LearnToMarkWordsViewController.h"
+#import "EnterAccentViewController.h"
+#import "WordViewController.h"
+
+
+
+
+@implementation Sylibifier
+-(void)setWord:(NSString*)words
+{
+    words = word;
+    
+}
+
++(NSString *) sylibify:(NSString *)words
+{
+    NSLog(@"inside sylibify");
+        // word = @"rio";
+   // word = @"imposible";
+        // word = @"impo";
+    words = words;
+    NSLog(@"%@", words);
+
+        //Step 2
+        //if word begins with prefix
+//    if ([words hasPrefix: @"circun"])
+//    {
+//        NSLog(@"IF statement");
+//        NSString *sylibifyWord = @"circun ";
+//        words =[words substringFromIndex: 6];
+//    
+//    }
+//    else if ([words hasPrefix: @"cuadri"])
+//    {
+//        NSString *sylibifyWord = @"circun ";
+//        words =[words substringFromIndex: 6];
+//  }
+        //
+        //expand to include all prefixs
+        //
+    
+    
+        //Step 3 and step 4 skip
+    NSString *word;
+    NSMutableArray *characters;
+    NSString *sylable;
+    NSString *sylable1;
+    NSString *sylable2;
+    NSString *sylable3;
+    NSString *temp;
+    int count;
+    int i;
+    int j;
+    int k;
+        //step 5
+        //  NSLog(@"step 5");
+    characters = [[NSMutableArray alloc] initWithCapacity:[words length]+4];
+    
+    for (int i=0; i < [words length]; i++){//put into array
+        temp  = [NSString stringWithFormat:@"%c", [words characterAtIndex:i]];
+        NSLog(@"%@", temp);
+        [characters addObject:temp];
+    }//string now in array
+    for (i=2; i< [words length]; i++) {
+        if (!([[characters objectAtIndex:i] isEqualToString:@"a"] || [[characters objectAtIndex:i] isEqualToString:@"e"] || [[characters objectAtIndex:i] isEqualToString:@"i"] || [[characters objectAtIndex:i] isEqualToString:@"o"] || [[characters objectAtIndex:i] isEqualToString:@"u"])) {
+            if (!([[characters objectAtIndex:i+1] isEqualToString:@"a"] || [[characters objectAtIndex:i+1] isEqualToString:@"e"] || [[characters objectAtIndex:i+1] isEqualToString:@"i"] || [[characters objectAtIndex:i+1] isEqualToString:@"o"] || [[characters objectAtIndex:i+1] isEqualToString:@"u"])) {
+                if (!([[characters objectAtIndex:i+2] isEqualToString:@"a"] || [[characters objectAtIndex:i+2] isEqualToString:@"e"] || [[characters objectAtIndex:i+2] isEqualToString:@"i"] || [[characters objectAtIndex:i+2] isEqualToString:@"o"] || [[characters objectAtIndex:i+2] isEqualToString:@"u"])) {
+                    if (([[characters objectAtIndex:i+2] isEqualToString:@"l"] || [[characters objectAtIndex:i+2] isEqualToString:@"r"])) {
+                        [characters insertObject:@" " atIndex:(i+1)];
+                        i++;
+                        
+                    } else {
+                        [characters insertObject:@" " atIndex:(i+2)];
+                        i=i+2;
+                    }
+                } else {
+                    if (([[characters objectAtIndex:i+1] isEqualToString:@"l"] || [[characters objectAtIndex:i+1] isEqualToString:@"r"])) {
+                        [characters insertObject:@" " atIndex:(i)];
+                    } else {
+                        [characters insertObject:@" " atIndex:(i+1)];
+                        i=i+2;
+                    }
+                }
+            } else {
+                [characters insertObject:@" " atIndex:(i)];
+                i++;
+            }
+        }
+    }
+        //end step 5
+        //step 7
+    
+    count = [characters count]-1;
+    for (i=1; i<count; i++) {
+        if ([[characters objectAtIndex:i] isEqualToString:@"a"] || [[characters objectAtIndex:i] isEqualToString:@"e"] || [[characters objectAtIndex:i] isEqualToString:@"i"] || [[characters objectAtIndex:i] isEqualToString:@"o"] || [[characters objectAtIndex:i] isEqualToString:@"u"]) {
+            if ([[characters objectAtIndex:i+1] isEqualToString:@"í"] || [[characters objectAtIndex:i+1] isEqualToString:@"ú"]) {
+                [characters insertObject:@" " atIndex:(i+1)];
+            }
+        } else {
+            if ([[characters objectAtIndex:i] isEqualToString:@"í"] || [[characters objectAtIndex:i] isEqualToString:@"ú"]) {
+                if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"i"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"u"]) {
+                    [characters insertObject:@" " atIndex:(i+1)];
+                    i=i++;
+                }
+            }
+        }
+        NSLog(@"%@", word);
+        if ([[characters objectAtIndex:(i)] isEqualToString:@"a"] || [[characters objectAtIndex:(i)] isEqualToString:@"e"] || [[characters objectAtIndex:(i)] isEqualToString:@"o"]) {
+            if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"]) {
+                [characters insertObject:@" " atIndex:(i+1)];
+                i=i++;
+            }
+        }
+        
+    } //end step 7 for loop
+      //trim spaces
+    while ([[characters objectAtIndex:(0)] isEqualToString:@" "]) {
+        [characters removeObject:0];
+    }
+    while ([[characters lastObject] isEqualToString:@" "]) {
+        [characters removeLastObject];
+    }
+    
+    count = [characters count]-1;
+    for (i=0; i< count; i++) {
+        if ([[characters objectAtIndex:(i)] isEqualToString:@" "]) {
+            if ([[characters objectAtIndex:(i+1)] isEqualToString:@" "]) {
+                [characters removeObjectAtIndex:i];
+                i=i-2;
+            }
+        }
+    }
+    j=0;
+    NSLog(@"test");
+        //for (int m =0; m<[characters count]-1; m++) {
+    
+    NSLog(@"char= %@", characters);
+        //}
+    NSLog(@"charCount = %d", [characters count]);
+    
+    i=[characters count]-1;
+    
+        //find fist space
+    while (!([[characters objectAtIndex:(i)] isEqualToString:@" "])) {
+        if (i>0) {
+            
+            NSLog(@"i = %d",i);
+            i--;
+                //rio ends here
+        } else {
+            NSLog(@"break");
+            i=0;
+            break;
+        }
+    }
+    NSLog(@"i = %d",i);
+    if (i<1) {
+      //  _label.text = word;
+    } else {
+        
+        NSLog(@"test");
+        k=i;//K is the last space
+        i--;
+        NSLog(@"test2");
+        while (!([[characters objectAtIndex:(i)] isEqualToString:@" "])) {
+            if (i<0) {
+                i--;
+            } else {
+                break;
+            }
+            
+            
+        }
+        j=i;//K is the last space
+        NSLog(@"my spaces are at indexs:");
+        NSLog(@"k %d",k);
+        NSLog(@"j %d",j);
+        
+        count=[characters count];
+        NSLog(@"Count = %d",  count);
+        
+        sylable1 = [[NSMutableString alloc] init];
+        sylable2 = [[NSMutableString alloc] init];
+        sylable3 = [[NSMutableString alloc] init];
+        NSLog(@"K = %d", k);
+        if (j>0){
+                //3 or more sylables
+                //sylable 3
+            NSLog(@"sylable3 start= %@", sylable3);
+            for (i=k; i<count; i++) {
+                temp = [characters objectAtIndex:i];
+                sylable3 = [sylable3 stringByAppendingString:temp];
+                NSLog(@"sylable3 = %@", sylable3);
+            }
+            NSLog(@"sylable3 = %@", sylable3);
+                //sylable 2
+            for (i=j; i<k; i++) {
+                temp = [characters objectAtIndex:i];
+                sylable2 = [sylable2 stringByAppendingString:temp];
+                    //   sylable2= [UIFont boldSystemFontOfSize:16.0f];
+            }
+            NSLog(@"sylable2 = %@", sylable2);
+                //sylable 1
+            for (i=0; i<j; i++) {
+                temp = [characters objectAtIndex:i];
+                sylable1 = [sylable1 stringByAppendingString:temp];
+                    //    NSLog(@"temp = %@",temp);
+                    //    NSLog(@"sylable1 = %@",sylable1);
+            }
+            NSLog(@"sylable1 = %@", sylable1);
+            sylable = sylable1;
+            sylable = [sylable stringByAppendingString:sylable2];
+            sylable = [sylable stringByAppendingString:sylable3];
+           // _label.text = sylable;
+            NSLog(@"sylable = %@", sylable);
+            
+        } else if (k>0) {
+                //2 sylables
+            for (i=0; i<k; i++) {
+                temp = [characters objectAtIndex:i];
+                sylable2 = [sylable2 stringByAppendingString:temp];
+                
+            }
+            NSLog(@"sylable2 = %@", sylable2);
+            
+            for (i=i+1; i<count; i++) {
+                temp = [characters objectAtIndex:i];
+                sylable3 = [sylable3 stringByAppendingString:temp];
+                
+            }
+            NSLog(@"sylable3 = %@", sylable3);
+            sylable = sylable2;
+            sylable = [sylable stringByAppendingString:sylable3];
+          //  _label.text = sylable;
+            NSLog(@"sylable = %@", sylable);
+        }
+        else
+            NSLog(@"fail");
+    }
+    return sylable;
+}
+
+@end
+

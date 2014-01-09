@@ -12,6 +12,8 @@
 {
     NSURL *url;
     NSArray *wordArray;
+    NSMutableArray *removedAccentMarkArray;
+    
     NSArray *wArray;
     NSDictionary *jsonDict;
     //NSString *selectedWord;
@@ -21,6 +23,6 @@
 @public NSString *word;
     //int selectedcat;
   //  int catagory;
-  
+    int i;  
 }
 @end
