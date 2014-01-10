@@ -46,6 +46,11 @@
 		40E1CD5C179B47F200122308 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A0E4721789BBC400531916 /* Default@2x.png */; };
 		40E1CD5F179CA03900122308 /* ChooseWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1CD5E179CA03900122308 /* ChooseWordViewController.m */; };
 		40E1CD6517A1849F00122308 /* SylibifierBackup in Resources */ = {isa = PBXBuildFile; fileRef = 40E1CD6417A1849F00122308 /* SylibifierBackup */; };
+		40E6013D187F39FC00C2CC4B /* LessonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6013C187F39FC00C2CC4B /* LessonsViewController.m */; };
+		40E60140187F3D4C00C2CC4B /* HelpScreenOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E6013F187F3D4C00C2CC4B /* HelpScreenOneViewController.m */; };
+		40E60143187F545C00C2CC4B /* HelpScreenTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E60142187F545C00C2CC4B /* HelpScreenTwoViewController.m */; };
+		40E60146187F546E00C2CC4B /* HelpScreenThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E60145187F546E00C2CC4B /* HelpScreenThreeViewController.m */; };
+		40E60149187F548200C2CC4B /* HelpScreenFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E60148187F548200C2CC4B /* HelpScreenFourViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,16 @@
 		40E1CD5D179CA03900122308 /* ChooseWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseWordViewController.h; sourceTree = "<group>"; };
 		40E1CD5E179CA03900122308 /* ChooseWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseWordViewController.m; sourceTree = "<group>"; };
 		40E1CD6417A1849F00122308 /* SylibifierBackup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SylibifierBackup; sourceTree = "<group>"; };
+		40E6013B187F39FC00C2CC4B /* LessonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonsViewController.h; sourceTree = "<group>"; };
+		40E6013C187F39FC00C2CC4B /* LessonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonsViewController.m; sourceTree = "<group>"; };
+		40E6013E187F3D4C00C2CC4B /* HelpScreenOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScreenOneViewController.h; sourceTree = "<group>"; };
+		40E6013F187F3D4C00C2CC4B /* HelpScreenOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScreenOneViewController.m; sourceTree = "<group>"; };
+		40E60141187F545C00C2CC4B /* HelpScreenTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScreenTwoViewController.h; sourceTree = "<group>"; };
+		40E60142187F545C00C2CC4B /* HelpScreenTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScreenTwoViewController.m; sourceTree = "<group>"; };
+		40E60144187F546E00C2CC4B /* HelpScreenThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScreenThreeViewController.h; sourceTree = "<group>"; };
+		40E60145187F546E00C2CC4B /* HelpScreenThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScreenThreeViewController.m; sourceTree = "<group>"; };
+		40E60147187F548200C2CC4B /* HelpScreenFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScreenFourViewController.h; sourceTree = "<group>"; };
+		40E60148187F548200C2CC4B /* HelpScreenFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpScreenFourViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +196,7 @@
 		4022B4BC1774A7BE0021ADF0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				40E6014A187F54C200C2CC4B /* HelpScreens */,
 				4022B4B1177492A20021ADF0 /* ViewController.h */,
 				4022B4B2177492A20021ADF0 /* ViewController.m */,
 				4022B4B9177493DD0021ADF0 /* LearnToMarkWordsViewController.h */,
@@ -193,6 +209,8 @@
 				40A0E459178871B800531916 /* EnterWordResultsViewController.m */,
 				40A0E45B1788785F00531916 /* EnterAccentViewController.h */,
 				40A0E45C1788785F00531916 /* EnterAccentViewController.m */,
+				40E6013B187F39FC00C2CC4B /* LessonsViewController.h */,
+				40E6013C187F39FC00C2CC4B /* LessonsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -233,6 +251,21 @@
 			);
 			name = media;
 			path = AccentMark;
+			sourceTree = "<group>";
+		};
+		40E6014A187F54C200C2CC4B /* HelpScreens */ = {
+			isa = PBXGroup;
+			children = (
+				40E6013E187F3D4C00C2CC4B /* HelpScreenOneViewController.h */,
+				40E6013F187F3D4C00C2CC4B /* HelpScreenOneViewController.m */,
+				40E60141187F545C00C2CC4B /* HelpScreenTwoViewController.h */,
+				40E60142187F545C00C2CC4B /* HelpScreenTwoViewController.m */,
+				40E60144187F546E00C2CC4B /* HelpScreenThreeViewController.h */,
+				40E60145187F546E00C2CC4B /* HelpScreenThreeViewController.m */,
+				40E60147187F548200C2CC4B /* HelpScreenFourViewController.h */,
+				40E60148187F548200C2CC4B /* HelpScreenFourViewController.m */,
+			);
+			name = HelpScreens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,14 +360,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4022B4A3177492A20021ADF0 /* main.m in Sources */,
+				40E60146187F546E00C2CC4B /* HelpScreenThreeViewController.m in Sources */,
 				4022B4A7177492A20021ADF0 /* AppDelegate.m in Sources */,
 				4022B4B3177492A20021ADF0 /* ViewController.m in Sources */,
 				4022B4BB177493DD0021ADF0 /* LearnToMarkWordsViewController.m in Sources */,
 				4022B4C01774A85B0021ADF0 /* Sylibifier.m in Sources */,
 				4022B4C61774D4CD0021ADF0 /* EnterWordViewController.m in Sources */,
+				40E60140187F3D4C00C2CC4B /* HelpScreenOneViewController.m in Sources */,
 				400E999117810F9000DB227C /* alertView.m in Sources */,
 				40A0E45A178871B800531916 /* EnterWordResultsViewController.m in Sources */,
+				40E6013D187F39FC00C2CC4B /* LessonsViewController.m in Sources */,
+				40E60143187F545C00C2CC4B /* HelpScreenTwoViewController.m in Sources */,
 				40A0E45D1788785F00531916 /* EnterAccentViewController.m in Sources */,
+				40E60149187F548200C2CC4B /* HelpScreenFourViewController.m in Sources */,
 				401007FC179993B500F08D1A /* Catagory.m in Sources */,
 				40E1CD5F179CA03900122308 /* ChooseWordViewController.m in Sources */,
 			);

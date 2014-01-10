@@ -38,10 +38,12 @@
   //  NSLog(@"in view controller");
     cata = [cat intValue];
     NSLog(@"audio = %@", audioUrl);
-    //NSLog(@"mWord = %@", modifiedWord);
+    NSLog(@"mWord = %@", modifiedWord);
 
     [self selectedChar];
-  _wordLabel.text = modifiedWord;
+    _wordLabel.text = modifiedWord;
+    _subViewWordLabel.text = modifiedWord;
+    
     [self addSelectedCharAttributes:@{ NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)}];
     
     
@@ -52,30 +54,41 @@
         //set text for last button
     if ([cat isEqual: @"1"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"3"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"4"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
+    } else if ([cat isEqual: @"6"]) {
+        _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"7"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
             _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
          } else if ([cat isEqual: @"8"]) {
            _helpButton.hidden = NO;
     } else if ([cat isEqual: @"9"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
             _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"10"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
            _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"11"]) {
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"12"]) {
         _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"13"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"14"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"15"]) {
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"16"]) {
@@ -83,10 +96,12 @@
     } else if ([cat isEqual: @"17"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
+        _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"18"]) {
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"19"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"20"]) {
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"21"]) {
@@ -95,12 +110,14 @@
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"23"]) {
         [_markOutlet setTitle:@"Place Mark Over 2nd UpperVowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"6"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"12"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"20"]) {
         [_markOutlet setTitle:@"Place Mark Over Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
+        _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     }
@@ -139,7 +156,7 @@
         } else if ([cat isEqual: @"12"]) {
             wordGroup = @"D";
         } else if ([cat isEqual: @"13"]) {
-            wordGroup = @"B";
+            wordGroup = @"E";
         } else if ([cat isEqual: @"14"]) {
             wordGroup = @"B";
         } else if ([cat isEqual: @"15"]) {
@@ -153,7 +170,7 @@
         } else if ([cat isEqual: @"19"]) {
             wordGroup = @"B";
         } else if ([cat isEqual: @"20"]) {
-            wordGroup = @"D";
+            wordGroup = @"E";
         } else if ([cat isEqual: @"21"]) {
             wordGroup = @"C";
         } else if ([cat isEqual: @"22"]) {
@@ -166,11 +183,13 @@
     }
     if ([wordGroup isEqual: @"C"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
-    }
-    if ([wordGroup isEqual: @"D"]) {
+    } else if ([wordGroup isEqual: @"D"]) {
+        _wordEndOutlet.text = @"Does the word end in a consonant?";
+    } else if ([cat isEqual: @"20"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
     }
-
+    currentValue = 50;
+	self.subViewSlider.value = currentValue;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -193,25 +212,30 @@
     
         for ( i=0; i < [charList count]-1; i++){
             if ([[charList objectAtIndex:i] isEqualToString:@"·"] ||
-               [[charList objectAtIndex:i] isEqualToString:@"á"] )
+                [[charList objectAtIndex:i] isEqualToString:@"á"] ){
                 [charList replaceObjectAtIndex:i withObject:@"a"];
-            
+                accentMarkLocation = i;
+            }
             if ([[charList objectAtIndex:i] isEqualToString:@"È"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"é"])
+                [[charList objectAtIndex:i] isEqualToString:@"é"]){
                 [charList replaceObjectAtIndex:i withObject:@"e"];
-            
+                accentMarkLocation = i;
+            }
             if ([[charList objectAtIndex:i] isEqualToString:@"Ì"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"í"])
+                [[charList objectAtIndex:i] isEqualToString:@"í"]){
                 [charList replaceObjectAtIndex:i withObject:@"i"];
-            
+                accentMarkLocation = i;
+            }
             if ([[charList objectAtIndex:i] isEqualToString:@"Û"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"ó"])
+                [[charList objectAtIndex:i] isEqualToString:@"ó"]){
                 [charList replaceObjectAtIndex:i withObject:@"o"];
-            
+                accentMarkLocation = i;
+            }
             if ([[charList objectAtIndex:i] isEqualToString:@"˙"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"ú"])
+                [[charList objectAtIndex:i] isEqualToString:@"ú"]){
                 [charList replaceObjectAtIndex:i withObject:@"u"];
-        
+                accentMarkLocation = i;
+            }
         }
                
               modifiedWord = [[NSMutableString alloc] init];
@@ -223,21 +247,27 @@
         //testing is showing correct so far
         if([temp isEqual:@"·"]){
             temp = @"a";
+            accentMarkLocation = i;
         }
         if([temp isEqual:@"È"]){
             temp = @"e";
+            accentMarkLocation = i;
         }
         if([temp isEqual:@"Ì"]){
             temp = @"i";
+            accentMarkLocation = i;
         }
         if([temp isEqual:@"Û"]){
             temp = @"o";
+            accentMarkLocation = i;
         }
         if([temp isEqual:@"˙"]){
             temp = @"u";
+            accentMarkLocation = i;
         }
         if([temp isEqual:@"Ò"]){
             temp = @"ñ";
+            accentMarkLocation = i;
         }
         modifiedWord = [modifiedWord stringByAppendingString:temp];
         
@@ -398,9 +428,15 @@
     [self addLabelAttributes:attributes range:range];
 }
 
+
+
 - (IBAction)wordConstantYesButton:(UIButton *)sender {
     if (firstquestion==TRUE) {
         _wordConstantYesOutlet.alpha = 1.0;
+        
+        if ([wordGroup characterAtIndex:0] == 'E') {
+            _stressLabel.text=@"Does the word have a stressed upper vowel?";
+        }
         
         if ([wordGroup characterAtIndex:0] == 'A')
         {
@@ -410,8 +446,6 @@
         {
             _stressLabel.text=@"Is the stress on the second to the last syllable?";
         }
-
-        
         [_stressLabel setTextColor:[UIColor blackColor]];
        
         [self selectedWord];
@@ -462,7 +496,21 @@
             secondquestion = FALSE;
             _stressYesOutlet.alpha=1.0;
         }
-        else
+        else if ([wordGroup characterAtIndex:0] == 'E')
+        {
+            
+            _accentMarkOutlet.text=@"Does the word have Hiatus on either side of stressed upper vowel?";
+            _noMarkOutlet.hidden = NO;
+            _markOutlet.hidden = NO;
+            _accentMarkOutlet.hidden = NO;
+            _stressNoOutlet.hidden = YES;
+            _stressYesOutlet.enabled = NO;
+            _arrow2mage.hidden=NO;
+            secondquestion = FALSE;
+            _stressYesOutlet.alpha=1.0;
+            
+        }
+        else//if wordtype is B or D
         {
             [self incorrectAlert];
         }
@@ -492,7 +540,7 @@
             _arrow2mage.hidden=NO;
             _stressNoOutlet.alpha=1.0;
         }
-        else{
+        else{//if word type is A or C or E
             [self incorrectAlert];
         }
         
@@ -519,12 +567,18 @@
 }
 
 - (IBAction)markButton:(UIButton *)sender {
-    if (([wordGroup characterAtIndex:0] == 'B') || ([wordGroup characterAtIndex:0] == 'D')) {
+    
+    
+//add logic here for place mark
+    
+    
+    
+    if (([wordGroup characterAtIndex:0] == 'B') || ([wordGroup characterAtIndex:0] == 'D')|| ([wordGroup characterAtIndex:0] == 'E')) {
         _markOutlet.alpha = 1;
         _noMarkOutlet.hidden = YES;
-        [self correctAlert];
+       // [self correctAlert];
+        _subView.hidden = NO;
     }
-        //  else if ([wordSet characterAtIndex:0] == 'C')
         //     [self correctAlert];
     else
     {
@@ -631,6 +685,22 @@
     
 
 }
+- (IBAction)subViewButton:(UIButton *)sender {
+    currentValue =  _subViewSlider.value;   NSLog(@"SliderValue %f",_subViewSlider.value);
+    NSLog(@"Accent letter value %d",accentMarkLocation);
+    NSLog(@"current value = %d", currentValue);
+    if (currentValue == accentMarkLocation) {
+        _subView.hidden = YES;
+        [self correctAlert];
+    } else {
+        [self incorrectAlert];
+    }
+}
+
+
+
+
+
 @end
 
 

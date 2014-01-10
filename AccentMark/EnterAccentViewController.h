@@ -39,6 +39,8 @@
     int spaceOne;
     int spaceTwo;
     int count;
+    int accentMarkLocation;
+    int currentValue;
     //NSMutableAttributedString *attributedString;
     //NSString *string;
     NSArray *wordList;
@@ -48,11 +50,19 @@
     int wordMark;// Show what array index has the accent mark  so I can underline it.
     NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
 }
+
 - (IBAction)helpButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *helpButton;
+@property (weak, nonatomic) IBOutlet UIView *subView;
+@property (weak, nonatomic) IBOutlet UILabel *subViewWordLabel;
+- (IBAction)subViewSliderAction:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *subViewLabel;
+@property (weak, nonatomic) IBOutlet UISlider *subViewSlider;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordEndOutlet;
+- (IBAction)subViewButton:(UIButton *)sender;
 
 - (IBAction)wordConstantYesButton:(UIButton *)sender;
 - (IBAction)constantNoButton:(UIButton *)sender;
@@ -75,7 +85,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *noMarkOutlet;
 - (IBAction)noMarkButton:(UIButton *)sender;
 - (IBAction)markButton:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
+//@property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow2mage;
 

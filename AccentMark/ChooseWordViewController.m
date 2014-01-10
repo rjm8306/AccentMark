@@ -171,6 +171,7 @@ for (i=0; i<[wordArray count]; i++) {
     wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
     wordResults.cat = wordArray[indexPath.row][@"category"];
     wordResults->word = wordArray[indexPath.row][@"word"];
+    wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
     wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
     wordResults.cata = (int)wordArray[indexPath.row][@"category"];
     [self.navigationController pushViewController:wordResults animated:NO];

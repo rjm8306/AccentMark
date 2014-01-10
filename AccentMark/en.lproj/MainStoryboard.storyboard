@@ -46,6 +46,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="IYb-Xw-56L" kind="push" id="oGG-bs-0DK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zub-5a-RTc">
                                 <rect key="frame" x="20" y="418" width="280" height="44"/>
@@ -67,7 +70,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-507" y="-431"/>
+            <point key="canvasLocation" x="-539" y="-950"/>
+        </scene>
+        <!--Lessons View Controller - Lessons-->
+        <scene sceneID="N1B-Sq-Vvn">
+            <objects>
+                <tableViewController storyboardIdentifier="Lessons" title="Lessons" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IYb-Xw-56L" customClass="LessonsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aCr-Ft-ipn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="krB-vk-2HJ" style="IBUITableViewCellStyleDefault" id="oAm-AD-f3g">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oAm-AD-f3g" id="Ehp-YR-2C5">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="krB-vk-2HJ">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="delegate" destination="IYb-Xw-56L" id="eoC-ie-6G6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lessons" id="ngE-t6-45s"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfW-Ub-1U3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="450"/>
         </scene>
         <!--View Controller - OverView-->
         <scene sceneID="Qnp-oA-IGd">
@@ -81,21 +122,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-kx-Eic">
-                                <rect key="frame" x="0.0" y="64" width="320" height="671"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Overview">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Calibri-Bold"/>
-                                            <font key="NSOriginalFont" size="18" name="Calibri-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-ng-fl9">
+                                <rect key="frame" x="0.0" y="62" width="320" height="458"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-kx-Eic">
+                                        <rect key="frame" x="0.0" y="-3" width="320" height="461"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Overview">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="Calibri-Bold"/>
+                                                    <font key="NSOriginalFont" size="18" name="Calibri-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
 With  Áccent Marker on your iPod Touch, iPhone or iPad, you can quickly and easily learn which words get accent marks and why.   In the same way you learn the words that get marked, you learn to figure out the words that don’t get accent marks.  
 
 Quick and Easy
@@ -107,39 +152,41 @@ The traditional set of rules for marking accents assume that the learner already
 What Áccent Marker is Not 
 Áccent Marker does not simply provide a set of keystrokes (such as ALT 0225 to make the character á) that places a mark over a word that you already know gets an accent mark.  To the contrary, interacting with Áccent Marker makes you an expert at knowing whether any word in Spanish gets an accent mark or not.  Then you can spell in Spanish!  
 </string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Calibri"/>
-                                            <font key="NSOriginalFont" size="18" name="Calibri"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="cd+WU}.t">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="18" name="Calibri"/>
-                                            <font key="NSOriginalFont" size="18" name="Calibri"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="Calibri"/>
+                                                    <font key="NSOriginalFont" size="18" name="Calibri"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="cd+WU}.t">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="18" name="Calibri"/>
+                                                    <font key="NSOriginalFont" size="18" name="Calibri"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
 Cg
 </string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Calibri"/>
-                                            <font key="NSOriginalFont" size="18" name="Calibri"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="Calibri"/>
+                                                    <font key="NSOriginalFont" size="18" name="Calibri"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -148,7 +195,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xM6-rg-rih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="1035"/>
+            <point key="canvasLocation" x="655" y="431"/>
         </scene>
         <!--View Controller - About Us-->
         <scene sceneID="NuZ-11-t4I">
@@ -326,7 +373,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr8-DH-PRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213" y="320"/>
+            <point key="canvasLocation" x="655" y="-283"/>
         </scene>
         <!--Tab Bar Controller - About Us/Overview-->
         <scene sceneID="Oss-14-OeR">
@@ -348,7 +395,7 @@ Cg
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khH-KL-cxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="751"/>
+            <point key="canvasLocation" x="85" y="-283"/>
         </scene>
         <!--Enter Word View Controller - Enter Word -->
         <scene sceneID="WTZ-6X-4V4">
@@ -390,7 +437,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bc-qm-s0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="39"/>
+            <point key="canvasLocation" x="85" y="-1031"/>
         </scene>
         <!--Enter Word Results View Controller - Your Word-->
         <scene sceneID="KpM-Gz-VhS">
@@ -422,7 +469,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSz-S3-f6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="31"/>
+            <point key="canvasLocation" x="503" y="-1031"/>
         </scene>
         <!--Learn To Mark Words View Controller - Learn To Mark Words-->
         <scene sceneID="6pZ-zd-MAg">
@@ -1000,7 +1047,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIx-y7-ebP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="-656"/>
+            <point key="canvasLocation" x="85" y="-1714"/>
         </scene>
         <!--Choose Word View Controller-->
         <scene sceneID="dxT-VM-ufD">
@@ -1032,7 +1079,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxB-Ta-dAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="-656"/>
+            <point key="canvasLocation" x="503" y="-1714"/>
         </scene>
         <!--Enter Accent View Controller - Marking Words-->
         <scene sceneID="2e2-Rg-S3y">
@@ -1046,14 +1093,14 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uh-bZ-twh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="9uh-bZ-twh">
                                 <rect key="frame" x="12" y="72" width="167" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Loading Word">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="26" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -1221,6 +1268,42 @@ Cg
                                     <action selector="helpButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="gGe-E6-V8v"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Kx-Ne1">
+                                <rect key="frame" x="12" y="115" width="288" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="bb8-0O-EMj">
+                                        <rect key="frame" x="9" y="55" width="227" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="subViewSliderAction:" destination="RKa-GS-cgs" eventType="touchDragExit" id="s5q-EJ-goV"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-6n-DPm">
+                                        <rect key="frame" x="11" y="83" width="214" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-L7-2bx">
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-yO-QNS">
+                                        <rect key="frame" x="69" y="132" width="100" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Check Answer">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="subViewButton:" destination="RKa-GS-cgs" eventType="touchDown" id="4O4-a4-Ymf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1239,6 +1322,10 @@ Cg
                         <outlet property="stressLabel" destination="luB-a4-XCj" id="2JZ-vW-6QU"/>
                         <outlet property="stressNoOutlet" destination="gX4-Gh-1Op" id="TxW-iX-Yqb"/>
                         <outlet property="stressYesOutlet" destination="FQJ-pF-gwV" id="v6k-TZ-LQ7"/>
+                        <outlet property="subView" destination="fXB-Kx-Ne1" id="My8-uB-TDt"/>
+                        <outlet property="subViewLabel" destination="9uJ-L7-2bx" id="X61-nq-EOs"/>
+                        <outlet property="subViewSlider" destination="bb8-0O-EMj" id="S9Y-EL-han"/>
+                        <outlet property="subViewWordLabel" destination="3qc-6n-DPm" id="ocC-Tz-Iua"/>
                         <outlet property="wordConstantNoOutlet" destination="bAR-6i-AAq" id="pgE-o9-9Se"/>
                         <outlet property="wordConstantYesOutlet" destination="0qS-17-wwj" id="Rxo-Kg-WgQ"/>
                         <outlet property="wordEndOutlet" destination="Tq0-vw-0Dk" id="1U0-d4-Vwq"/>
@@ -1247,12 +1334,12 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9r-TL-xD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="-656"/>
+            <point key="canvasLocation" x="1427" y="-1020"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--View Controller - Hiatus-->
         <scene sceneID="SBD-Up-nrp">
             <objects>
-                <viewController id="yp7-S4-j9E" sceneMemberID="viewController">
+                <viewController title="Hiatus" id="yp7-S4-j9E" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8El-OO-DJo"/>
                         <viewControllerLayoutGuide type="bottom" id="MmZ-ni-e5H"/>
@@ -1356,11 +1443,11 @@ ICAgICAgIAo
             </objects>
             <point key="canvasLocation" x="-507" y="-3125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - HelpScreenOne-->
         <scene sceneID="bC0-H5-i0U">
             <objects>
-                <tabBarController storyboardIdentifier="HelpScreenOne" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sgl-cF-xiP" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController storyboardIdentifier="HelpScreenOne" title="HelpScreenOne" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sgl-cF-xiP" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lWT-eB-YMH">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1396,7 +1483,7 @@ ICAgICAgIAo
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61L-tx-cLe">
-                                        <rect key="frame" x="-48" y="5" width="368" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
@@ -1472,7 +1559,7 @@ The </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHL-bO-pgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-531" y="-2408"/>
+            <point key="canvasLocation" x="-539" y="-2387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dIr-hk-xlj">
@@ -1499,12 +1586,12 @@ The </string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PR-05-yzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="-392"/>
+            <point key="canvasLocation" x="-1078" y="-1020"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--View Controller - HelpScreenOne-->
         <scene sceneID="B2K-eQ-2wf">
             <objects>
-                <viewController id="AOT-wQ-j76" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpScreenThree" title="HelpScreenOne" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AOT-wQ-j76" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kuJ-Ef-nus"/>
                         <viewControllerLayoutGuide type="bottom" id="Kl3-uo-g9M"/>
@@ -1573,13 +1660,13 @@ equals 2 vowels in 1 syllable is Diphthong
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOK-Vd-9BX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-499" y="-1805"/>
+            <point key="canvasLocation" x="503" y="-3125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Diphthong-->
         <scene sceneID="qpQ-iM-DA3">
             <objects>
-                <tabBarController storyboardIdentifier="HelpScreenThree" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t18-eN-wzn" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController storyboardIdentifier="HelpScreenThree" title="Diphthong" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t18-eN-wzn" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="H5F-Ki-2PK">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1592,7 +1679,7 @@ equals 2 vowels in 1 syllable is Diphthong
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6u-ZD-HRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1049" y="-1638"/>
+            <point key="canvasLocation" x="57" y="-2878"/>
         </scene>
         <!--View Controller - More Help-->
         <scene sceneID="Brp-vN-WBj">
@@ -1615,7 +1702,7 @@ equals 2 vowels in 1 syllable is Diphthong
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-9M-bCR">
-                                        <rect key="frame" x="-48" y="5" width="368" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
@@ -1691,12 +1778,12 @@ The </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfz-ks-avF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-515" y="-1192"/>
+            <point key="canvasLocation" x="503" y="-2387"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--View Controller - Unique Hiatus-->
         <scene sceneID="hOv-Hv-Gr9">
             <objects>
-                <viewController id="Sfb-fL-obC" sceneMemberID="viewController">
+                <viewController title="Unique Hiatus" id="Sfb-fL-obC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jpE-cn-Yko"/>
                         <viewControllerLayoutGuide type="bottom" id="dEc-wx-9w1"/>
@@ -1798,13 +1885,13 @@ ICAgICAgIAo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x8-Gi-yMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325" y="-2973"/>
+            <point key="canvasLocation" x="2595" y="-3125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aP6-WK-fEq">
             <objects>
                 <tabBarController storyboardIdentifier="HelpScreenTwo" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ru6-Wv-yFr" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="IGb-hg-lai">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1817,7 +1904,7 @@ ICAgICAgIAo
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJ8-Gy-kLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="-2566"/>
+            <point key="canvasLocation" x="2043" y="-2878"/>
         </scene>
         <!--View Controller - More Help-->
         <scene sceneID="gEz-B2-jV6">
@@ -1840,7 +1927,7 @@ ICAgICAgIAo
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-ig-Ewl">
-                                        <rect key="frame" x="-48" y="5" width="368" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
@@ -1916,12 +2003,12 @@ The </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7m-7Z-t5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1349" y="-2304"/>
+            <point key="canvasLocation" x="2595" y="-2387"/>
         </scene>
-        <!--View Controller - Help-->
+        <!--View Controller - More Diphthong-->
         <scene sceneID="mQU-YI-0qP">
             <objects>
-                <viewController id="9r6-yR-Bqo" sceneMemberID="viewController">
+                <viewController title="More Diphthong" id="9r6-yR-Bqo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGy-kE-WW9"/>
                         <viewControllerLayoutGuide type="bottom" id="3E5-w0-UFz"/>
@@ -1940,7 +2027,7 @@ The </string>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">Adjacent Vowels andb Syllables:
+                                                <string key="content">Adjacent Vowels and Syllables:
 
   1 lower vowel adjacent to 1 upper vowel  
 equals 2 vowels in 1 syllable is Diphthong
@@ -2045,13 +2132,13 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gp-i1-zPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2365" y="-2093"/>
+            <point key="canvasLocation" x="1541" y="-3125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VYM-BD-gGV">
             <objects>
                 <tabBarController storyboardIdentifier="HelpScreenFour" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HgL-jh-j6D" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sfa-2f-ZVp">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -2064,7 +2151,7 @@ Cg
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXx-Fq-ljf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="-1662"/>
+            <point key="canvasLocation" x="1029" y="-2878"/>
         </scene>
         <!--View Controller - More Help-->
         <scene sceneID="kSb-mi-V6y">
@@ -2087,7 +2174,7 @@ Cg
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh7-Kg-jWs">
-                                        <rect key="frame" x="-48" y="5" width="368" height="245"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
@@ -2163,27 +2250,13 @@ The </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iI7-0e-kga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933" y="-1296"/>
+            <point key="canvasLocation" x="1541" y="-2387"/>
         </scene>
     </scenes>
     <resources>
         <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
         <image name="AppStoreIcon-512.png" width="467" height="275"/>
         <image name="arrow.png" width="600" height="600"/>
-        <image name="arrow.png" width="600" height="600"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
         <image name="bGround.png" width="100" height="100"/>
         <image name="speaker.png" width="40" height="40"/>
     </resources>
