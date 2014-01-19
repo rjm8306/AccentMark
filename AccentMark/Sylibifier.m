@@ -197,7 +197,7 @@
                     } else {
                         if (([[characters objectAtIndex:i+1] isEqualToString:@"l"] ||
                          [[characters objectAtIndex:i+1] isEqualToString:@"r"])) {
-                        [characters insertObject:@" " atIndex:(i+1)];//12/27 changed from i to i+1
+                        [characters insertObject:@" " atIndex:(i)];
      // NSLog(@"in right loop i+1 = l or r");
                             i=i+2;
                          //       NSLog(@"space3");
@@ -227,7 +227,7 @@
     
         //step 7
     //NSLog(@"step 7");
-    count = [characters count]-1;
+    count = [characters count]-1;  //changed from [character count]-1    01/18/14
     for (i=1; i<count; i++) {
             //looking for guí or quí
         if (i<[characters count]-2) {
@@ -238,29 +238,60 @@
             }
         }
         
-        if (([[characters objectAtIndex:i] isEqualToString:@"a"] || [[characters objectAtIndex:i] isEqualToString:@"e"] || [[characters objectAtIndex:i] isEqualToString:@"i"] || [[characters objectAtIndex:i] isEqualToString:@"o"] || [[characters objectAtIndex:i] isEqualToString:@"u"]) && (i<[characters count]-1)) {
-            if ([[characters objectAtIndex:i+1] isEqualToString:@"í"] || [[characters objectAtIndex:i+1] isEqualToString:@"ú"]) {
+        if (([[characters objectAtIndex:i] isEqualToString:@"a"] || [[characters objectAtIndex:i] isEqualToString:@"e"]  || [[characters objectAtIndex:i] isEqualToString:@"o"]) && (i<[characters count]-1)) {
+                //removed i, u
+           if ([[characters objectAtIndex:i+1] isEqualToString:@"í"] || [[characters objectAtIndex:i+1] isEqualToString:@"ú"]) {
                 [characters insertObject:@" " atIndex:(i+1)];
-            //    NSLog(@"space6");
-              //  NSLog(@"%d", i);
+//                
+//            //    NSLog(@"space6");
+//              //  NSLog(@"%d", i);
+//                
             }
+//            
+//            
         } else {
-            if ([[characters objectAtIndex:i] isEqualToString:@"í"] || [[characters objectAtIndex:i] isEqualToString:@"ú"]) {
-                if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"i"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"u"]) {
-                    [characters insertObject:@" " atIndex:(i+1)];
+                if ([[characters objectAtIndex:i] isEqualToString:@"í"] || [[characters objectAtIndex:i] isEqualToString:@"ú"]) {
+                    if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"i"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"u"]) {
+                        [characters insertObject:@" " atIndex:(i+1)];
            //         NSLog(@"space7");
            //         NSLog(@"%d", i);
-                    i=i+1;
+                        i=i+1;
+                    }
                 }
             }
-        }
         if ([[characters objectAtIndex:(i)] isEqualToString:@"a"] || [[characters objectAtIndex:(i)] isEqualToString:@"e"] || [[characters objectAtIndex:(i)] isEqualToString:@"o"]) {
             if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"á"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"é"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"ó"] ) {
                 [characters insertObject:@" " atIndex:(i+1)];
                 i=i+1;
             }
         }
-   
+   //added for hyatus  LúL
+      
+        if ([[characters objectAtIndex:(i)] isEqualToString:@"í"] || [[characters objectAtIndex:(i)] isEqualToString:@"ú"]  ||[[characters objectAtIndex:i] isEqualToString:@"Ì"] ||  [[characters objectAtIndex:i] isEqualToString:@"˙"]) {
+            if ([[characters objectAtIndex:(i+1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i+1)] isEqualToString:@"o"]) {
+                    [characters insertObject:@" " atIndex:(i+1)];
+                    i=i+1;
+            }
+             if ([[characters objectAtIndex:(i-1)] isEqualToString:@"a"] || [[characters objectAtIndex:(i-1)] isEqualToString:@"e"] || [[characters objectAtIndex:(i-1)] isEqualToString:@"o"]) {
+                [characters insertObject:@" " atIndex:(i)];
+                NSLog(@"test3");
+            }
+        }//end    //added for hyatus  LúL
+    }
+        if ([[characters lastObject]  isEqualToString:@"a"] ||[[characters lastObject]  isEqualToString:@"e" ] || [[characters lastObject]  isEqualToString:@"o"]) {
+          //  NSLog(@"count = %d", count);
+          //  NSLog(@"chars = %lu", (unsigned long)[characters count]);
+            if ([[characters objectAtIndex:count]  isEqualToString:@"í"]  ||[[characters objectAtIndex:count]  isEqualToString:@"ú"]   ) {
+                [characters insertObject:@" " atIndex:(count +1)];
+
+            }
+        
+        
+        
+        
+        
+        
+        
     //    NSLog(@"end step 7");
     } //end step 7 for loop
       //trim spaces
@@ -285,7 +316,7 @@
     
     i=[characters count]-1;
     
-        //find fist space
+        //find first space
     while (!([[characters objectAtIndex:(i)] isEqualToString:@" "])) {
         if (i>0) {
             
@@ -378,17 +409,18 @@
      //   NSLog(@"in last loop changing weird chars");
         if ([[characters objectAtIndex:i] isEqualToString:@"á"])
             [characters replaceObjectAtIndex:i withObject:@"a"];
-        
-        if ([[characters objectAtIndex:i] isEqualToString:@"é"])
+       
+         else   if ([[characters objectAtIndex:i] isEqualToString:@"é"])
             [characters replaceObjectAtIndex:i withObject:@"e"];
         
-        if ([[characters objectAtIndex:i] isEqualToString:@"í"])
+        
+       else  if ([[characters objectAtIndex:i] isEqualToString:@"í"])
             [characters replaceObjectAtIndex:i withObject:@"i"];
         
-        if ([[characters objectAtIndex:i] isEqualToString:@"ó"])
+       else  if ([[characters objectAtIndex:i] isEqualToString:@"ó"])
             [characters replaceObjectAtIndex:i withObject:@"o"];
         
-        if ([[characters objectAtIndex:i] isEqualToString:@"ú"])
+       else if ([[characters objectAtIndex:i] isEqualToString:@"ú"])
             [characters replaceObjectAtIndex:i withObject:@"u"];
     }
     return sylable;

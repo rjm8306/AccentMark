@@ -25,6 +25,7 @@
 		4022B4C01774A85B0021ADF0 /* Sylibifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4BF1774A85B0021ADF0 /* Sylibifier.m */; };
 		4022B4C61774D4CD0021ADF0 /* EnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */; };
 		403AD204187E4A31007FB877 /* AccentMarkerHelpImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 403AD203187E4A31007FB877 /* AccentMarkerHelpImage.png */; };
+		4047435B188B07F700BF21DA /* ChooseWordViewControllerDuplicate in Resources */ = {isa = PBXBuildFile; fileRef = 4047435A188B07F700BF21DA /* ChooseWordViewControllerDuplicate */; };
 		40A0E45A178871B800531916 /* EnterWordResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A0E459178871B800531916 /* EnterWordResultsViewController.m */; };
 		40A0E45D1788785F00531916 /* EnterAccentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A0E45C1788785F00531916 /* EnterAccentViewController.m */; };
 		40A0E4611789AFB000531916 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A0E4601789AFB000531916 /* Storyboard.storyboard */; };
@@ -83,6 +84,7 @@
 		4022B4C41774D4CD0021ADF0 /* EnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWordViewController.h; sourceTree = "<group>"; };
 		4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWordViewController.m; sourceTree = "<group>"; };
 		403AD203187E4A31007FB877 /* AccentMarkerHelpImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccentMarkerHelpImage.png; sourceTree = "<group>"; };
+		4047435A188B07F700BF21DA /* ChooseWordViewControllerDuplicate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChooseWordViewControllerDuplicate; sourceTree = "<group>"; };
 		40A0E458178871B800531916 /* EnterWordResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWordResultsViewController.h; sourceTree = "<group>"; };
 		40A0E459178871B800531916 /* EnterWordResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWordResultsViewController.m; sourceTree = "<group>"; };
 		40A0E45B1788785F00531916 /* EnterAccentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterAccentViewController.h; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				4022B4BA177493DD0021ADF0 /* LearnToMarkWordsViewController.m */,
 				40E1CD5D179CA03900122308 /* ChooseWordViewController.h */,
 				40E1CD5E179CA03900122308 /* ChooseWordViewController.m */,
+				4047435A188B07F700BF21DA /* ChooseWordViewControllerDuplicate */,
 				4022B4C41774D4CD0021ADF0 /* EnterWordViewController.h */,
 				4022B4C51774D4CD0021ADF0 /* EnterWordViewController.m */,
 				40A0E458178871B800531916 /* EnterWordResultsViewController.h */,
@@ -330,6 +333,7 @@
 				40A78F2F177A07850070039D /* greenButton.png in Resources */,
 				40A78F42177A08180070039D /* icon-57.png in Resources */,
 				40A78F44177A08290070039D /* icon-114.png in Resources */,
+				4047435B188B07F700BF21DA /* ChooseWordViewControllerDuplicate in Resources */,
 				400E999C178112C100DB227C /* accept.png in Resources */,
 				400E999D178112C100DB227C /* accept@2x.png in Resources */,
 				403AD204187E4A31007FB877 /* AccentMarkerHelpImage.png in Resources */,

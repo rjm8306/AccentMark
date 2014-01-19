@@ -37,12 +37,12 @@
    sylibifiedWord = [Sylibifier sylibify:word];
   //  NSLog(@"in view controller");
     cata = [cat intValue];
-    NSLog(@"audio = %@", audioUrl);
-    NSLog(@"mWord = %@", modifiedWord);
+   // NSLog(@"audio = %@", audioUrl);
+   //NSLog(@"mWord = %@", modifiedWord);
 
     [self selectedChar];
     _wordLabel.text = modifiedWord;
-    _subViewWordLabel.text = modifiedWord;
+   // _subViewWordLabel.text = modifiedWord;
     
     [self addSelectedCharAttributes:@{ NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)}];
     
@@ -62,6 +62,8 @@
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"6"]) {
+        
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"7"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
@@ -69,6 +71,8 @@
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
          } else if ([cat isEqual: @"8"]) {
            _helpButton.hidden = NO;
+             [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+             
     } else if ([cat isEqual: @"9"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
             _helpButton.hidden = NO;
@@ -78,10 +82,12 @@
            _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"11"]) {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"12"]) {
         _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"13"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
@@ -90,14 +96,17 @@
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"15"]) {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"16"]) {
         _helpButton.hidden = NO;
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"17"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"18"]) {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"19"]) {
         [_markOutlet setTitle:@"Place Mark Over Single Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
@@ -105,6 +114,7 @@
     } else if ([cat isEqual: @"20"]) {
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"21"]) {
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _helpButton.hidden = NO;
     } else if ([cat isEqual: @"22"]) {
         _helpButton.hidden = NO;
@@ -188,8 +198,8 @@
     } else if ([cat isEqual: @"20"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
     }
-    currentValue = 50;
-	self.subViewSlider.value = currentValue;
+    //currentValue = 50;
+	//self.subViewSlider.value = currentValue;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -245,32 +255,33 @@
    //     NSLog(@"%@", temp);
      //may possibly need to do this for the other letters
         //testing is showing correct so far
-        if([temp isEqual:@"·"]){
+        NSLog(@"charList = %@", [charList objectAtIndex:i]);
+        if([temp isEqual:@"·"]||[temp isEqual:@"á"]){
             temp = @"a";
             accentMarkLocation = i;
         }
-        if([temp isEqual:@"È"]){
+        if([temp isEqual:@"È"]||[temp isEqual:@"é"]){
             temp = @"e";
             accentMarkLocation = i;
         }
-        if([temp isEqual:@"Ì"]){
+        if([temp isEqual:@"Ì"] ||[temp isEqual:@"í"]) {
             temp = @"i";
             accentMarkLocation = i;
         }
-        if([temp isEqual:@"Û"]){
+        if([temp isEqual:@"Û"]||[temp isEqual:@"ó"]){
             temp = @"o";
             accentMarkLocation = i;
         }
-        if([temp isEqual:@"˙"]){
+        if([temp isEqual:@"˙"]||[temp isEqual:@"ú"]){
             temp = @"u";
             accentMarkLocation = i;
         }
-        if([temp isEqual:@"Ò"]){
+        if([temp isEqual:@"Ò"]  ){
             temp = @"ñ";
-            accentMarkLocation = i;
+           
         }
         modifiedWord = [modifiedWord stringByAppendingString:temp];
-        
+      //  NSLog(@"modifiedWord after charList = %@", modifiedWord);
     //    NSLog(@"mWord = %@", modifiedWord);
     }
 
@@ -410,6 +421,7 @@
                      range:range];
         //NSLog(@"%@ mat", mat);
           self.wordLabel.attributedText = attributedString;
+        self.subViewWordLabel.attributedText = attributedString;
        // NSLog(@"mat = %@", mat);
     }
 }
@@ -574,6 +586,8 @@
     
     
     if (([wordGroup characterAtIndex:0] == 'B') || ([wordGroup characterAtIndex:0] == 'D')|| ([wordGroup characterAtIndex:0] == 'E')) {
+        [self findAccentMarkLocation:modifiedWord];
+       // self.subViewWordLabel =
         _markOutlet.alpha = 1;
         _noMarkOutlet.hidden = YES;
        // [self correctAlert];
@@ -625,6 +639,56 @@
                 ChooseWordViewController *catResults = [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
         //        NSLog(@"passing cat %@", cat);
         //        NSLog(@"passing cata %d", cata);
+                if (cata == 1) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=1"];
+                } else if (cata == 2) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=2"];
+                } else if (cata == 3) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=3"];
+                } else if (cata == 4) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=4"];
+                } else if (cata == 5) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=5"];
+                } else if (cata == 6) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=6"];
+                } else if (cata == 7) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=7"];
+                } else if (cata == 8) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=8"];
+                } else if (cata == 9) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=9"];
+                } else if (cata == 10) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=10"];
+                } else if (cata == 11) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=11"];
+                } else if (cata == 12) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=12"];
+                } else if (cata == 13) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=13"];
+                } else if (cata == 14) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=14"];
+                } else if (cata == 15) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=15"];
+                } else if (cata == 16) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=16"];
+                } else if (cata == 17) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=17"];
+                } else if (cata == 18) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=18"];
+                } else if (cata == 19) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=19"];
+                } else if (cata == 20) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=20"];
+                } else if (cata == 21) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=21"];
+                } else if (cata == 22) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=22"];
+                } else if (cata == 23) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=23"];
+                } else{
+                    NSLog(@"error");
+                }
+ 
                 catResults->cat = cata;
                 
                 [self.navigationController pushViewController:catResults animated:NO];
@@ -686,10 +750,15 @@
 
 }
 - (IBAction)subViewButton:(UIButton *)sender {
-    currentValue =  _subViewSlider.value;   NSLog(@"SliderValue %f",_subViewSlider.value);
+  
+    currentValue =  _subViewSlider.value;
+    NSLog(@"SliderValue %f",_subViewSlider.value);//float
     NSLog(@"Accent letter value %d",accentMarkLocation);
     NSLog(@"current value = %d", currentValue);
-    if (currentValue == accentMarkLocation) {
+    NSLog(@"wordMark = %d", wordMark);
+    NSLog(@"sylibifiedWord = %@", sylibifiedWord);
+    if (currentValue == 0) {
+            //    if (currentValue == accentMarkLocation) {
         _subView.hidden = YES;
         [self correctAlert];
     } else {
@@ -697,8 +766,29 @@
     }
 }
 
-
-
+- (void)findAccentMarkLocation:(NSString *)sylibifiedWord;
+{
+    for (i=0; i < [modifiedWord length]; i++){
+       // temp1 = modifiedWord;
+        temp  = [NSString stringWithFormat:@"%c", [modifiedWord characterAtIndex:i]];
+        if([temp isEqual:@"·"]||[temp isEqual:@"á"])
+            accentMarkLocation = i;
+        
+        if([temp isEqual:@"È"]||[temp isEqual:@"é"])
+            accentMarkLocation = i;
+        
+        if([temp isEqual:@"Ì"] ||[temp isEqual:@"í"])
+            accentMarkLocation = i;
+        
+        if([temp isEqual:@"Û"]||[temp isEqual:@"ó"])
+            temp = @"o";
+            accentMarkLocation = i;
+        
+        if([temp isEqual:@"˙"]||[temp isEqual:@"ú"])
+            accentMarkLocation = i;
+     
+    }
+}
 
 
 @end

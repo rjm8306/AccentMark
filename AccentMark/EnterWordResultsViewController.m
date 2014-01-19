@@ -33,7 +33,7 @@
     url = [NSURL URLWithString:urlString];
         // Setup the URL with the JSON URL.
         //NSLog(@"urlString = %@", urlString);
-    NSLog(@"url = %@", url);
+    //NSLog(@"url = %@", url);
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -42,7 +42,7 @@
                                             completionHandler:
                                   ^(NSData *data, NSURLResponse *response, NSError *error) {
                                       wordArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                      NSLog(@"wordArray = %@", wordArray);
+                                   //   NSLog(@"wordArray = %@", wordArray);
                                   }];
     [task resume];
     
@@ -117,8 +117,8 @@
         
         [removedAccentMarkArray addObject: wordWithoutAccentMark];
     }//end for loop
-    NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
-    NSLog(@"Test");
+    //NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
+    //NSLog(@"Test");
     [self.tableView reloadData];
 }
 

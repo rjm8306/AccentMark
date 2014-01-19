@@ -46,7 +46,7 @@
     NSArray *wordList;
     NSMutableArray *charList;
      NSString *temp;
-   // NSString temp;
+    NSMutableString *temp1;
     int wordMark;// Show what array index has the accent mark  so I can underline it.
     NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
 }
