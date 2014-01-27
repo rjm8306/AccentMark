@@ -10,7 +10,6 @@
 
 @interface ChooseWordViewController : UITableViewController
 {
-   // @property (weak, nonAtomic) NSString @*urlString;
 @public NSURL *url;
     NSArray *wordArray;
     NSMutableArray *removedAccentMarkArray;
@@ -25,4 +24,6 @@
     int i;
     
 }
+
+@property (strong, nonatomic) NSString *urlString;
 @end

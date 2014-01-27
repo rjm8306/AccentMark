@@ -27,8 +27,6 @@
    // @public __strong NSString *cat;
     int i;//iterator for 4 loop
     int l;//iterator for 4 loop
-    //NSRange range;
-    //NSData *request;
     BOOL firstquestion;
     BOOL secondquestion;
     IBOutlet UIWebView *Webview;
@@ -41,6 +39,8 @@
     int count;
     int accentMarkLocation;
     int currentValue;
+    int k;
+    int j;
     //NSMutableAttributedString *attributedString;
     //NSString *string;
     NSArray *wordList;
@@ -49,8 +49,22 @@
     NSMutableString *temp1;
     int wordMark;// Show what array index has the accent mark  so I can underline it.
     NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
+    //variables for slider view
+    NSString *charString; //for slider
+    int endOfTheStressedSylable;
+    int beginingOfTheStressedSylable;
+    int tempFlag;
+    int temp1Flag;
+    float fontSize;
+    NSMutableString *sliderWord;
+    NSMutableString *sliderWordWithAccentMark;
+    NSMutableArray *sliderArraywithoutAccentMark;
+    NSMutableArray *sliderArrayWithAccentMark;
+    int accentFound;
+    float sliderMinValue;
+    float sliderMaxValue;
+    NSMutableAttributedString *attributedStringWithAccentMark;
 }
-
 - (IBAction)helpButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 @property (weak, nonatomic) IBOutlet UIView *subView;
@@ -88,7 +102,12 @@
 //@property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow2mage;
-
+- (void)findAccentMarkLocation:(NSString *)sylibifiedWord;
 @property (weak, nonatomic) UIActionSheet *actionSheet;
+@property (weak, nonatomic) IBOutlet UIView *noMarkSubView;
+- (IBAction)noMarkSubViewYesButton:(UIButton *)sender;
+- (IBAction)noMarkSUbViewNoButton:(UIButton *)sender;
+
+
 @end
 

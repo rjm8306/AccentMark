@@ -29,6 +29,7 @@
     title =  [NSString stringWithFormat:@"Word type %d",cat];
     self.navigationItem.title = title;
     [super viewDidLoad];
+    NSLog(@"test %@", wordArray);
     NSLog(@"url = %@", url);
     [self parseJSONWithURL:url];
     NSLog(@"%@", word);

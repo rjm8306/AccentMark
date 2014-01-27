@@ -10,8 +10,8 @@
 
 @interface EnterWordViewController : UIViewController
 {
-    NSString *input;
-    NSString *answer;
+    NSMutableString *input;
+    NSMutableString *answer;
     int catagory;
     
 }

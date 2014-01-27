@@ -14,9 +14,6 @@
 #import "Catagory.h"
 #import "ChooseWordViewController.h"
 #import "SetParameters.h"
-#import "SetSliderCorrectValue.h"
-
-
 @interface EnterAccentViewController ()
 
 @end
@@ -44,7 +41,7 @@
 
     [self selectedChar];
     _wordLabel.text = modifiedWord;
-    NSLog(@"47 wordlabel = %@", _wordLabel.text);
+    
     [self addSelectedCharAttributes:@{ NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)}];
     [super viewDidLoad];
     firstquestion=TRUE;
@@ -70,6 +67,7 @@
          } else if ([cat isEqual: @"8"]) {
            _helpButton.hidden = NO;
              [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+             
     } else if ([cat isEqual: @"9"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
             _helpButton.hidden = NO;
@@ -130,24 +128,66 @@
     }
     _markOutlet.titleLabel.textAlignment= NSTextAlignmentCenter;
     
+    
     if ([audioUrl hasPrefix:@"http"]) {
         _speakerOutlet.hidden = NO;
     }
-    
-    //
-    //Set WordGroup
-    //
     
     //NSLog(@"1wordGroup %@",wordGroup);
     if ([wordGroup isEqual:@"null"])
     {
         wordGroup = [SetParameters SetWordGroup:cat];
+        
+//        if ([cat isEqual: @"1"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"2"]) {
+//            wordGroup = @"A";
+//        } else if ([cat isEqual: @"3"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"4"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"5"]) {
+//            wordGroup = @"C";
+//        } else if ([cat isEqual: @"6"]) {
+//            wordGroup = @"D";
+//        } else if ([cat isEqual: @"7"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"8"]) {
+//            wordGroup = @"A";
+//        } else if ([cat isEqual: @"9"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"10"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"11"]) {
+//            wordGroup = @"11";
+//        } else if ([cat isEqual: @"12"]) {
+//            wordGroup = @"D";
+//        } else if ([cat isEqual: @"13"]) {
+//            wordGroup = @"E";
+//        } else if ([cat isEqual: @"14"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"15"]) {
+//            wordGroup = @"A";        
+//        } else if ([cat isEqual: @"16"]) {
+//            wordGroup = @"A";
+//        } else if ([cat isEqual: @"17"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"18"]) {
+//            wordGroup = @"A";    
+//        } else if ([cat isEqual: @"19"]) {
+//            wordGroup = @"B";
+//        } else if ([cat isEqual: @"20"]) {
+//            wordGroup = @"E";
+//        } else if ([cat isEqual: @"21"]) {
+//            wordGroup = @"C";
+//        } else if ([cat isEqual: @"22"]) {
+//            wordGroup = @"A";
+//        } else if ([cat isEqual: @"23"]) {
+//            wordGroup = @"B";
+//        } else {
+//            NSLog(@"unable to set wordGroup");
+//        }
     }
-    
-    //
-    //Set wordEndOutlet
-    //
-    
     if ([wordGroup isEqual: @"C"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
     } else if ([wordGroup isEqual: @"D"]) {
@@ -172,97 +212,90 @@
        temp  = [NSString stringWithFormat:@"%c", [word characterAtIndex:i]];
        // NSLog(@"temp = %@", temp);
         [charList addObject:temp];
-        NSLog(@"175charlist1 = %@", charList);
+        NSLog(@"charlist1 = %@", charList);
         
- NSLog(@"177modifiedWord = %@", modifiedWord);
+
+        
     }
     
         for ( i=0; i < [charList count]-1; i++){
-            NSLog(@"181charLIST");
             if ([[charList objectAtIndex:i] isEqualToString:@"·"] ||
                 [[charList objectAtIndex:i] isEqualToString:@"á"] ){
                 [charList replaceObjectAtIndex:i withObject:@"a"];
                 accentMarkLocation = i;
-                NSLog(@"1");
                 
             }
             if ([[charList objectAtIndex:i] isEqualToString:@"È"] ||
                 [[charList objectAtIndex:i] isEqualToString:@"é"]){
                 [charList replaceObjectAtIndex:i withObject:@"e"];
                 accentMarkLocation = i;
-                NSLog(@"2");
             }
             if ([[charList objectAtIndex:i] isEqualToString:@"Ì"] ||
                 [[charList objectAtIndex:i] isEqualToString:@"í"]){
                 [charList replaceObjectAtIndex:i withObject:@"i"];
                 accentMarkLocation = i;
-                NSLog(@"3");
-
             }
             if ([[charList objectAtIndex:i] isEqualToString:@"Û"] ||
                 [[charList objectAtIndex:i] isEqualToString:@"ó"]){
                 [charList replaceObjectAtIndex:i withObject:@"o"];
                 accentMarkLocation = i;
-                NSLog(@"3");
             }
             if ([[charList objectAtIndex:i] isEqualToString:@"˙"] ||
                 [[charList objectAtIndex:i] isEqualToString:@"ú"]){
                 [charList replaceObjectAtIndex:i withObject:@"u"];
                 accentMarkLocation = i;
-                NSLog(@"4");
             }
-               //01/26 modifiedWord = [modifiedWord stringByAppendingString:temp];
             
         }
-     NSLog(@"217modifiedWord = %@", modifiedWord);
     NSLog(@"charlist2 = %@", charList);
     
-    //          modifiedWord = [[NSMutableString alloc] init];
+              modifiedWord = [[NSMutableString alloc] init];
    // NSLog(@"charList = %@", charList);
-//    for (i=0; i<[charList count]; i++) {
-//        temp = [charList objectAtIndex:i];
-//        
-//   //     NSLog(@"%@", temp);
-//     //may possibly need to do this for the other letters
-//        //testing is showing correct so far
-//        NSLog(@"charList3 = %@", [charList objectAtIndex:i]);
-//        if([temp isEqual:@"·"]||[temp isEqual:@"á"]){
-//            temp = @"a";
-//            accentMarkLocation = i;
-//            NSLog(@"aposition = %d",accentMarkLocation);
-//        }
-//        if([temp isEqual:@"È"]||[temp isEqual:@"é"]){
-//            temp = @"e";
-//            accentMarkLocation = i;
-//            NSLog(@"eposition = %d",accentMarkLocation);
-//        }
-//        if([temp isEqual:@"Ì"] ||[temp isEqual:@"í"]) {
-//            temp = @"i";
-//            accentMarkLocation = i;
-//            NSLog(@"iposition = %d",accentMarkLocation);
-//        }
-//        if([temp isEqual:@"Û"]||[temp isEqual:@"ó"]){
-//            temp = @"o";
-//            accentMarkLocation = i;
-//            NSLog(@"oposition = %d",accentMarkLocation);
-//        }
-//        if([temp isEqual:@"˙"]||[temp isEqual:@"ú"]){
-//            temp = @"u";
-//            accentMarkLocation = i;
-//            NSLog(@"uposition = %d",accentMarkLocation);
-//        }
-//        if([temp isEqual:@"Ò"]){
-//            temp = @"ñ";
-//           // NSLog(@"position = %d",accentMarkLocation);
-//           
-//        }
-//        NSLog(@"charList4 = %@", [charList objectAtIndex:i]);
-//        modifiedWord = [modifiedWord stringByAppendingString:temp];
-//        NSLog(@"modifiedWord after charList = %@", modifiedWord);
+    for (i=0; i<[charList count]; i++) {
+        temp = [charList objectAtIndex:i];
+        
+   //     NSLog(@"%@", temp);
+     //may possibly need to do this for the other letters
+        //testing is showing correct so far
+        NSLog(@"charList3 = %@", [charList objectAtIndex:i]);
+        if([temp isEqual:@"·"]||[temp isEqual:@"á"]){
+            temp = @"a";
+            accentMarkLocation = i;
+            NSLog(@"aposition = %d",accentMarkLocation);
+        }
+        if([temp isEqual:@"È"]||[temp isEqual:@"é"]){
+            temp = @"e";
+            accentMarkLocation = i;
+            NSLog(@"eposition = %d",accentMarkLocation);
+        }
+        if([temp isEqual:@"Ì"] ||[temp isEqual:@"í"]) {
+            temp = @"i";
+            accentMarkLocation = i;
+            NSLog(@"iposition = %d",accentMarkLocation);
+        }
+        if([temp isEqual:@"Û"]||[temp isEqual:@"ó"]){
+            temp = @"o";
+            accentMarkLocation = i;
+            NSLog(@"oposition = %d",accentMarkLocation);
+        }
+        if([temp isEqual:@"˙"]||[temp isEqual:@"ú"]){
+            temp = @"u";
+            accentMarkLocation = i;
+            NSLog(@"uposition = %d",accentMarkLocation);
+        }
+        if([temp isEqual:@"Ò"]){
+            temp = @"ñ";
+           // NSLog(@"position = %d",accentMarkLocation);
+           
+        }
+        NSLog(@"charList4 = %@", [charList objectAtIndex:i]);
+        modifiedWord = [modifiedWord stringByAppendingString:temp];
+        NSLog(@"modifiedWord after charList = %@", modifiedWord);
     //    NSLog(@"mWord = %@", modifiedWord);
-  //  }
+    }
 
     if ([charList count]) {
+       // NSLog(@"returning");
         return charList;
     } else {
         return @[@""];
@@ -278,7 +311,7 @@
 - (NSArray *)wordList
 {
     wordList = [sylibifiedWord componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSLog(@"278 wordList = %@", wordList);
+    
     for (i=0; i<[wordList count]; i++) {
       //  NSMutableString * temp1;
         temp = [wordList objectAtIndex:i];
@@ -313,7 +346,6 @@
         //sylibifiedWord will be text field
     NSUInteger position;
     sylibifiedWord1= [sylibifiedWord mutableCopy];
-    NSLog(@"316 sylword = %@", sylibifiedWord1);
     if((position = NSNotFound)) {
         position = [sylibifiedWord1 rangeOfString:@"á"].location;
         if(position !=NSNotFound){
@@ -321,9 +353,9 @@
             range1.location= position;
             range1.length = 1;
             [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"a"];
-            NSLog(@"316 sylword = %@", sylibifiedWord1);
         }
     }//end  if((position = NSNotFound)) for a
+    
     if((position = NSNotFound)) {
     position = [sylibifiedWord1 rangeOfString:@"é"].location;
     if(position !=NSNotFound){
@@ -360,7 +392,7 @@
             [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"u"];
         }
     }//end  if((position = NSNotFound)) for u
-    NSLog(@"358 sylbifiedWord1 = %@", sylibifiedWord1);
+    
     
      wordList = [sylibifiedWord1 componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
    // _wordLabel = sylibifiedWord1;
@@ -384,10 +416,6 @@
     } else if ([wordGroup characterAtIndex:0] == 'A'){
         return [self wordList][[wordList count]-2];
     } else {
-        sliderMinValue = [SetSliderCorrectValue SetSliderMinValue:sylibifiedWord];
-        sliderMaxValue = [SetSliderCorrectValue SetSliderMaxValue:sylibifiedWord];
-        NSLog(@"386 sliderMinValue = %f", sliderMinValue);
-        NSLog(@"387 sliderMaxValue = %f", sliderMaxValue);
         return [self wordList][wordMark];
     }
 }
@@ -398,25 +426,20 @@
 - (void)addLabelAttributes:(NSDictionary *)attributes range:(NSRange)range
 {
     if (range.location != NSNotFound) {
-        NSLog(@"397 inside addLabelAttributes");
+       // NSLog(@"inside addLabelAttributes");
        // NSLog(@"%@ = self.wordLabel.attributedText", self.wordLabel.attributedText);
         
         NSMutableAttributedString *attributedString = [self.wordLabel.attributedText mutableCopy];
-        NSRange range2 = range;
+       // for (i=0;i<[mat length] ; i++) {}
+        
+        //NSMutableAttributedString *mat =sylibifiedWord1;
+        
         [attributedString addAttributes:attributes
                      range:range];
+        //NSLog(@"%@ mat", mat);
           self.wordLabel.attributedText = attributedString;
         self.subViewWordLabel.attributedText = attributedString;
-        
-        
-        NSLog(@"test1");
-         attributedStringWithAccentMark = [sylibifiedWord mutableCopy];
-        NSLog(@"test2");
-       // [attributedStringWithAccentMark addAttributes:attributes range:range2];
-    
-        NSLog(@"test3");
-    
-    
+       // NSLog(@"mat = %@", mat);
     }
 }
 - (void)addSelectedCharAttributes:(NSDictionary *)attributes
@@ -571,15 +594,13 @@
     {
         _noMarkOutlet.alpha = 1;
         _markOutlet.hidden = YES;
-        _noMarkSubView.hidden = NO;
-       // _wordLabel.text = word;
-        //[self correctAlert];
+        _wordLabel.text = word;
+        [self correctAlert];
     } else if ([wordGroup characterAtIndex:0] == 'C'){
-      //  _wordLabel.text = word;
+        _wordLabel.text = word;
         _noMarkOutlet.alpha = 1;
         _markOutlet.hidden = YES;
-        _noMarkSubView.hidden = NO;
-       // [self correctAlert];
+        [self correctAlert];
     }
     else {
         [self incorrectAlert];
@@ -600,209 +621,209 @@
         _markOutlet.alpha = 1;
         _noMarkOutlet.hidden = YES;
        // [self correctAlert];
-//        for (k=0; k<sylibifiedWord.length; k++) {
-//            char character = [sylibifiedWord characterAtIndex:k];
-//            charString = [NSString stringWithFormat:@"%c" , character];
-//            NSLog(@"590 sylibifiedWord == %@", sylibifiedWord);
-//            
-//            if (k==0) {
-//                UILabel *character0 = [[UILabel alloc] initWithFrame:CGRectMake(10, 180, 300, 45)];
-//                //character0.textColor = [UIColor orangeColor];
-//                character0.font = [UIFont systemFontOfSize:fontSize];
-//                character0.text = charString;
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character0.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character0];
-//            } else if (k==1){
-//                UILabel *character1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 180, 300, 45)];
-//                character1.text = charString;
-//                //character1.textColor = [UIColor orangeColor];
-//                character1.font = [UIFont systemFontOfSize:fontSize];
-//                character1.text = charString;
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character1.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character1];
-//            } else if (k==2){
-//                UILabel *character2 = [[UILabel alloc] initWithFrame:CGRectMake(40, 180, 300, 45)];
-//                character2.text = charString;
-//                //character2.textColor = [UIColor orangeColor];
-//                character2.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character2.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character2];
-//            }else if (k==3){
-//                UILabel *character3 = [[UILabel alloc] initWithFrame:CGRectMake(55, 180, 300, 45)];
-//                character3.text = charString;
-//                //character3.textColor = [UIColor orangeColor];
-//                character3.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character3.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character3];
-//            }else if (k==4){
-//                UILabel *character4 = [[UILabel alloc] initWithFrame:CGRectMake(70, 205, 300, 45)];
-//                character4.text = charString;
-//                //character4.textColor = [UIColor orangeColor];
-//                character4.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character4.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character4];
-//            } else if (k==5){
-//                UILabel *character5 = [[UILabel alloc] initWithFrame:CGRectMake(85, 205, 300, 45)];
-//                character5.text = charString;
-//                //character5.textColor = [UIColor orangeColor];
-//                character5.font = [UIFont systemFontOfSize:22.0];
-//                character5.text = charString;
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character5.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character5];
-//            } else if (k==6){
-//                UILabel *character6 = [[UILabel alloc] initWithFrame:CGRectMake(100, 205, 300, 45)];
-//                character6.text = charString;
-//                //character6.textColor = [UIColor orangeColor];
-//                character6.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character6.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character6];
-//            }else if (k==7){
-//                UILabel *character7 = [[UILabel alloc] initWithFrame:CGRectMake(115, 205, 300, 45)];
-//                character7.text = charString;
-//                //character7.textColor = [UIColor orangeColor];
-//                character7.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character7.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character7];
-//            }else if (k==8){
-//                UILabel *character8 = [[UILabel alloc] initWithFrame:CGRectMake(130, 205, 300, 45)];
-//                character8.text = charString;
-//                //character8.textColor = [UIColor orangeColor];
-//                character8.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character8.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character8];
-//            } else if (k==9){
-//                UILabel *character9 = [[UILabel alloc] initWithFrame:CGRectMake(145, 205, 300, 45)];
-//                character9.text = charString;
-//                //character9.textColor = [UIColor orangeColor];
-//                character9.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character9.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character9];
-//            }else if (k==10){
-//                UILabel *character10 = [[UILabel alloc] initWithFrame:CGRectMake(160, 205, 300, 45)];
-//                character10.text = charString;
-//                //character10.textColor = [UIColor orangeColor];
-//                character10.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character10.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character10];
-//            }else if (k==11){
-//                UILabel *character11 = [[UILabel alloc] initWithFrame:CGRectMake(175, 205, 300, 45)];
-//                character11.text = charString;
-//                //character11.textColor = [UIColor orangeColor];
-//                character11.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character11.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character11];
-//            } else if (k==12){
-//                UILabel *character12 = [[UILabel alloc] initWithFrame:CGRectMake(190, 205, 300, 45)];
-//                character12.text = charString;
-//                //character12.textColor = [UIColor orangeColor];
-//                character12.font = [UIFont systemFontOfSize:fontSize];
-//                character12.text = charString;
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character12.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character12];
-//            } else if (k==13){
-//                UILabel *character13 = [[UILabel alloc] initWithFrame:CGRectMake(205, 205, 300, 45)];
-//                character13.text = charString;
-//                //character13.textColor = [UIColor orangeColor];
-//                character13.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character13.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character13];
-//            }else if (k==14){
-//                UILabel *character14 = [[UILabel alloc] initWithFrame:CGRectMake(220, 205, 300, 45)];
-//                character14.text = charString;
-//                //character14.textColor = [UIColor orangeColor];
-//                character14.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character14.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character14];
-//            }else if (k==15){
-//                UILabel *character15 = [[UILabel alloc] initWithFrame:CGRectMake(235, 205, 300, 45)];
-//                character15.text = charString;
-//                //character15.textColor = [UIColor orangeColor];
-//                character15.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character15.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character15];
-//            }else if (k==16){
-//                UILabel *character16 = [[UILabel alloc] initWithFrame:CGRectMake(250, 205, 300, 45)];
-//                character16.text = charString;
-//                    //character10.textColor = [UIColor orangeColor];
-//                character16.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character16.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character16];
-//            }else if (k==17){
-//                UILabel *character17 = [[UILabel alloc] initWithFrame:CGRectMake(265, 205, 300, 45)];
-//                character17.text = charString;
-//                    //character11.textColor = [UIColor orangeColor];
-//                character17.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character17.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character17];
-//            } else if (k==18){
-//                UILabel *character18 = [[UILabel alloc] initWithFrame:CGRectMake(280, 205, 300, 45)];
-//                character18.text = charString;
-//                    //character12.textColor = [UIColor orangeColor];
-//                character18.font = [UIFont systemFontOfSize:fontSize];
-//                character18.text = charString;
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character18.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character18];
-//            } else if (k==19){
-//                UILabel *character19 = [[UILabel alloc] initWithFrame:CGRectMake(295, 205, 300, 45)];
-//                character19.text = charString;
-//                    //character13.textColor = [UIColor orangeColor];
-//                character19.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character19.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character19];
-//            }else if (k==20){
-//                UILabel *character20 = [[UILabel alloc] initWithFrame:CGRectMake(310, 205, 300, 45)];
-//                character20.text = charString;
-//                    //character14.textColor = [UIColor orangeColor];
-//                character20.font = [UIFont systemFontOfSize:fontSize];
-//                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
-//                    character20.textColor = [UIColor greenColor];
-//                }
-//                [self.view addSubview:character20];
-//                       } else {
-//                
-//                NSLog(@"787 error");
-//            }
-//        }//end k for loop
+        for (k=0; k<sylibifiedWord.length; k++) {
+            char character = [sylibifiedWord characterAtIndex:k];
+            charString = [NSString stringWithFormat:@"%c" , character];
+            NSLog(@"sylibifiedWord == %@", sylibifiedWord);
+            
+            if (k==0) {
+                UILabel *character0 = [[UILabel alloc] initWithFrame:CGRectMake(10, 180, 300, 45)];
+                //character0.textColor = [UIColor orangeColor];
+                character0.font = [UIFont systemFontOfSize:fontSize];
+                character0.text = charString;
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character0.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character0];
+            } else if (k==1){
+                UILabel *character1 = [[UILabel alloc] initWithFrame:CGRectMake(25, 180, 300, 45)];
+                character1.text = charString;
+                //character1.textColor = [UIColor orangeColor];
+                character1.font = [UIFont systemFontOfSize:fontSize];
+                character1.text = charString;
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character1.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character1];
+            } else if (k==2){
+                UILabel *character2 = [[UILabel alloc] initWithFrame:CGRectMake(40, 180, 300, 45)];
+                character2.text = charString;
+                //character2.textColor = [UIColor orangeColor];
+                character2.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character2.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character2];
+            }else if (k==3){
+                UILabel *character3 = [[UILabel alloc] initWithFrame:CGRectMake(55, 180, 300, 45)];
+                character3.text = charString;
+                //character3.textColor = [UIColor orangeColor];
+                character3.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character3.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character3];
+            }else if (k==4){
+                UILabel *character4 = [[UILabel alloc] initWithFrame:CGRectMake(70, 205, 300, 45)];
+                character4.text = charString;
+                //character4.textColor = [UIColor orangeColor];
+                character4.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character4.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character4];
+            } else if (k==5){
+                UILabel *character5 = [[UILabel alloc] initWithFrame:CGRectMake(85, 205, 300, 45)];
+                character5.text = charString;
+                //character5.textColor = [UIColor orangeColor];
+                character5.font = [UIFont systemFontOfSize:22.0];
+                character5.text = charString;
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character5.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character5];
+            } else if (k==6){
+                UILabel *character6 = [[UILabel alloc] initWithFrame:CGRectMake(100, 205, 300, 45)];
+                character6.text = charString;
+                //character6.textColor = [UIColor orangeColor];
+                character6.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character6.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character6];
+            }else if (k==7){
+                UILabel *character7 = [[UILabel alloc] initWithFrame:CGRectMake(115, 205, 300, 45)];
+                character7.text = charString;
+                //character7.textColor = [UIColor orangeColor];
+                character7.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character7.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character7];
+            }else if (k==8){
+                UILabel *character8 = [[UILabel alloc] initWithFrame:CGRectMake(130, 205, 300, 45)];
+                character8.text = charString;
+                //character8.textColor = [UIColor orangeColor];
+                character8.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character8.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character8];
+            } else if (k==9){
+                UILabel *character9 = [[UILabel alloc] initWithFrame:CGRectMake(145, 205, 300, 45)];
+                character9.text = charString;
+                //character9.textColor = [UIColor orangeColor];
+                character9.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character9.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character9];
+            }else if (k==10){
+                UILabel *character10 = [[UILabel alloc] initWithFrame:CGRectMake(160, 205, 300, 45)];
+                character10.text = charString;
+                //character10.textColor = [UIColor orangeColor];
+                character10.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character10.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character10];
+            }else if (k==11){
+                UILabel *character11 = [[UILabel alloc] initWithFrame:CGRectMake(175, 205, 300, 45)];
+                character11.text = charString;
+                //character11.textColor = [UIColor orangeColor];
+                character11.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character11.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character11];
+            } else if (k==12){
+                UILabel *character12 = [[UILabel alloc] initWithFrame:CGRectMake(190, 205, 300, 45)];
+                character12.text = charString;
+                //character12.textColor = [UIColor orangeColor];
+                character12.font = [UIFont systemFontOfSize:fontSize];
+                character12.text = charString;
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character12.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character12];
+            } else if (k==13){
+                UILabel *character13 = [[UILabel alloc] initWithFrame:CGRectMake(205, 205, 300, 45)];
+                character13.text = charString;
+                //character13.textColor = [UIColor orangeColor];
+                character13.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character13.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character13];
+            }else if (k==14){
+                UILabel *character14 = [[UILabel alloc] initWithFrame:CGRectMake(220, 205, 300, 45)];
+                character14.text = charString;
+                //character14.textColor = [UIColor orangeColor];
+                character14.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character14.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character14];
+            }else if (k==15){
+                UILabel *character15 = [[UILabel alloc] initWithFrame:CGRectMake(235, 205, 300, 45)];
+                character15.text = charString;
+                //character15.textColor = [UIColor orangeColor];
+                character15.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character15.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character15];
+            }else if (k==16){
+                UILabel *character16 = [[UILabel alloc] initWithFrame:CGRectMake(250, 205, 300, 45)];
+                character16.text = charString;
+                    //character10.textColor = [UIColor orangeColor];
+                character16.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character16.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character16];
+            }else if (k==17){
+                UILabel *character17 = [[UILabel alloc] initWithFrame:CGRectMake(265, 205, 300, 45)];
+                character17.text = charString;
+                    //character11.textColor = [UIColor orangeColor];
+                character17.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character17.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character17];
+            } else if (k==18){
+                UILabel *character18 = [[UILabel alloc] initWithFrame:CGRectMake(280, 205, 300, 45)];
+                character18.text = charString;
+                    //character12.textColor = [UIColor orangeColor];
+                character18.font = [UIFont systemFontOfSize:fontSize];
+                character18.text = charString;
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character18.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character18];
+            } else if (k==19){
+                UILabel *character19 = [[UILabel alloc] initWithFrame:CGRectMake(295, 205, 300, 45)];
+                character19.text = charString;
+                    //character13.textColor = [UIColor orangeColor];
+                character19.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character19.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character19];
+            }else if (k==20){
+                UILabel *character20 = [[UILabel alloc] initWithFrame:CGRectMake(310, 205, 300, 45)];
+                character20.text = charString;
+                    //character14.textColor = [UIColor orangeColor];
+                character20.font = [UIFont systemFontOfSize:fontSize];
+                if (k>beginingOfTheStressedSylable && k<endOfTheStressedSylable) {
+                    character20.textColor = [UIColor greenColor];
+                }
+                [self.view addSubview:character20];
+                       } else {
+                
+                NSLog(@"error");
+            }
+        }//end k for loop
         
         UIImage *thumbImage = [UIImage imageNamed:@"sliderArrow30x19.png"];
         [_subViewSlider setThumbImage:thumbImage forState:UIControlStateNormal];
@@ -856,12 +877,61 @@
             if(buttonIndex == 0)
             {
                 ChooseWordViewController *catResults = [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
-        
-            catResults->cat = cata;
+        //        NSLog(@"passing cat %@", cat);
+        //        NSLog(@"passing cata %d", cata);
+                if (cata == 1) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=1"];
+                } else if (cata == 2) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=2"];
+                } else if (cata == 3) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=3"];
+                } else if (cata == 4) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=4"];
+                } else if (cata == 5) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=5"];
+                } else if (cata == 6) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=6"];
+                } else if (cata == 7) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=7"];
+                } else if (cata == 8) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=8"];
+                } else if (cata == 9) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=9"];
+                } else if (cata == 10) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=10"];
+                } else if (cata == 11) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=11"];
+                } else if (cata == 12) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=12"];
+                } else if (cata == 13) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=13"];
+                } else if (cata == 14) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=14"];
+                } else if (cata == 15) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=15"];
+                } else if (cata == 16) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=16"];
+                } else if (cata == 17) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=17"];
+                } else if (cata == 18) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=18"];
+                } else if (cata == 19) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=19"];
+                } else if (cata == 20) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=20"];
+                } else if (cata == 21) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=21"];
+                } else if (cata == 22) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=22"];
+                } else if (cata == 23) {
+                    catResults->url = [NSURL URLWithString:  @"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=getCategory&category=23"];
+                } else{
+                    NSLog(@"error");
+                }
+ 
+                catResults->cat = cata;
                 
-            catResults->url =[SetParameters SetURL:cata];
-                
-            [self.navigationController pushViewController:catResults animated:NO];
+                [self.navigationController pushViewController:catResults animated:NO];
                 
             }
             if (buttonIndex== 1) {
@@ -921,27 +991,15 @@
 }
 - (IBAction)subViewButton:(UIButton *)sender {
    // [self findAccentMarkLocation:sylibifiedWord];
-    //currentValue =  _subViewSlider.value;
-
-   
-   // NSLog(@"Accent letter value %d",accentMarkLocation);
-   // NSLog(@"current value = %d", currentValue);
-   // NSLog(@"correctSliderValue = %d", sliderCorrectValue);
-   // NSLog(@"wordMark = %d", wordMark);
-   // NSLog(@"sylibifiedWord = %@", sylibifiedWord);
-    if (_subViewSlider.value > sliderMinValue && _subViewSlider.value < sliderMaxValue) {
+    currentValue =  _subViewSlider.value;
+    NSLog(@"SliderValue %f",_subViewSlider.value);//float
+    NSLog(@"Accent letter value %d",accentMarkLocation);
+    NSLog(@"current value = %d", currentValue);
+    NSLog(@"wordMark = %d", wordMark);
+    NSLog(@"sylibifiedWord = %@", sylibifiedWord);
+    if (currentValue == 0) {
             //    if (currentValue == accentMarkLocation) {
- NSLog(@"909 SliderValue %f",_subViewSlider.value);//float
-        NSLog(@"slidermin = %f", sliderMinValue);
-        NSLog(@"slidermax = %f", sliderMaxValue);
-       // _wordLabel.text = modifiedWord;
-       // _subViewWordLabel.text= _wordLabel.text;
-      //  self.subViewWordLabel.attributedText = attributedStringWithAccentMark;
-        _wordLabel.text = sylibifiedWord;
-        _subViewWordLabel.text = _wordLabel.text;
-        _subViewWordLabel.attributedText=_wordLabel.attributedText;
-        NSLog(@"%@", sylibifiedWord);
-        
+ 
         [self performSelector:@selector(correctAlert) withObject:@"" afterDelay:2];
       
     } else {
@@ -1009,7 +1067,6 @@
     NSLog(@"sliderWord = %@", sliderWord);
     NSLog(@"sylibifiedWord in findAccentMark = %@", sylibifiedWord);
     NSLog(@"modifiedWord in findAccentMark = %@", modifiedWord);
-    NSLog(@"1038 accentMarkLocation = %d", accentMarkLocation);
     for (i=0; i < sliderWord.length; i++){
         temp  = [NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:i]];
         NSLog(@"temp = %@", temp);
@@ -1057,8 +1114,9 @@
             tempFlag =1;
         } else if ([temp isEqual:@" "]){
                 endOfTheStressedSylable = i;
-        NSLog(@"1086 endOfTheStressedSylable = %d", endOfTheStressedSylable);
+        //NSLog(@"endOfTheStressedSylable = %d", endOfTheStressedSylable);
             tempFlag =1;
+            
         }
         i++;
     }
@@ -1082,16 +1140,6 @@
 }
 
 
-
-
-- (IBAction)noMarkSubViewYesButton:(UIButton *)sender {
-         _wordLabel.text = word;
-        [self correctAlert];
-}
-
-- (IBAction)noMarkSUbViewNoButton:(UIButton *)sender {
-    [self incorrectAlert];
-}
 @end
 
 

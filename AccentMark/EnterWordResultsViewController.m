@@ -30,26 +30,16 @@
         urlString = [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word];
     }
     [super viewDidLoad];
+    
+    
     url = [NSURL URLWithString:urlString];
         // Setup the URL with the JSON URL.
         //NSLog(@"urlString = %@", urlString);
     //NSLog(@"url = %@", url);
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                            completionHandler:
-                                  ^(NSData *data, NSURLResponse *response, NSError *error) {
-                                      wordArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                   //   NSLog(@"wordArray = %@", wordArray);
-                                  }];
-    [task resume];
-    
+    [self parseJSONWithURL:url];
     while (wordArray == nil) {
             //waiting for array to load
     }
-    [self parseJSONWithURL:url];
 
    
     
@@ -59,6 +49,56 @@
 
 - (void) parseJSONWithURL:(NSURL *) jsonURL
 {
+    jsonDict = [[NSDictionary alloc] init];
+    wordArray = [[NSMutableArray alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSError *error = nil;
+    
+        // Request the data and store in a string.
+    NSString *json = [NSString stringWithContentsOfURL:jsonURL encoding:NSASCIIStringEncoding error:&error];
+    while (json ==nil) {
+            //  NSLog(@"json = nil");
+    }
+        // NSLog(@"json =%@", json);
+        // NSLog(@"error = %@", error);
+    if (error == nil || error != nil){
+            // Convert the String into an NSData object.
+        NSData *jsonData = [json dataUsingEncoding:NSASCIIStringEncoding];
+            // NSLog(@"data = %@", jsonData);
+        jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+        wordArray = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+        while (wordArray == NULL) {
+            
+        }
+        if ([wordArray isKindOfClass:[NSNull class]])
+        {  //  NSLog(@"check internet");                // Parsing success.
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"This app requires internet connection.  Please check your connection and try again later." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            
+            [alertView show];
+        }
+        
+        if (error == nil)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            });
+            
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Uh Oh, Parsing Failed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            
+            [alertView show];
+        }
+    }
+        // Request Failed, display error as alert.
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Request Error! Check that you are connected to wifi or 3G/4G with internet access." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        
+        [alertView show];
+        
+    }
     
     NSUInteger position;
     NSMutableString *wordWithoutAccentMark;

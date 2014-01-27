@@ -10,17 +10,18 @@
 
 @interface EnterWordResultsViewController : UITableViewController
 {
+    
     NSURL *url;
-    NSArray *wordArray;
+    NSMutableArray *wordArray;
     NSMutableArray *removedAccentMarkArray;
     
     NSArray *wArray;
     NSDictionary *jsonDict;
     //NSString *selectedWord;
     //NSString *aUrl;
-    NSString *urlString;
+    NSMutableString *urlString;
     //NSString *selectedType;
-@public NSString *word;
+@public NSMutableString *word;
     //int selectedcat;
   //  int catagory;
     int i;  
