@@ -8,7 +8,7 @@
 
 #import "EnterWordResultsViewController.h"
 #import "EnterAccentViewController.h"
-
+#import "SpecialHiatusEnterAccentMarkViewController.h"
 @interface EnterWordResultsViewController ()
 
 @end
@@ -201,15 +201,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
-    wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
-   wordResults.cat = wordArray[indexPath.row][@"category"];
-    wordResults->word = wordArray[indexPath.row][@"word"];
-    wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
-
+    if ( ([wordArray[indexPath.row][@"category"] isEqualToString: @"13"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"19"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"20"]) ) {
+        SpecialHiatusEnterAccentMarkViewController  *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+        wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
+        wordResults.cat = wordArray[indexPath.row][@"category"];
+        wordResults->word = wordArray[indexPath.row][@"word"];
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+                                                                        
         [self.navigationController pushViewController:wordResults animated:NO];
-
+    } else {
+        EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+        wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
+        wordResults.cat = wordArray[indexPath.row][@"category"];
+        wordResults->word = wordArray[indexPath.row][@"word"];
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        [self.navigationController pushViewController:wordResults animated:NO];
+    }
 }
-
-@end
+ 
+    
+    
+    @end

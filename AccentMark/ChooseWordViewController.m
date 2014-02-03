@@ -8,6 +8,8 @@
 
 #import "ChooseWordViewController.h"
 #import "EnterAccentViewController.h"
+#import "SpecialHiatusEnterAccentMarkViewController.h"
+
 
 @interface ChooseWordViewController ()
 
@@ -194,15 +196,27 @@ for (i=0; i<[wordArray count]; i++) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 13 || indexPath.row == 19 || indexPath.row == 20) {
+        SpecialHiatusEnterAccentMarkViewController  *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+        wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
+        wordResults.cat = wordArray[indexPath.row][@"category"];
+        wordResults->word = wordArray[indexPath.row][@"word"];
+        wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        wordResults.cata = (int)wordArray[indexPath.row][@"category"];
+        [self.navigationController pushViewController:wordResults animated:NO];
+    } else {
+        EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+        wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
+        wordResults.cat = wordArray[indexPath.row][@"category"];
+        wordResults->word = wordArray[indexPath.row][@"word"];
+        wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        wordResults.cata = (int)wordArray[indexPath.row][@"category"];
+        [self.navigationController pushViewController:wordResults animated:NO];
+    }
     
-    EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
-    wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
-    wordResults.cat = wordArray[indexPath.row][@"category"];
-    wordResults->word = wordArray[indexPath.row][@"word"];
-    wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
-    wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
-    wordResults.cata = (int)wordArray[indexPath.row][@"category"];
-    [self.navigationController pushViewController:wordResults animated:NO];
+ 
     
 }
 
