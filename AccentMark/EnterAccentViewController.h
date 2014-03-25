@@ -12,7 +12,7 @@
 {
   @public  NSArray *wordArray;
     NSDictionary *jsonDict;
-    
+    int presentingSeque;
     
     NSString *wordGroup;//A,B,C,D
     NSString *cat;//1-23
@@ -64,12 +64,16 @@
     float sliderMinValue;
     float sliderMaxValue;
     NSMutableAttributedString *attributedStringWithAccentMark;
+    //@property  public NSMutableString sylibifiedWord;
+    
 }
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
 - (IBAction)helpButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 @property (weak, nonatomic) IBOutlet UIView *subView;
 @property (weak, nonatomic) IBOutlet UILabel *subViewWordLabel;
-- (IBAction)subViewSliderAction:(UISlider *)sender;
+//- (IBAction)subViewSliderAction:(UISlider *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *subViewLabel;
 @property (weak, nonatomic) IBOutlet UISlider *subViewSlider;
 
@@ -102,11 +106,31 @@
 //@property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow2mage;
+@property (weak, nonatomic) IBOutlet UIImageView *arrow3Image;
+
+
 - (void)findAccentMarkLocation:(NSString *)sylibifiedWord;
 @property (weak, nonatomic) UIActionSheet *actionSheet;
 @property (weak, nonatomic) IBOutlet UIView *noMarkSubView;
 - (IBAction)noMarkSubViewYesButton:(UIButton *)sender;
 - (IBAction)noMarkSUbViewNoButton:(UIButton *)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *checkAnswerButton;
+
+- (IBAction)sliderChanged:(UISlider *)sender;
+
+//wt E buttons
+@property (weak, nonatomic) IBOutlet UIButton *wtEYesOutlet;
+- (IBAction)wtEYesButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *wtNoOutlet;
+- (IBAction)wtENoButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *EOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *eYesOutlet;
+- (IBAction)eYesButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *eNoOutlet;
+
+- (IBAction)eNoButton:(UIButton *)sender;
 
 
 @end

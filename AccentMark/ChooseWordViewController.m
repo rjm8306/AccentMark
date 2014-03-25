@@ -16,6 +16,7 @@
 @end
 
 @implementation ChooseWordViewController
+@synthesize urlString=_urlString;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,6 +25,9 @@
             // Custom initialization
     }
     return self;
+
+    
+    
 }
 
 - (void)viewDidLoad
@@ -150,7 +154,7 @@ for (i=0; i<[wordArray count]; i++) {
     
     [removedAccentMarkArray addObject: wordWithoutAccentMark];
 }//end for loop
-    NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
+   // NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
    // NSLog(@"Test");
     [self.tableView reloadData];
 }
@@ -196,8 +200,9 @@ for (i=0; i<[wordArray count]; i++) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 13 || indexPath.row == 19 || indexPath.row == 20) {
-        SpecialHiatusEnterAccentMarkViewController  *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+   
+    if (cat == 13 || cat == 19 || cat == 20) {
+        EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
         wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
         wordResults.cat = wordArray[indexPath.row][@"category"];
         wordResults->word = wordArray[indexPath.row][@"word"];
@@ -220,4 +225,8 @@ for (i=0; i<[wordArray count]; i++) {
     
 }
 
+- (IBAction)backButton:(UIBarButtonItem *)sender {
+    NSLog(@"back");
+    
+}
 @end

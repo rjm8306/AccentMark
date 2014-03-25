@@ -38,9 +38,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ChooseWordViewController *catResults = [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
-    catResults->cat = indexPath.row +1;
-    catResults->url = [SetParameters SetURL:indexPath.row+1];
+    catResults->cat = (int)indexPath.row +1;
+    catResults->url = [SetParameters SetURL:(int)indexPath.row+1];
     
-       [self.navigationController pushViewController:catResults animated:NO];
+       [self.navigationController  pushViewController:catResults animated:NO];
 }
 @end

@@ -11,7 +11,7 @@
 @implementation SetParameters
 -(void)setCat:(NSString*)cat
 {
-    cat = inputCat;
+   // cat = inputCat;
     
 }
 

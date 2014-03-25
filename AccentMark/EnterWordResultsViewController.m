@@ -17,9 +17,18 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
+        self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+//        if ([_back isEqual: @"choose"]) {
+//            NSMutableArray *newStack = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
+//            [newStack removeLastObject];
+//            [newStack removeLastObject];
+//            [newStack removeLastObject];
+//            _back = Nil;
+//        
+//            [self.navigationController setViewControllers:newStack animated:YES];
+//    
+//        }
     }
     return self;
 }
@@ -27,7 +36,7 @@
 
 - (void)viewDidLoad {
     if (word != nil) {
-        urlString = [NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word];
+        urlString = [[NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word] mutableCopy];
     }
     [super viewDidLoad];
     
@@ -201,13 +210,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   // _back = @"choose";
     if ( ([wordArray[indexPath.row][@"category"] isEqualToString: @"13"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"19"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"20"]) ) {
-        SpecialHiatusEnterAccentMarkViewController  *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
+        EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
         wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
         wordResults.cat = wordArray[indexPath.row][@"category"];
         wordResults->word = wordArray[indexPath.row][@"word"];
         wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
-                                                                        
+        wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
+        wordResults->presentingSeque = 1;
+      //   [self.navigationController popViewController Animated: NO];
         [self.navigationController pushViewController:wordResults animated:NO];
     } else {
         EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
@@ -215,6 +227,8 @@
         wordResults.cat = wordArray[indexPath.row][@"category"];
         wordResults->word = wordArray[indexPath.row][@"word"];
         wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
+        wordResults->presentingSeque = 1;        
         [self.navigationController pushViewController:wordResults animated:NO];
     }
 }

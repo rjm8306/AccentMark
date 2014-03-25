@@ -38,16 +38,19 @@
 }
 
 - (IBAction)submitButton:(UIButton *)sender {
-    input = _userInput.text;
+    input = [_userInput.text mutableCopy];
     
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    input = _userInput.text;
+    input = [_userInput.text mutableCopy];
     EnterWordResultsViewController *dest = (EnterWordResultsViewController *)[segue destinationViewController];
     dest->word = input;
+  //  [self.navigationController modalViewController:enterWordResults animated:NO];
+    
+    
     
 }
 

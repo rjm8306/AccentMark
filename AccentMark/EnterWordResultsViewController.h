@@ -26,4 +26,5 @@
   //  int catagory;
     int i;  
 }
+@property (strong, atomic) NSString *back;
 @end

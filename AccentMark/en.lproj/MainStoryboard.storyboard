@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RYq-18-nhk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RYq-18-nhk">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller - Accent Marker-->
@@ -66,6 +66,7 @@
                     <navigationItem key="navigationItem" title="Accent Marker" id="ehN-mW-L6W">
                         <barButtonItem key="backBarButtonItem" title="Back" id="vrX-o5-WwZ"/>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -83,7 +84,7 @@
                         <color key="separatorColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="krB-vk-2HJ" style="IBUITableViewCellStyleDefault" id="oAm-AD-f3g">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oAm-AD-f3g" id="Ehp-YR-2C5">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -369,7 +370,7 @@ Cg
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About Us" image="about-us.png" id="VCp-7u-b38"/>
+                    <tabBarItem key="tabBarItem" title="About Us" id="VCp-7u-b38"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr8-DH-PRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +451,7 @@ Cg
                         <color key="separatorColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainCell" id="ICP-Xk-X8A">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ICP-Xk-X8A" id="9pv-bv-1Z1">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -484,7 +485,7 @@ Cg
                             <tableViewSection id="2Pi-9z-g5C">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ERD-MH-GHu" detailTextLabel="YIL-eB-r9h" style="IBUITableViewCellStyleSubtitle" id="F9C-J5-lVK">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F9C-J5-lVK" id="clM-Zi-Gel">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -506,7 +507,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e36-w9-G98" detailTextLabel="5YN-wk-i8h" style="IBUITableViewCellStyleSubtitle" id="xZc-hJ-W6B">
-                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZc-hJ-W6B" id="t6r-Su-MQD">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -530,7 +531,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="lFi-Wu-kjq" detailTextLabel="fxq-ii-vVA" style="IBUITableViewCellStyleSubtitle" id="yod-d2-gs6">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yod-d2-gs6" id="dze-wt-ycI">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -554,7 +555,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="w5g-bu-g1h" detailTextLabel="Irv-g6-Xtf" style="IBUITableViewCellStyleSubtitle" id="e3q-uV-PEV">
-                                        <rect key="frame" x="0.0" y="196" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e3q-uV-PEV" id="PYk-rH-zth">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -578,7 +579,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="G1V-nt-zVh" detailTextLabel="CDn-6a-tMj" style="IBUITableViewCellStyleSubtitle" id="yYl-cI-cs0">
-                                        <rect key="frame" x="0.0" y="240" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yYl-cI-cs0" id="qaM-MO-m0t">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -602,7 +603,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="au7-sU-aZb" detailTextLabel="bBI-T5-F7D" style="IBUITableViewCellStyleSubtitle" id="9Sc-RN-cpX">
-                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sc-RN-cpX" id="7a7-F3-gZu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -626,7 +627,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="a0b-Jw-6hS" detailTextLabel="4DP-dj-Ch3" style="IBUITableViewCellStyleSubtitle" id="FPt-li-R3m">
-                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FPt-li-R3m" id="RYj-w4-vck">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -650,7 +651,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="XBS-RZ-kut" detailTextLabel="ExI-cC-yLp" style="IBUITableViewCellStyleSubtitle" id="ah3-MH-P8B">
-                                        <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ah3-MH-P8B" id="WUu-KC-3B9">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -674,7 +675,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="J1I-xI-Sqd" detailTextLabel="J7V-h5-sQ6" style="IBUITableViewCellStyleSubtitle" id="Sg1-eT-L4b">
-                                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sg1-eT-L4b" id="lkn-bg-2bn">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -698,7 +699,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mbZ-EZ-klu" detailTextLabel="184-CC-MHq" style="IBUITableViewCellStyleSubtitle" id="23T-in-ZYi">
-                                        <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="396" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="23T-in-ZYi" id="dJn-pz-MUB">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -722,7 +723,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ff2-Dn-8M4" detailTextLabel="9Ie-yd-u97" style="IBUITableViewCellStyleSubtitle" id="o9m-lT-yL1">
-                                        <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="440" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o9m-lT-yL1" id="CZK-I6-k78">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -746,7 +747,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="aST-V3-LFb" detailTextLabel="oBT-g8-5Am" style="IBUITableViewCellStyleSubtitle" id="W36-NM-PU6">
-                                        <rect key="frame" x="0.0" y="548" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="484" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W36-NM-PU6" id="cUc-Bv-XU6">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -770,7 +771,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Mg9-OJ-mDb" detailTextLabel="xFd-fq-YJt" style="IBUITableViewCellStyleSubtitle" id="OMK-5n-3RF">
-                                        <rect key="frame" x="0.0" y="592" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="528" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OMK-5n-3RF" id="bFh-0V-dsU">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -794,7 +795,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="G1e-c3-AFJ" detailTextLabel="tRt-1q-yak" style="IBUITableViewCellStyleSubtitle" id="W7S-nx-vgI">
-                                        <rect key="frame" x="0.0" y="636" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="572" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W7S-nx-vgI" id="qvw-Vv-Gxj">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -818,7 +819,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="61R-Hc-IOT" detailTextLabel="scw-kk-lte" style="IBUITableViewCellStyleSubtitle" id="cJ4-FX-Mac">
-                                        <rect key="frame" x="0.0" y="680" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="616" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJ4-FX-Mac" id="GXV-Va-pMj">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -842,7 +843,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WEN-dJ-2MT" detailTextLabel="fdI-cn-93z" style="IBUITableViewCellStyleSubtitle" id="6Je-iP-U93">
-                                        <rect key="frame" x="0.0" y="724" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="660" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Je-iP-U93" id="kEr-iw-grI">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -866,7 +867,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="lE1-g8-FSm" detailTextLabel="M63-6l-csB" style="IBUITableViewCellStyleSubtitle" id="JYd-6P-3un">
-                                        <rect key="frame" x="0.0" y="768" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="704" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JYd-6P-3un" id="ShC-9G-wIh">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -890,7 +891,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="j56-ip-lGd" detailTextLabel="RHE-1S-nQi" style="IBUITableViewCellStyleSubtitle" id="9lu-Jz-3gK">
-                                        <rect key="frame" x="0.0" y="812" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="748" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9lu-Jz-3gK" id="gDl-lE-hjQ">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -914,7 +915,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YS7-Wi-yVF" detailTextLabel="eRo-MS-oUu" style="IBUITableViewCellStyleSubtitle" id="Hv5-WS-2MD">
-                                        <rect key="frame" x="0.0" y="856" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="792" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hv5-WS-2MD" id="jdi-gE-YdB">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -938,7 +939,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="UPx-92-01c" detailTextLabel="2wA-OX-yHY" style="IBUITableViewCellStyleSubtitle" id="Ryv-lO-Lkt">
-                                        <rect key="frame" x="0.0" y="900" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="836" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ryv-lO-Lkt" id="V5s-OM-J55">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -962,7 +963,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="bXa-yz-PeI" detailTextLabel="lKV-ti-5nx" style="IBUITableViewCellStyleSubtitle" id="05N-Wk-nIU">
-                                        <rect key="frame" x="0.0" y="944" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="880" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05N-Wk-nIU" id="gLq-At-xdd">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -986,7 +987,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YrK-Xy-V7Y" detailTextLabel="2Zc-1X-oIA" style="IBUITableViewCellStyleSubtitle" id="vOO-dU-dD3">
-                                        <rect key="frame" x="0.0" y="988" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="924" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOO-dU-dD3" id="PK9-rX-uhU">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -1010,7 +1011,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ZA6-9A-prv" detailTextLabel="vdi-LS-bEv" style="IBUITableViewCellStyleSubtitle" id="l1g-FZ-HcQ">
-                                        <rect key="frame" x="0.0" y="1032" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="968" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1g-FZ-HcQ" id="5AB-W8-bnD">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -1106,45 +1107,36 @@ Cg
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-9E-WuD">
+                                <rect key="frame" x="176" y="77" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="gGe-E6-V8v"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Da-Lx9" userLabel="SpeakerButton">
+                                <rect key="frame" x="247" y="69" width="53" height="46"/>
+                                <state key="normal" image="speaker.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="speakerButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="zHG-ge-yLV"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3E-pZ-ra4">
+                                <rect key="frame" x="267" y="24" width="53" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Does the Word end in a vowel, n or s?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="156" translatesAutoresizingMaskIntoConstraints="NO" id="Tq0-vw-0Dk">
-                                <rect key="frame" x="12" y="120" width="156" height="55"/>
+                                <rect key="frame" x="12" y="102" width="156" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="156" translatesAutoresizingMaskIntoConstraints="NO" id="luB-a4-XCj">
-                                <rect key="frame" x="12" y="225" width="156" height="68"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Is the Stress on the last syllable?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuL-hc-oKN">
-                                <rect key="frame" x="12" y="372" width="288" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" backgroundImage="bGround.png">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="No Mark">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="noMarkButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="ZTh-CY-baW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0qS-17-wwj">
-                                <rect key="frame" x="176" y="126" width="54" height="44"/>
+                                <rect key="frame" x="176" y="113" width="54" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
                                     <attributedString key="attributedTitle">
@@ -1162,7 +1154,7 @@ Cg
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAR-6i-AAq">
-                                <rect key="frame" x="247" y="126" width="53" height="44"/>
+                                <rect key="frame" x="247" y="113" width="53" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
                                     <attributedString key="attributedTitle">
@@ -1179,8 +1171,25 @@ Cg
                                     <action selector="constantNoButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="Kh2-BR-QvF"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="rrA-WR-kyx">
+                                <rect key="frame" x="65" y="152" width="35" height="35"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="156" translatesAutoresizingMaskIntoConstraints="NO" id="luB-a4-XCj">
+                                <rect key="frame" x="12" y="188" width="156" height="65"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Is the Stress on the last syllable?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                             <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-pF-gwV">
-                                <rect key="frame" x="176" y="237" width="54" height="44"/>
+                                <rect key="frame" x="176" y="203" width="54" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
                                     <attributedString key="attributedTitle">
@@ -1198,7 +1207,7 @@ Cg
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gX4-Gh-1Op">
-                                <rect key="frame" x="247" y="237" width="53" height="44"/>
+                                <rect key="frame" x="247" y="203" width="53" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" backgroundImage="bGround.png">
                                     <attributedString key="attributedTitle">
@@ -1215,8 +1224,11 @@ Cg
                                     <action selector="stressNoButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="20U-tq-CCs"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-oz-x5g">
+                                <rect key="frame" x="65" y="261" width="35" height="35"/>
+                            </imageView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Lqq-oP-3mG">
-                                <rect key="frame" x="12" y="331" width="280" height="47"/>
+                                <rect key="frame" x="12" y="297" width="280" height="45"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Is there an accent mark?">
                                         <attributes>
@@ -1228,14 +1240,26 @@ Cg
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="rrA-WR-kyx">
-                                <rect key="frame" x="65" y="183" width="35" height="35"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-oz-x5g">
-                                <rect key="frame" x="65" y="301" width="35" height="35"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mTy-AG-qgB">
-                                <rect key="frame" x="12" y="434" width="288" height="44"/>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuL-hc-oKN">
+                                <rect key="frame" x="12" y="348" width="288" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" backgroundImage="bGround.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="No Mark">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="noMarkButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="ZTh-CY-baW"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mTy-AG-qgB" userLabel="AccentMark Button ">
+                                <rect key="frame" x="12" y="398" width="288" height="44"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Button" backgroundImage="bGround.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1245,27 +1269,87 @@ Cg
                                     <action selector="markButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="mDd-JO-U6R"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Da-Lx9">
-                                <rect key="frame" x="247" y="69" width="53" height="46"/>
-                                <state key="normal" image="speaker.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="wtEYesButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtv-Wy-8NU">
+                                <rect key="frame" x="15" y="348" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="bGround.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Yes">
+                                            <attributes>
+                                                <color key="NSColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="speakerButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="zHG-ge-yLV"/>
+                                    <action selector="wtEYesButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="Tbs-dh-wEI"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3E-pZ-ra4">
-                                <rect key="frame" x="267" y="24" width="53" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-9E-WuD">
-                                <rect key="frame" x="176" y="77" width="54" height="30"/>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJ9-o5-hwO">
+                                <rect key="frame" x="200" y="348" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Help">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="bGround.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="No">
+                                            <attributes>
+                                                <color key="NSColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="helpButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="gGe-E6-V8v"/>
+                                    <action selector="wtENoButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="nv0-WU-Jzn"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="o0T-q1-arp">
+                                <rect key="frame" x="65" y="398" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Does the word have an accent mark?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjU-Z5-FMb">
+                                <rect key="frame" x="6" y="430" width="300" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-fU-yE1">
+                                <rect key="frame" x="12" y="473" width="288" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="bGround.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Place Mark Over Upper Vowel">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="eYesButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="kvy-rE-keC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22Z-0O-BaV">
+                                <rect key="frame" x="12" y="523" width="288" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="bGround.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="No Mark">
+                                            <attributes>
+                                                <color key="NSColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="eNoButton:" destination="RKa-GS-cgs" eventType="touchUpInside" id="Y18-TQ-4St"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-2c-You">
@@ -1337,21 +1421,21 @@ Cg
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Kx-Ne1">
-                                <rect key="frame" x="13" y="115" width="291" height="374"/>
+                                <rect key="frame" x="12" y="102" width="291" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="74" translatesAutoresizingMaskIntoConstraints="NO" id="bb8-0O-EMj">
-                                        <rect key="frame" x="-9" y="60" width="302" height="34"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="74" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb8-0O-EMj">
+                                        <rect key="frame" x="-9" y="110" width="302" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="subViewSliderAction:" destination="RKa-GS-cgs" eventType="touchDragExit" id="s5q-EJ-goV"/>
+                                            <action selector="sliderChanged:" destination="RKa-GS-cgs" eventType="valueChanged" id="zeu-DE-UEO"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-6n-DPm">
-                                        <rect key="frame" x="5" y="82" width="267" height="30"/>
+                                        <rect key="frame" x="4" y="132" width="267" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Word">
@@ -1365,37 +1449,53 @@ Cg
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-L7-2bx">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="47"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Move the slider to above the letter that is supposed to have the accent mark to add the accent mark to the word" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-L7-2bx">
+                                        <rect key="frame" x="0.0" y="61" width="238" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.43921571970000001" blue="0.45098042490000001" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-yO-QNS">
-                                        <rect key="frame" x="69" y="132" width="100" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-yO-QNS">
+                                        <rect key="frame" x="20" y="182" width="251" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Check Answer">
+                                        <state key="normal" title="Press button to place mark" backgroundImage="bGround.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="subViewButton:" destination="RKa-GS-cgs" eventType="touchDown" id="4O4-a4-Ymf"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Move the slider to above the letter that is supposed to have the accent mark to add the accent mark to the word" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="L1Y-jF-WxS">
+                                        <rect key="frame" x="0.0" y="-6" width="283" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="EOutlet" destination="SjU-Z5-FMb" id="h2x-0r-Hxc"/>
                         <outlet property="Webview" destination="O3E-pZ-ra4" id="X3o-nO-AQq"/>
                         <outlet property="accentMarkOutlet" destination="Lqq-oP-3mG" id="ETx-Pp-85Z"/>
                         <outlet property="arrow1Image" destination="rrA-WR-kyx" id="VFg-zn-pem"/>
                         <outlet property="arrow2mage" destination="xdz-oz-x5g" id="BsY-OA-fjX"/>
+                        <outlet property="arrow3Image" destination="o0T-q1-arp" id="2rE-gb-fkv"/>
+                        <outlet property="checkAnswerButton" destination="rFX-yO-QNS" id="fQZ-XW-a9U"/>
+                        <outlet property="eNoOutlet" destination="22Z-0O-BaV" id="Vrh-SZ-Vke"/>
+                        <outlet property="eYesOutlet" destination="2b4-fU-yE1" id="aaG-jc-Mn0"/>
                         <outlet property="helpButton" destination="pLu-9E-WuD" id="0f1-ch-VNG"/>
+                        <outlet property="instructionLabel" destination="L1Y-jF-WxS" id="7VJ-4S-GMz"/>
                         <outlet property="markOutlet" destination="mTy-AG-qgB" id="gug-Ra-pQB"/>
                         <outlet property="noMarkOutlet" destination="PuL-hc-oKN" id="t26-fg-2uX"/>
                         <outlet property="noMarkSubView" destination="Y2c-2c-You" id="JL0-va-qWj"/>
@@ -1411,225 +1511,40 @@ Cg
                         <outlet property="wordConstantYesOutlet" destination="0qS-17-wwj" id="Rxo-Kg-WgQ"/>
                         <outlet property="wordEndOutlet" destination="Tq0-vw-0Dk" id="1U0-d4-Vwq"/>
                         <outlet property="wordLabel" destination="9uh-bZ-twh" id="2N0-q5-77r"/>
+                        <outlet property="wtEYesOutlet" destination="gtv-Wy-8NU" id="jxe-Qz-BSx"/>
+                        <outlet property="wtNoOutlet" destination="TJ9-o5-hwO" id="Aud-RY-dSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9r-TL-xD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1427" y="-1020"/>
+            <point key="canvasLocation" x="1390" y="-1208"/>
         </scene>
         <!--Special Hiatus Enter Accent Mark View Controller-->
-        <scene sceneID="Ynk-YL-2KN">
+        <scene sceneID="l3m-Bm-aZT">
             <objects>
-                <viewController storyboardIdentifier="SpecialHiatus" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gdt-Ki-3QE" customClass="SpecialHiatusEnterAccentMarkViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="specialHiatus" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q6Z-xj-Ldq" customClass="SpecialHiatusEnterAccentMarkViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kkJ-6u-6DG"/>
-                        <viewControllerLayoutGuide type="bottom" id="ubW-Ee-cgg"/>
+                        <viewControllerLayoutGuide type="top" id="iNh-Be-FDp"/>
+                        <viewControllerLayoutGuide type="bottom" id="03h-n9-Dim"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xYe-4F-g03">
+                    <view key="view" contentMode="scaleToFill" id="Hh8-aO-QZm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-k8-udO">
-                                <rect key="frame" x="0.0" y="50" width="320" height="790"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-zp-YMs">
-                                        <rect key="frame" x="184" y="132" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Yes" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="stressYesButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="w29-Vb-EdR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Io-DQy">
-                                        <rect key="frame" x="254" y="60" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="No" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="wordConstantNoButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="5f5-8g-8fW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQN-sQ-1By">
-                                        <rect key="frame" x="184" y="60" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Yes" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="wordConstantYesButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="zsx-Bi-jK4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-0Y-GZo">
-                                        <rect key="frame" x="254" y="228" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="No" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="hiatusNoButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="r8U-iQ-qhp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cor-6b-ZsM">
-                                        <rect key="frame" x="184" y="228" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Yes" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="hiatusYesButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="FOy-yG-4vm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7c-EG-Kdj">
-                                        <rect key="frame" x="254" y="132" width="54" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="No" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="stressNoButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="riy-Nm-iaf"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Is the Stress on the last syllable?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-oW-DUd">
-                                        <rect key="frame" x="12" y="112" width="169" height="83"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Does the Word end in a vowel, n, or s?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="azP-ad-2J2">
-                                        <rect key="frame" x="9" y="54" width="169" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Does the word have hiatus on either side of the stressed upper vowel?" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-Vs-pxa">
-                                        <rect key="frame" x="12" y="191" width="169" height="117"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Is there an accent mark?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzd-Wt-0OH">
-                                        <rect key="frame" x="9" y="304" width="190" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="d9O-52-Hg2">
-                                        <rect key="frame" x="50" y="288" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-79-fgf">
-                                        <rect key="frame" x="50" y="178" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-cP-VJS">
-                                        <rect key="frame" x="50" y="98" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8T-do-pYB">
-                                        <rect key="frame" x="9" y="12" width="184" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Loading Word">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.41960787770000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
-                                                    <font key="NSFont" size="22" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSp-ta-17f">
-                                        <rect key="frame" x="184" y="20" width="54" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Help">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="helpButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="xoW-FI-Ytl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-mx-Cpz">
-                                        <rect key="frame" x="9" y="367" width="299" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Place Mark" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="accentMarkYesButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="uCm-OX-83V"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-nO-BBj">
-                                        <rect key="frame" x="9" y="427" width="299" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="No Mark" backgroundImage="greenButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="accentMarkNoButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="vqy-BT-xDK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1G-yu-THc">
-                                        <rect key="frame" x="255" y="12" width="53" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="speaker.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="speakerButton:" destination="Gdt-Ki-3QE" eventType="touchUpInside" id="zXg-Kc-gXE"/>
-                                        </connections>
-                                    </button>
-                                    <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-fx-O5E">
-                                        <rect key="frame" x="279" y="-61" width="30" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </webView>
-                                </subviews>
-                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1N-HJ-ETz">
+                                <rect key="frame" x="101" y="93" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="accentMarkLabel" destination="xzd-Wt-0OH" id="JVB-i3-oeW"/>
-                        <outlet property="accentMarkNoOutlet" destination="NfU-nO-BBj" id="f6R-yi-0zm"/>
-                        <outlet property="accentMarkYesOutlet" destination="JNd-mx-Cpz" id="6vW-HO-fNB"/>
-                        <outlet property="arrow1" destination="3eE-cP-VJS" id="ots-aP-udn"/>
-                        <outlet property="arrow2" destination="cGS-79-fgf" id="8rs-Ms-S8R"/>
-                        <outlet property="arrow3" destination="d9O-52-Hg2" id="3PJ-0t-we6"/>
-                        <outlet property="helpButton" destination="XSp-ta-17f" id="LhR-ad-5Ve"/>
-                        <outlet property="hiatusLabel" destination="2pq-Vs-pxa" id="zEB-7Y-3QA"/>
-                        <outlet property="hiatusNoOutlet" destination="lK3-0Y-GZo" id="ojo-xF-ACG"/>
-                        <outlet property="hiatusYesOutlet" destination="Cor-6b-ZsM" id="dGG-VO-dRz"/>
-                        <outlet property="speakerOutlet" destination="G1G-yu-THc" id="evy-qG-sAm"/>
-                        <outlet property="stressLabel" destination="bfU-oW-DUd" id="lbx-ru-Gcp"/>
-                        <outlet property="stressNoOutlet" destination="a7c-EG-Kdj" id="oPZ-Wi-0lZ"/>
-                        <outlet property="stressYesOutlet" destination="wpA-zp-YMs" id="CZs-35-4SC"/>
-                        <outlet property="webView" destination="dwm-fx-O5E" id="eGF-CF-OhD"/>
-                        <outlet property="wordConstantNoOutlet" destination="e57-Io-DQy" id="mBd-Az-bnK"/>
-                        <outlet property="wordConstantYesOutlet" destination="OQN-sQ-1By" id="h0B-Zr-9qf"/>
-                        <outlet property="wordEndingOutlet" destination="azP-ad-2J2" id="Ah8-2x-vsh"/>
-                        <outlet property="wordLabel" destination="D8T-do-pYB" id="r8N-3k-59T"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="at6-ro-LVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOe-5d-Msk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="-1208"/>
+            <point key="canvasLocation" x="1997" y="-1172"/>
         </scene>
         <!--View Controller - Hiatus-->
         <scene sceneID="SBD-Up-nrp">
@@ -1657,12 +1572,12 @@ Cg
 
 Hiatus is 2 adjacent vowels making up 2 syllables:
 
-co mí-a mos, pa-ís,  Ra-úl,  Pú-a,   ma-íz    le-í-a Words found in Word Groups 13, 19, 20  are of a unique word type
+co mí-a mos, pa-ís, Ra-úl,  Pú-a,  ma-íz,  le-í-a  Words found in Word Groups 13, 14, 19, &amp; 20  are of a unique word type
 
 Unique Word Type:
 Marked Upper Vowel Beside Lower Vowel
 These 2 vowels form 2 syllables
-This type hiatus happens in Word Groups 13, 19, 20
+This type hiatus happens in Word Groups 13, 14, 19, &amp; 20
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="12" name=".LucidaGrandeUI"/>
@@ -1672,9 +1587,8 @@ This type hiatus happens in Word Groups 13, 19, 20
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
-upper vowels =  i u           
-  lower vowels = a e o
+                                                <string key="content" base64-UTF8="YES">
+Cg
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="24" name="Calibri"/>
@@ -1697,10 +1611,10 @@ upper vowels =  i u
             </objects>
             <point key="canvasLocation" x="-507" y="-3125"/>
         </scene>
-        <!--Tab Bar Controller - HelpScreenOne-->
+        <!--Tab Bar Controller - Hiatus Unique Word Group-->
         <scene sceneID="bC0-H5-i0U">
             <objects>
-                <tabBarController storyboardIdentifier="HelpScreenOne" title="HelpScreenOne" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sgl-cF-xiP" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HelpScreenOne" title="Hiatus Unique Word Group" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sgl-cF-xiP" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lWT-eB-YMH">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -1845,7 +1759,7 @@ The </string>
         <!--View Controller - HelpScreenOne-->
         <scene sceneID="B2K-eQ-2wf">
             <objects>
-                <viewController storyboardIdentifier="HelpScreenThree" title="HelpScreenOne" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AOT-wQ-j76" sceneMemberID="viewController">
+                <viewController title="HelpScreenOne" id="AOT-wQ-j76" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kuJ-Ef-nus"/>
                         <viewControllerLayoutGuide type="bottom" id="Kl3-uo-g9M"/>
@@ -2076,7 +1990,7 @@ Cg
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="  2 adjacent lower vowels = 2 syllables = hiatus   le e        ">
+                                            <fragment content="  2 adjacent lower vowels = 2 syllables = hiatus  ">
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="Calibri"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
@@ -2084,9 +1998,9 @@ Cg
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="le é   cre o   cre a   cre é">
+                                            <fragment content="        le e   le é   cre o   cre a   cre é">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="Calibri"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
                                                         <tabStops/>
@@ -2141,10 +2055,10 @@ ICAgICAgIAo
             </objects>
             <point key="canvasLocation" x="2595" y="-3125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Hiatus-->
         <scene sceneID="aP6-WK-fEq">
             <objects>
-                <tabBarController storyboardIdentifier="HelpScreenTwo" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ru6-Wv-yFr" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HelpScreenTwo" title="Hiatus" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ru6-Wv-yFr" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="IGb-hg-lai">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -2326,21 +2240,9 @@ upper vowels = a,e,o                  lower vowels </string>
                                                     </paragraphStyle>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">= i,u 
-</string>
+                                            <fragment content="= i,u">
                                                 <attributes>
                                                     <font key="NSFont" size="28" name="Calibri"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">
-       2 adjacent upper vowels                                                        in 1 syllable make up a Diphthong</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="24" name="Calibri"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
                                                         <tabStops/>
                                                     </paragraphStyle>
@@ -2348,38 +2250,7 @@ upper vowels = a,e,o                  lower vowels </string>
                                             </fragment>
                                             <fragment>
                                                 <string key="content" base64-UTF8="YES">
-ICAKICAgICAgICAgIA
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="28" name="Calibri"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">ciu dad,    cons truis te,    diurno,    flui do   
-</string>
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="28" name="Calibri"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">upper vowels = i, u 
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="28" name="Calibri"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">.
+Cg
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="Calibri-Italic"/>
@@ -2413,10 +2284,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="1541" y="-3125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Diphthong-->
         <scene sceneID="VYM-BD-gGV">
             <objects>
-                <tabBarController storyboardIdentifier="HelpScreenFour" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HgL-jh-j6D" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HelpScreenFour" title="Diphthong" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HgL-jh-j6D" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sfa-2f-ZVp">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -2534,38 +2405,9 @@ The </string>
     </scenes>
     <resources>
         <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
-        <image name="AccentMarkerHelpImage.png" width="289" height="164"/>
         <image name="AppStoreIcon-512.png" width="467" height="275"/>
-        <image name="about-us.png" width="512" height="95"/>
-        <image name="arrow.png" width="600" height="600"/>
-        <image name="arrow.png" width="600" height="600"/>
-        <image name="arrow.png" width="600" height="600"/>
-        <image name="arrow.png" width="600" height="600"/>
         <image name="arrow.png" width="600" height="600"/>
         <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="bGround.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="greenButton.png" width="100" height="100"/>
-        <image name="speaker.png" width="40" height="40"/>
         <image name="speaker.png" width="40" height="40"/>
     </resources>
     <color key="tintColor" red="0.011764707040000001" green="0.47058826679999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>

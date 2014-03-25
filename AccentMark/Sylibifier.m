@@ -227,7 +227,7 @@
     
         //step 7
     //NSLog(@"step 7");
-    count = [characters count]-1;  //changed from [character count]-1    01/18/14
+    count = (int)[characters count]-1;  //changed from [character count]-1    01/18/14
     for (i=1; i<count; i++) {
             //looking for guí or quí
         if (i<[characters count]-2) {
@@ -302,7 +302,7 @@
         [characters removeLastObject];
     }
     
-    count = [characters count]-1;
+    count = (int)[characters count]-1;
     for (i=0; i< count; i++) {
         if ([[characters objectAtIndex:(i)] isEqualToString:@" "]) {
             if ([[characters objectAtIndex:(i+1)] isEqualToString:@" "]) {
@@ -314,7 +314,7 @@
     j=0;
     
     
-    i=[characters count]-1;
+    i=(int)[characters count]-1;
     
         //find first space
     while (!([[characters objectAtIndex:(i)] isEqualToString:@" "])) {
@@ -348,7 +348,7 @@
      //  NSLog(@"k %d",k);
      //   NSLog(@"j %d",j);
         
-        count=[characters count];
+        count=(int)[characters count];
             // NSLog(@"Count = %d",  count);
         
         sylable1 = [[NSMutableString alloc] init];

@@ -289,7 +289,7 @@
             // NSLog(@"%@ = self.wordLabel.attributedText", self.wordLabel.attributedText);
         
         NSMutableAttributedString *attributedString = [self.wordLabel.attributedText mutableCopy];
-        NSRange range2 = range;
+        //NSRange range2 = range;
         [attributedString addAttributes:attributes
                                   range:range];
         self.wordLabel.attributedText = attributedString;
@@ -476,7 +476,7 @@
             //0203    [self findAccentMarkLocation:sylibifiedWord];
         _accentMarkLabel.alpha = 1;
         _accentMarkNoOutlet.hidden = YES;
-        UIImage *thumbImage = [UIImage imageNamed:@"sliderArrow30x19.png"];
+       // UIImage *thumbImage = [UIImage imageNamed:@"sliderArrow30x19.png"];
             //0203    [_subViewSlider setThumbImage:thumbImage forState:UIControlStateNormal];
             //0203    [_subViewSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
         
