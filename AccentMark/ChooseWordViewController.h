@@ -24,7 +24,7 @@
     int i;
     
 }
-- (IBAction)backButton:(UIBarButtonItem *)sender;
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender;
 
 @property (strong, nonatomic) NSString *urlString;
 @end

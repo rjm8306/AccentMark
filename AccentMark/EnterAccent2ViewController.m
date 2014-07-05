@@ -1,12 +1,12 @@
 //
-//  EnterAccentViewController.m
+//  EnterAccent2ViewController.m
 //  AccentMark
 //
-//  Created by Robert Millar on 7/6/13.
-//  Copyright (c) 2013 Robert Millar. All rights reserved.
+//  Created by Robert Millar on 7/2/14.
+//  Copyright (c) 2014 Robert Millar. All rights reserved.
 //
 
-#import "EnterAccentViewController.h"
+#import "EnterAccent2ViewController.h"
 #import "alertView.h"
 #import "EnterWordViewController.h"
 #import "LearnToMarkWordsViewController.h"
@@ -16,13 +16,19 @@
 #import "SetParameters.h"
 #import "SetSliderCorrectValue.h"
 
+@interface EnterAccent2ViewController ()
+
+@end
+
+
+
 
 @interface EnterAccentViewController ()
 
 @end
 
 @implementation EnterAccentViewController
-//@synthesize sylibifiedWord;
+    //@synthesize sylibifiedWord;
 @synthesize cata;
 @synthesize cat;
 
@@ -39,24 +45,24 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //self.navigationController.navigationBar.hidden = YES;
-
+    self.navigationController.navigationBar.hidden = YES;
+    
 }
 
 
 - (void)viewDidLoad
 {
-    //self.navigationController.navigationBar.hidden = YES;
+        //self.navigationController.navigationBar.hidden = YES;
     
     NSLog(@"%@",self.navigationController.viewControllers);
-   // count = [self.navigationController.viewControllers count];
-   //[self.navigationController popToViewController:  [self.navigationController.viewControllers objectAtIndex:count-3]animated:YES];
+        // count = [self.navigationController.viewControllers count];
+        //[self.navigationController popToViewController:  [self.navigationController.viewControllers objectAtIndex:count-3]animated:YES];
     
     fontSize = 20.0;
     
-   sylibifiedWord = [Sylibifier sylibify:word];
+    sylibifiedWord = [Sylibifier sylibify:word];
     cata = [cat intValue];
-
+    
     [self selectedChar];
     _wordLabel.text = modifiedWord;
     NSLog(@"47 wordlabel = %@", _wordLabel.text);
@@ -64,7 +70,7 @@
     [super viewDidLoad];
     firstquestion=TRUE;
     secondquestion = TRUE;
-
+    
     if ([cat isEqual: @"1"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
@@ -80,18 +86,18 @@
         _subViewLabel.text = @"Place Mark Over Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"7"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
-            _helpButton.hidden = NO;
+        _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
-         } else if ([cat isEqual: @"8"]) {
-           _helpButton.hidden = NO;
-             [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
+    } else if ([cat isEqual: @"8"]) {
+        _helpButton.hidden = NO;
+        [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
     } else if ([cat isEqual: @"9"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
-            _helpButton.hidden = NO;
+        _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"10"]) {
         [_markOutlet setTitle:@"Place Mark Over Lower Vowel of Stressed Syllable" forState:UIControlStateNormal];
-           _helpButton.hidden = NO;
+        _helpButton.hidden = NO;
         _subViewLabel.text = @"Place Mark Over Lower Vowel of Stressed Syllable";
     } else if ([cat isEqual: @"11"]) {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
@@ -143,9 +149,9 @@
     } else if ([cat isEqual: @"20"]) {
         [_markOutlet setTitle:@"Place Mark Over Upper Vowel of Stressed Syllable" forState:UIControlStateNormal];
         _subViewLabel.text = @"Place Mark Over Single Upper Vowel of Stressed Syllable";
-//    } else if ([cat isEqual: @"13"] || [cat isEqual: @"19"] ||[cat isEqual: @"20"] ) {
-//        [_markOutlet setTitle:@"" forState:UIControlStateNormal];
-   
+            //    } else if ([cat isEqual: @"13"] || [cat isEqual: @"19"] ||[cat isEqual: @"20"] ) {
+            //        [_markOutlet setTitle:@"" forState:UIControlStateNormal];
+        
         
     } else {
         [_markOutlet setTitle:@"Place Mark Over Vowel of Stressed Syllable" forState:UIControlStateNormal];
@@ -157,19 +163,19 @@
         _speakerOutlet.hidden = NO;
     }
     
-    //
-    //Set WordGroup
-    //
+        //
+        //Set WordGroup
+        //
     
-    //NSLog(@"1wordGroup %@",wordGroup);
+        //NSLog(@"1wordGroup %@",wordGroup);
     if ([wordGroup isEqual:@"null"])
     {
         wordGroup = [SetParameters SetWordGroup:cat];
     }
     
-    //
-    //Set wordEndOutlet
-    //
+        //
+        //Set wordEndOutlet
+        //
     
     if ([wordGroup isEqual: @"C"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
@@ -178,9 +184,9 @@
     } else if ([cat isEqual: @"20"]) {
         _wordEndOutlet.text = @"Does the word end in a consonant?";
     }
-    //currentValue = 50;
-	//self.subViewSlider.value = currentValue;
-    //_view.reloadInputViews;
+        //currentValue = 50;
+        //self.subViewSlider.value = currentValue;
+        //_view.reloadInputViews;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -193,55 +199,55 @@
 {
     charList = [[NSMutableArray alloc] initWithCapacity:[word length]-1];
     for (i=0; i < [word length]; i++){//put into array
-       temp  = [NSString stringWithFormat:@"%c", [word characterAtIndex:i]];
-       // NSLog(@"temp = %@", temp);
+        temp  = [NSString stringWithFormat:@"%c", [word characterAtIndex:i]];
+            // NSLog(@"temp = %@", temp);
         [charList addObject:temp];
         NSLog(@"175charlist1 = %@", charList);
         
- NSLog(@"177modifiedWord = %@", modifiedWord);
+        NSLog(@"177modifiedWord = %@", modifiedWord);
     }
     
-        for ( i=0; i < [charList count]-1; i++){
-         //   NSLog(@"181charLIST");
-            if ([[charList objectAtIndex:i] isEqualToString:@"·"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"á"] ){
-                [charList replaceObjectAtIndex:i withObject:@"a"];
-                accentMarkLocation = i;
-           //     NSLog(@"1");
-                
-            }
-            if ([[charList objectAtIndex:i] isEqualToString:@"È"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"é"]){
-                [charList replaceObjectAtIndex:i withObject:@"e"];
-                accentMarkLocation = i;
-             //   NSLog(@"2");
-            }
-            if ([[charList objectAtIndex:i] isEqualToString:@"Ì"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"í"]){
-                [charList replaceObjectAtIndex:i withObject:@"i"];
-                accentMarkLocation = i;
-               // NSLog(@"3");
-
-            }
-            if ([[charList objectAtIndex:i] isEqualToString:@"Û"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"ó"]){
-                [charList replaceObjectAtIndex:i withObject:@"o"];
-                accentMarkLocation = i;
-              //  NSLog(@"3");
-            }
-            if ([[charList objectAtIndex:i] isEqualToString:@"˙"] ||
-                [[charList objectAtIndex:i] isEqualToString:@"ú"]){
-                [charList replaceObjectAtIndex:i withObject:@"u"];
-                accentMarkLocation = i;
-               // NSLog(@"4");
-            }
-               //01/26 modifiedWord = [modifiedWord stringByAppendingString:temp];
+    for ( i=0; i < [charList count]-1; i++){
+            //   NSLog(@"181charLIST");
+        if ([[charList objectAtIndex:i] isEqualToString:@"·"] ||
+            [[charList objectAtIndex:i] isEqualToString:@"á"] ){
+            [charList replaceObjectAtIndex:i withObject:@"a"];
+            accentMarkLocation = i;
+                //     NSLog(@"1");
             
         }
-    // NSLog(@"217modifiedWord = %@", modifiedWord);
-    //NSLog(@"charlist2 = %@", charList);
+        if ([[charList objectAtIndex:i] isEqualToString:@"È"] ||
+            [[charList objectAtIndex:i] isEqualToString:@"é"]){
+            [charList replaceObjectAtIndex:i withObject:@"e"];
+            accentMarkLocation = i;
+                //   NSLog(@"2");
+        }
+        if ([[charList objectAtIndex:i] isEqualToString:@"Ì"] ||
+            [[charList objectAtIndex:i] isEqualToString:@"í"]){
+            [charList replaceObjectAtIndex:i withObject:@"i"];
+            accentMarkLocation = i;
+                // NSLog(@"3");
+            
+        }
+        if ([[charList objectAtIndex:i] isEqualToString:@"Û"] ||
+            [[charList objectAtIndex:i] isEqualToString:@"ó"]){
+            [charList replaceObjectAtIndex:i withObject:@"o"];
+            accentMarkLocation = i;
+                //  NSLog(@"3");
+        }
+        if ([[charList objectAtIndex:i] isEqualToString:@"˙"] ||
+            [[charList objectAtIndex:i] isEqualToString:@"ú"]){
+            [charList replaceObjectAtIndex:i withObject:@"u"];
+            accentMarkLocation = i;
+                // NSLog(@"4");
+        }
+            //01/26 modifiedWord = [modifiedWord stringByAppendingString:temp];
+        
+    }
+        // NSLog(@"217modifiedWord = %@", modifiedWord);
+        //NSLog(@"charlist2 = %@", charList);
     
-  
+    
     if ([charList count]) {
         return charList;
     } else {
@@ -258,26 +264,26 @@
 - (NSArray *)wordList
 {
     wordList = [sylibifiedWord componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //NSLog(@"278 wordList = %@", wordList);
+        //NSLog(@"278 wordList = %@", wordList);
     for (i=0; i<[wordList count]; i++) {
-      //  NSMutableString * temp1;
+            //  NSMutableString * temp1;
         temp = [wordList objectAtIndex:i];
-    //    NSLog(@"test %d", i);
-     //   NSLog(@"temp for wordList  %@", temp);
+            //    NSLog(@"test %d", i);
+            //   NSLog(@"temp for wordList  %@", temp);
         NSUInteger position = [temp rangeOfString:@"á"].location;
         if(position !=NSNotFound){
-                wordMark = i;
-      //      NSLog(@"position = %d",wordMark);
+            wordMark = i;
+                //      NSLog(@"position = %d",wordMark);
         }
         position = [temp rangeOfString:@"é"].location;
         if(position !=NSNotFound){
             wordMark = i;
-        //    NSLog(@"position = %d",wordMark);
+                //    NSLog(@"position = %d",wordMark);
         }
         position = [temp rangeOfString:@"í"].location;
         if(position !=NSNotFound){
             wordMark = i;
-       //     NSLog(@"position = %d",wordMark);
+                //     NSLog(@"position = %d",wordMark);
         }
         position = [temp rangeOfString:@"ó"].location;
         if(position !=NSNotFound){
@@ -288,12 +294,12 @@
             wordMark = i;
         }
         
-    //    NSLog(@"wordMark == %d", wordMark);
-        }
+            //    NSLog(@"wordMark == %d", wordMark);
+    }
         //sylibifiedWord will be text field
     NSUInteger position;
     sylibifiedWord1= [sylibifiedWord mutableCopy];
-    //NSLog(@"316 sylword = %@", sylibifiedWord1);
+        //NSLog(@"316 sylword = %@", sylibifiedWord1);
     if((position = NSNotFound)) {
         position = [sylibifiedWord1 rangeOfString:@"á"].location;
         if(position !=NSNotFound){
@@ -301,16 +307,16 @@
             range1.location= position;
             range1.length = 1;
             [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"a"];
-      //      NSLog(@"316 sylword = %@", sylibifiedWord1);
+                //      NSLog(@"316 sylword = %@", sylibifiedWord1);
         }
     }//end  if((position = NSNotFound)) for a
     if((position = NSNotFound)) {
-    position = [sylibifiedWord1 rangeOfString:@"é"].location;
-    if(position !=NSNotFound){
-        NSRange range1;
-        range1.location= position;
-        range1.length = 1;
-        [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"e"];
+        position = [sylibifiedWord1 rangeOfString:@"é"].location;
+        if(position !=NSNotFound){
+            NSRange range1;
+            range1.location= position;
+            range1.length = 1;
+            [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"e"];
         }
     }//end  if((position = NSNotFound)) for e
     if((position = NSNotFound)) {
@@ -340,12 +346,12 @@
             [sylibifiedWord1 replaceCharactersInRange:range1 withString:@"u"];
         }
     }//end  if((position = NSNotFound)) for u
-  //  NSLog(@"358 sylbifiedWord1 = %@", sylibifiedWord1);
+     //  NSLog(@"358 sylbifiedWord1 = %@", sylibifiedWord1);
     
-     wordList = [sylibifiedWord1 componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-   // _wordLabel = sylibifiedWord1;
+    wordList = [sylibifiedWord1 componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        // _wordLabel = sylibifiedWord1;
     if ([wordList count]) {
-   //     NSLog(@"wordList = %@", wordList);
+            //     NSLog(@"wordList = %@", wordList);
         return wordList;
     } else {
         return @[@""];
@@ -359,15 +365,15 @@
 
 - (NSString *)selectedWord
 {
-    if ([wordGroup characterAtIndex:0] == 'C') { 
-         return [self wordList][[wordList count]-1];
+    if ([wordGroup characterAtIndex:0] == 'C') {
+        return [self wordList][[wordList count]-1];
     } else if ([wordGroup characterAtIndex:0] == 'A'){
         return [self wordList][[wordList count]-2];
     } else {
         sliderMinValue = [SetSliderCorrectValue SetSliderMinValue:sylibifiedWord];
         sliderMaxValue = [SetSliderCorrectValue SetSliderMaxValue:sylibifiedWord];
-    //    NSLog(@"386 sliderMinValue = %f", sliderMinValue);
-    //    NSLog(@"387 sliderMaxValue = %f", sliderMaxValue);
+            //    NSLog(@"386 sliderMinValue = %f", sliderMinValue);
+            //    NSLog(@"387 sliderMaxValue = %f", sliderMaxValue);
         return [self wordList][wordMark];
     }
 }
@@ -378,25 +384,25 @@
 - (void)addLabelAttributes:(NSDictionary *)attributes range:(NSRange)range
 {
     if (range.location != NSNotFound) {
-      //  NSLog(@"397 inside addLabelAttributes");
-       // NSLog(@"%@ = self.wordLabel.attributedText", self.wordLabel.attributedText);
+            //  NSLog(@"397 inside addLabelAttributes");
+            // NSLog(@"%@ = self.wordLabel.attributedText", self.wordLabel.attributedText);
         
         NSMutableAttributedString *attributedString = [self.wordLabel.attributedText mutableCopy];
-        //NSRange range2 = range;
+            //NSRange range2 = range;
         [attributedString addAttributes:attributes
-                     range:range];
-          self.wordLabel.attributedText = attributedString;
+                                  range:range];
+        self.wordLabel.attributedText = attributedString;
         self.subViewWordLabel.attributedText = attributedString;
         
         
-       // NSLog(@"test1");
-         attributedStringWithAccentMark = [sylibifiedWord mutableCopy];
-       // NSLog(@"test2");
-       // [attributedStringWithAccentMark addAttributes:attributes range:range2];
-    
-       // NSLog(@"test3");
-    
-    
+            // NSLog(@"test1");
+        attributedStringWithAccentMark = [sylibifiedWord mutableCopy];
+            // NSLog(@"test2");
+            // [attributedStringWithAccentMark addAttributes:attributes range:range2];
+        
+            // NSLog(@"test3");
+        
+        
     }
 }
 - (void)addSelectedCharAttributes:(NSDictionary *)attributes
@@ -404,7 +410,7 @@
     NSRange range;
     range.location = [modifiedWord length]-1;
     range.length = 1;
-    //NSLog(@"Range is: %@", NSStringFromRange(range));
+        //NSLog(@"Range is: %@", NSStringFromRange(range));
     [self addLabelAttributes:attributes range:range];
     
     _wordLabel.text = modifiedWord;
@@ -417,18 +423,18 @@
     [self addLabelAttributes:attributes range:range];
 }
 
-///
-///Attributes ends here
-///
+    ///
+    ///Attributes ends here
+    ///
 
 
 
 
-///
-///
-///Button Action Listoners start here
-///
-///
+    ///
+    ///
+    ///Button Action Listoners start here
+    ///
+    ///
 
 - (IBAction)wordConstantYesButton:(UIButton *)sender {
     if (firstquestion==TRUE) {
@@ -447,9 +453,9 @@
             _stressLabel.text=@"Is the stress on the second to the last syllable?";
         }
         [_stressLabel setTextColor:[UIColor blackColor]];
-       
+        
         [self selectedWord];
-         _wordLabel.text =sylibifiedWord1;
+        _wordLabel.text =sylibifiedWord1;
         [self addSelectedWordAttributes:@{ NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle)}];
         [super viewDidLoad];
         _wordConstantYesOutlet.alpha = 1.0;
@@ -466,12 +472,12 @@
 }
 
 - (IBAction)constantNoButton:(UIButton *)sender {
-               [self incorrectAlert];
+    [self incorrectAlert];
 }
 
 - (IBAction)stressYesButton:(UIButton *)sender {
-   // NSLog(@"495cat ====%@",cat);
-   // NSLog(@"wt ====%@",wordGroup);
+        // NSLog(@"495cat ====%@",cat);
+        // NSLog(@"wt ====%@",wordGroup);
     if (secondquestion == TRUE) {
         if ([wordGroup characterAtIndex:0] == 'A' || [wordGroup characterAtIndex:0] == 'C')
         {
@@ -486,8 +492,8 @@
             secondquestion = FALSE;
             _stressYesOutlet.alpha=1.0;
             
-        
-        
+            
+            
         } else if ([wordGroup characterAtIndex:0] == 'E') {
             NSLog(@"2");
             _accentMarkOutlet.text=@"Does the word have Hiatus on either side of stressed upper vowel?";
@@ -500,24 +506,24 @@
             _arrow2mage.hidden=NO;
             secondquestion = FALSE;
             _stressYesOutlet.alpha=1.0;
-//add buttons
+                //add buttons
             _wtEYesOutlet.hidden = NO;
             _wtNoOutlet.hidden = NO;
         }
         else//if wordtype is B or D
         {
-        //    NSLog(@"3");
-
+                //    NSLog(@"3");
+            
             [self incorrectAlert];
         }
-       // NSLog(@"4");
-
+            // NSLog(@"4");
+        
     }
-//    NSLog(@"5");
-
+        //    NSLog(@"5");
+    
 }
 
-//stress
+    //stress
 
 - (IBAction)stressNoButton:(UIButton *)sender {
     if (secondquestion == TRUE) {
@@ -543,8 +549,8 @@
         _noMarkOutlet.alpha = 1;
         _markOutlet.hidden = YES;
         _noMarkSubView.hidden = NO;
-       // _wordLabel.text = word;
-        //[self correctAlert];
+            // _wordLabel.text = word;
+            //[self correctAlert];
     }  else {
         [self incorrectAlert];
     }
@@ -553,7 +559,7 @@
 - (IBAction)markButton:(UIButton *)sender {
     
     
-//add logic here for place mark
+        //add logic here for place mark
     
     if (([wordGroup characterAtIndex:0] == 'B') || ([wordGroup characterAtIndex:0] == 'D')) {
         [self findAccentMarkLocation:sylibifiedWord];
@@ -606,21 +612,19 @@
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    //self.navigationController.navigationBar.hidden = NO;
-  //  NSLog(@"Buttonnnn pushed: %@, index %i", alertView.title, buttonIndex);
+    self.navigationController.navigationBar.hidden = NO;
+        //  NSLog(@"Buttonnnn pushed: %@, index %i", alertView.title, buttonIndex);
     if ([title characterAtIndex:0] == 'c'){
         NSLog(@"works");
         {
-            NSArray *viewControllers = [[self navigationController] viewControllers];
-            
             if(buttonIndex == 0)
             {
-               // [self.navigationController popViewControllerAnimated:YES];
-              //  ChooseWordViewController *catResults = [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
-           // catResults->cat = cata;
-           // catResults->url =[SetParameters SetURL:cata];
-           // [self.navigationController pushViewController:catResults animated:NO];
-                
+                    // [self.navigationController popViewControllerAnimated:YES];
+                    //  ChooseWordViewController *catResults = [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
+                    // catResults->cat = cata;
+                    // catResults->url =[SetParameters SetURL:cata];
+                    // [self.navigationController pushViewController:catResults animated:NO];
+                NSArray *viewControllers = [[self navigationController] viewControllers];
                 for(i=0;i<3;i++){
                     id obj=[viewControllers objectAtIndex:i];
                     if([obj isKindOfClass:[ ChooseWordViewController class]]){
@@ -632,54 +636,48 @@
                         catResults->cat = cata;
                         catResults->url = [SetParameters SetURL:cata];
                         [self.navigationController pushViewController:catResults animated:NO];
- 
+                        
                     }
                 }
             }
             
             if (buttonIndex== 1) {
+                    //load view with word groups
+                    //LearnToMarkWordsViewController *learnToMarkWords = [self.storyboard instantiateViewControllerWithIdentifier:@"learnToMarkWords"];
+                    //[self.navigationController pushViewController:learnToMarkWords animated:YES];
+                NSArray *viewControllers = [[self navigationController] viewControllers];
                 for(i=0;i<[viewControllers count];i++){
                     id obj=[viewControllers objectAtIndex:i];
                     if([obj isKindOfClass:[ LearnToMarkWordsViewController class]]){
                         [[self navigationController] popToViewController:obj animated:YES];
                         return;
                     }
-                    
-                       LearnToMarkWordsViewController *learnToMarkWords= [self.storyboard instantiateViewControllerWithIdentifier:@"learnToMarkWords"];
-                        [[self navigationController ] pushViewController:learnToMarkWords animated:NO];
-                    
+                    else{
+                        LearnToMarkWordsViewController *wordType= [self.storyboard instantiateViewControllerWithIdentifier:@"word"];
+                        [self.navigationController pushViewController:wordType animated:NO];
+                    }
                 }
             }
             if (buttonIndex ==2) {
-                for(i=0;i<[viewControllers count];i++){
-                    id obj=[viewControllers objectAtIndex:i];
-                    if([obj isKindOfClass:[ EnterWordViewController class]]){
-                        [[self navigationController] popToViewController:obj animated:YES];
-                        return;
-                    }
-                   // else{
-                            //load enter word view
-                }
+                    //load enter word view
+                EnterWordViewController *enterWord = [self.storyboard instantiateViewControllerWithIdentifier:@"enterWord"];
+                [self.navigationController pushViewController:enterWord animated:YES];
             }
-                 EnterWordViewController *enterWord = [self.storyboard instantiateViewControllerWithIdentifier:@"enterWord"];
-                        [[self navigationController] pushViewController:enterWord animated:YES];
-                 
-               // }
-            
         }
     }
 }
 
 
+- (IBAction)BackButton:(UIBarButtonItem *)sender {
+}
 
-
-- (IBAction)speakerButton:(UIButton *)sender {    
+- (IBAction)speakerButton:(UIButton *)sender {
     NSURL *url = [NSURL URLWithString:audioUrl];
     NSURLRequest *urlrequest = [NSURLRequest requestWithURL:url];
-   //added 01/08/14 to hide the webView
+        //added 01/08/14 to hide the webView
     Webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 1024,768)];
     [Webview loadRequest:urlrequest];
-     Webview.hidden=YES;
+    Webview.hidden=YES;
     
 }
 
@@ -692,7 +690,7 @@
     }
     else if(cata == 15 || cata == 16 || cata == 17)
     {
-    EnterAccentViewController *HelpScreenTwo = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenTwo"];
+        EnterAccentViewController *HelpScreenTwo = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenTwo"];
         [self.navigationController pushViewController:HelpScreenTwo animated:NO];
     }
     else if (cata ==  22 || cata== 23)
@@ -707,71 +705,71 @@
     }
 }
 - (IBAction)subViewButton:(UIButton *)sender {
-   // [self findAccentMarkLocation:sylibifiedWord];
-    //currentValue =  _subViewSlider.value;
-
-   
-   // NSLog(@"Accent letter value %d",accentMarkLocation);
-   // NSLog(@"current value = %d", currentValue);
-   // NSLog(@"correctSliderValue = %d", sliderCorrectValue);
-   // NSLog(@"wordMark = %d", wordMark);
-   // NSLog(@"sylibifiedWord = %@", sylibifiedWord);
+        // [self findAccentMarkLocation:sylibifiedWord];
+        //currentValue =  _subViewSlider.value;
+    
+    
+        // NSLog(@"Accent letter value %d",accentMarkLocation);
+        // NSLog(@"current value = %d", currentValue);
+        // NSLog(@"correctSliderValue = %d", sliderCorrectValue);
+        // NSLog(@"wordMark = %d", wordMark);
+        // NSLog(@"sylibifiedWord = %@", sylibifiedWord);
     if (_subViewSlider.value > sliderMinValue && _subViewSlider.value < sliderMaxValue) {
             //    if (currentValue == accentMarkLocation) {
-        //NSLog(@"909 SliderValue %f",_subViewSlider.value);//float
-       // NSLog(@"slidermin = %f", sliderMinValue);
-       // NSLog(@"slidermax = %f", sliderMaxValue);
-       // _wordLabel.text = modifiedWord;
-       // _subViewWordLabel.text= _wordLabel.text;
-      //  self.subViewWordLabel.attributedText = attributedStringWithAccentMark;
+            //NSLog(@"909 SliderValue %f",_subViewSlider.value);//float
+            // NSLog(@"slidermin = %f", sliderMinValue);
+            // NSLog(@"slidermax = %f", sliderMaxValue);
+            // _wordLabel.text = modifiedWord;
+            // _subViewWordLabel.text= _wordLabel.text;
+            //  self.subViewWordLabel.attributedText = attributedStringWithAccentMark;
         _wordLabel.text = sylibifiedWord;
         _subViewWordLabel.text = _wordLabel.text;
         _subViewWordLabel.attributedText=_wordLabel.attributedText;
-      //  NSLog(@"%@", sylibifiedWord);
+            //  NSLog(@"%@", sylibifiedWord);
         [_checkAnswerButton setTitle:@"Checking Answer" forState:UIControlStateNormal];        [self performSelector:@selector(correctAlert) withObject:@"" afterDelay:1];
-      
+        
     } else {
         [self incorrectAlert];
     }
 }
 
-//sliderWord contains word with no accent mark and - for spaces
+    //sliderWord contains word with no accent mark and - for spaces
 
 - (void)findAccentMarkLocation:(NSString *)sylibifiedWord;
 {
     sliderWord = [sylibifiedWord1 mutableCopy];
-   // NSLog(@"in find accent mark");
-   // NSLog(@"sliderWord = %@", sliderWord);
-   // NSLog(@"sylibifiedWord in findAccentMark = %@", sylibifiedWord1);
-   // NSLog(@"modifiedWord in findAccentMark = %@", modifiedWord);
-   // NSLog(@"1038 accentMarkLocation = %d", accentMarkLocation);
+        // NSLog(@"in find accent mark");
+        // NSLog(@"sliderWord = %@", sliderWord);
+        // NSLog(@"sylibifiedWord in findAccentMark = %@", sylibifiedWord1);
+        // NSLog(@"modifiedWord in findAccentMark = %@", modifiedWord);
+        // NSLog(@"1038 accentMarkLocation = %d", accentMarkLocation);
     for (i=0; i < sliderWord.length; i++){
         temp  = [NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:i]];
-     //   NSLog(@"temp = %@", temp);
+            //   NSLog(@"temp = %@", temp);
         if([temp isEqual:@"·"]||[temp isEqual:@"á"]){
             accentMarkLocation = i;
-            //add change char in sliderWord
-      //  NSLog(@"1accentMarkLocation = %d", accentMarkLocation);
+                //add change char in sliderWord
+                //  NSLog(@"1accentMarkLocation = %d", accentMarkLocation);
         }
         if([temp isEqual:@"È"]||[temp isEqual:@"é"]){
             accentMarkLocation = i;
-       // NSLog(@"2accentMarkLocation = %d", accentMarkLocation);
+                // NSLog(@"2accentMarkLocation = %d", accentMarkLocation);
         }
         if([temp isEqual:@"Ì"] ||[temp isEqual:@"í"]){
             accentMarkLocation = i;
-        //NSLog(@"3accentMarkLocation = %d", accentMarkLocation);
+                //NSLog(@"3accentMarkLocation = %d", accentMarkLocation);
         }
         if([temp isEqual:@"Û"]||[temp isEqual:@"ó"]){
-        //temp = @"o";
-        accentMarkLocation = i;
-        //NSLog(@"4accentMarkLocation = %d", accentMarkLocation);
+                //temp = @"o";
+            accentMarkLocation = i;
+                //NSLog(@"4accentMarkLocation = %d", accentMarkLocation);
         }
         if([temp isEqual:@"˙"]||[temp isEqual:@"ú"]){
             accentMarkLocation = i;
-        //NSLog(@"5accentMarkLocation = %d", accentMarkLocation);
+                //NSLog(@"5accentMarkLocation = %d", accentMarkLocation);
         }
     }
-    //NSLog(@"accentMarkLocation = %d", accentMarkLocation);
+        //NSLog(@"accentMarkLocation = %d", accentMarkLocation);
     
     
     temp = nil;
@@ -781,44 +779,46 @@
     
     while (tempFlag == 0) {
         
-    
-    //for (i=accentMarkLocation; i<sylibifiedWord.length; i++) {
-         temp  = [NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:i]];
-       // NSLog(@"temp = %@", temp);
+        
+            //for (i=accentMarkLocation; i<sylibifiedWord.length; i++) {
+        temp  = [NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:i]];
+            // NSLog(@"temp = %@", temp);
         if (i+1 == sliderWord.length) {
             endOfTheStressedSylable = i;
                 //NSLog(@"endOfTheStressedSylable = %d", endOfTheStressedSylable);
             tempFlag =1;
         } else if ([temp isEqual:@" "]){
-                endOfTheStressedSylable = i;
-      //  NSLog(@"1086 endOfTheStressedSylable = %d", endOfTheStressedSylable);
+            endOfTheStressedSylable = i;
+                //  NSLog(@"1086 endOfTheStressedSylable = %d", endOfTheStressedSylable);
             tempFlag =1;
         }
         i++;
     }
-
-    //for (j=accentMarkLocation; j<sylibifiedWord.length; j--) {
+    
+        //for (j=accentMarkLocation; j<sylibifiedWord.length; j--) {
     while (temp1Flag == 0) {
-    temp1  = [[NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:j]] mutableCopy];
-        //NSLog(@"temp1 = %@", temp1);
+        temp1  = [[NSString stringWithFormat:@"%c", [sliderWord characterAtIndex:j]] mutableCopy];
+            //NSLog(@"temp1 = %@", temp1);
         if (j==0) {
             beginingOfTheStressedSylable = -1;
-          //  NSLog(@"beginingOfTheStressedSylable = %d and should be -1", beginingOfTheStressedSylable);
+                //  NSLog(@"beginingOfTheStressedSylable = %d and should be -1", beginingOfTheStressedSylable);
             temp1Flag =1;        }
         else if ([temp1 isEqual:@" "]){
             beginingOfTheStressedSylable = j;
-            //NSLog(@"beginingOfTheStressedSylable = %d", beginingOfTheStressedSylable);
+                //NSLog(@"beginingOfTheStressedSylable = %d", beginingOfTheStressedSylable);
             temp1Flag =1;
         }
         j--;
-   // NSLog(@"end find accent mark");
+            // NSLog(@"end find accent mark");
     }
 }
 
 
+
+
 - (IBAction)noMarkSubViewYesButton:(UIButton *)sender {
-         _wordLabel.text = word;
-        [self correctAlert];
+    _wordLabel.text = word;
+    [self correctAlert];
 }
 
 - (IBAction)noMarkSUbViewNoButton:(UIButton *)sender {
@@ -843,7 +843,7 @@
 }
 - (IBAction)eYesButton:(UIButton *)sender {
     [self findAccentMarkLocation:sylibifiedWord];
-    //_eYesOutlet.alpha = 1;
+        //_eYesOutlet.alpha = 1;
     _eNoOutlet.hidden = YES;
     _eYesOutlet.hidden = YES;
     UIImage *thumbImage = [UIImage imageNamed:@"sliderArrow30x19.png"];
@@ -862,33 +862,31 @@
 - (IBAction)backButtonAction:(UIBarButtonItem *)sender {
     NSLog(@"back button pressed");
     _backButtonOutlet.enabled=NO;
+        //    ChooseWordViewController *catResults= [self.storyboard instantiateViewControllerWithIdentifier:@"catResults"];
+        //       catResults->cat = cata;
+        //    catResults->url = [SetParameters SetURL:cata];
+        //    self.navigationController.navigationBar.hidden = NO;
+        //       [self.navigationController pushViewController:catResults animated:NO];
+        //[self.navigationController popToRootViewControllerAnimated:NO];  //ViewControllerAnimated:NO];//  pushViewController:catResults animated:NO];
+        // [self.navigationController popToViewController:  [self.navigationController.viewControllers objectAtIndex:count-1 ]animated:YES];
+        //  [[self.navigationController popToViewController:[[UINavigationController.navigationController objectAtIndex:2] animated:YES];//  ToViewController:2]Animated:NO];
     NSArray *viewControllers = [[self navigationController] viewControllers];
-    
-        for(i=0;i<[viewControllers count];i++){
-            id obj=[viewControllers objectAtIndex:i];
-            if([obj isKindOfClass:[ LearnToMarkWordsViewController class]]){
-                [[self navigationController] popToViewController:obj animated:YES];
-                return;
-            }
-            if([obj isKindOfClass:[ EnterWordViewController class]]){
-                [[self navigationController] popToViewController:obj animated:YES];
-                return;
-
-            }
-   
-            
-        }//end for loop
-    
-    
-        [[self navigationController] popViewControllerAnimated:YES];
-                return;
+    self.navigationController.navigationBar.hidden = NO;
+    NSLog(@"%lu", (unsigned long)[viewControllers count]);
+        //for(i=[viewControllers count];i>0;i--){
+        //  id obj=[viewControllers objectAtIndex:i];
+        // if([obj isKindOfClass:[ LearnToMarkWordsViewController class]])//{
+        //   [[self navigationController] popToViewController:obj animated:YES];
+        // return;
+    [[self navigationController] popViewControllerAnimated:NO];
+        //        }
+        //        if([obj isKindOfClass:[ EnterWordViewController class]]){
+        //            [[self navigationController] popToViewController:obj animated:YES];
+        //            return;
+        //        }
+        //    
+        //     }
 }
-
-
-
-
-
-
 @end
 
 

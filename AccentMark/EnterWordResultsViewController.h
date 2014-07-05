@@ -26,5 +26,6 @@
   //  int catagory;
     int i;  
 }
+- (IBAction)BackButtonAction:(UIBarButtonItem *)sender;
 @property (strong, atomic) NSString *back;
 @end

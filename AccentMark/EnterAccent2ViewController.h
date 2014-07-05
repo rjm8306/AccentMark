@@ -1,30 +1,30 @@
 //
-//  EnterAccentViewController.h
+//  EnterAccent2ViewController.h
 //  AccentMark
 //
-//  Created by Robert Millar on 7/6/13.
-//  Copyright (c) 2013 Robert Millar. All rights reserved.
+//  Created by Robert Millar on 7/2/14.
+//  Copyright (c) 2014 Robert Millar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface EnterAccentViewController : UIViewController
+@interface EnterAccent2ViewController : UIViewController
 {
-  @public  NSArray *wordArray;
+@public  NSArray *wordArray2;
     NSDictionary *jsonDict;
     int presentingSeque;
     
     NSString *wordGroup;//A,B,C,D
     NSString *cat;//1-23
-    //NSString *urlString;
+                  //NSString *urlString;
     NSString *sylibifiedWord;//return from sylibifier method
     NSMutableString *word;//word from database  NEVER TO BE CHANGED
     NSString *modifiedWord;
     NSString *title;//USED TO DISPLAY TITLE
     NSString *audioUrl;//url of audio file if it exists
     NSMutableAttributedString *lastDigit;//used to underline last char
-    //NSMutableAttributedString *modifiedWord;
-   // @public __strong NSString *cat;
+                                         //NSMutableAttributedString *modifiedWord;
+                                         // @public __strong NSString *cat;
     int i;//iterator for 4 loop
     int l;//iterator for 4 loop
     BOOL firstquestion;
@@ -41,15 +41,15 @@
     int currentValue;
     int k;
     int j;
-    //NSMutableAttributedString *attributedString;
-    //NSString *string;
+        //NSMutableAttributedString *attributedString;
+        //NSString *string;
     NSArray *wordList;
     NSMutableArray *charList;
-     NSString *temp;
+    NSString *temp;
     NSMutableString *temp1;
     int wordMark;// Show what array index has the accent mark  so I can underline it.
     NSMutableString *sylibifiedWord1;//mutable copy of sylibifiedWord
-    //variables for slider view
+                                     //variables for slider view
     NSString *charString; //for slider
     int endOfTheStressedSylable;
     int beginingOfTheStressedSylable;
@@ -64,7 +64,7 @@
     float sliderMinValue;
     float sliderMaxValue;
     NSMutableAttributedString *attributedStringWithAccentMark;
-    //@property  public NSMutableString sylibifiedWord;
+        //@property  public NSMutableString sylibifiedWord;
     
 }
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
@@ -73,7 +73,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 @property (weak, nonatomic) IBOutlet UIView *subView;
 @property (weak, nonatomic) IBOutlet UILabel *subViewWordLabel;
-//- (IBAction)subViewSliderAction:(UISlider *)sender;
+    //- (IBAction)subViewSliderAction:(UISlider *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *subViewLabel;
 @property (weak, nonatomic) IBOutlet UISlider *subViewSlider;
 
@@ -104,7 +104,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *noMarkOutlet;
 - (IBAction)noMarkButton:(UIButton *)sender;
 - (IBAction)markButton:(UIButton *)sender;
-//@property (weak, nonatomic) IBOutlet UILabel *label2;
+    //@property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow2mage;
 @property (weak, nonatomic) IBOutlet UIImageView *arrow3Image;
@@ -121,7 +121,7 @@
 
 - (IBAction)sliderChanged:(UISlider *)sender;
 
-//wt E buttons
+    //wt E buttons
 @property (weak, nonatomic) IBOutlet UIButton *wtEYesOutlet;
 - (IBAction)wtEYesButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *wtNoOutlet;
@@ -131,6 +131,7 @@
 - (IBAction)eYesButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *eNoOutlet;
 
+- (IBAction)eNoButton:(UIButton *)sender;
 - (IBAction)backButtonAction:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButtonOutlet;
 

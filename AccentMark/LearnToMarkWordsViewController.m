@@ -24,10 +24,18 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+   // self.navigationController.navigationBar.hidden = YES;
+   
+    }
+
 - (void)viewDidLoad
 {
+    //UINavigationController *navigationController = navigationController;
+    
     [super viewDidLoad];
-
+   // self.navigationController.navigationBar.hidden = YES;
    }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +49,10 @@
     catResults->cat = (int)indexPath.row +1;
     catResults->url = [SetParameters SetURL:(int)indexPath.row+1];
     
-       [self.navigationController  pushViewController:catResults animated:NO];
+       [self.navigationController  pushViewController:catResults animated:YES];
 }
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+   }
+
 @end

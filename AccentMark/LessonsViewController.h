@@ -10,5 +10,6 @@
 
 @interface LessonsViewController : UITableViewController
 @property (nonatomic,strong) NSArray *arrItems;
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender;
 
 @end

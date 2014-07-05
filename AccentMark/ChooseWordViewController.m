@@ -29,11 +29,16 @@
     
     
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    //self.navigationController.navigationBar.hidden = NO;
+    title =[NSString stringWithFormat:@"Word type %d",cat];
+    self.navigationItem.title = title;
+}
 
 - (void)viewDidLoad
 {
-    title =  [NSString stringWithFormat:@"Word type %d",cat];
-    self.navigationItem.title = title;
+  
     [super viewDidLoad];
     NSLog(@"test %@", wordArray);
     NSLog(@"url = %@", url);
@@ -220,13 +225,11 @@ for (i=0; i<[wordArray count]; i++) {
         wordResults.cata = (int)wordArray[indexPath.row][@"category"];
         [self.navigationController pushViewController:wordResults animated:NO];
     }
-    
- 
-    
 }
 
-- (IBAction)backButton:(UIBarButtonItem *)sender {
-    NSLog(@"back");
-    
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender {
+    [[self navigationController] popViewControllerAnimated:YES];
 }
+
+
 @end

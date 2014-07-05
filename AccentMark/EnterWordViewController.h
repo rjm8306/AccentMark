@@ -18,5 +18,6 @@
 @property int catagory;
 @property (weak, nonatomic) IBOutlet UITextField *userInput;
 - (IBAction)submitButton:(UIButton *)sender;
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender;
 
 @end

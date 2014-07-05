@@ -1,51 +1,47 @@
 //
-//  EnterWordResultsViewController.m
+//  ChooseWordV2ViewController.m
 //  AccentMark
 //
-//  Created by Robert Millar on 7/6/13.
-//  Copyright (c) 2013 Robert Millar. All rights reserved.
+//  Created by Robert Millar on 6/24/14.
+//  Copyright (c) 2014 Robert Millar. All rights reserved.
 //
 
-#import "EnterWordResultsViewController.h"
+#import "ChooseWordV2ViewController.h"
 #import "EnterAccentViewController.h"
 #import "SpecialHiatusEnterAccentMarkViewController.h"
-@interface EnterWordResultsViewController ()
+
+@interface ChooseWordV2ViewController ()
 
 @end
 
-@implementation EnterWordResultsViewController 
+@implementation ChooseWordV2ViewController
+
+@synthesize urlString=_urlString;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-        self = [super initWithStyle:style];
     return self;
+    
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+        //self.navigationController.navigationBar.hidden = NO;
+    title =  [NSString stringWithFormat:@"Word type %d",cat];
+    self.navigationItem.title = title;}
 
-
-- (void)viewDidLoad {
-    if (word != nil) {
-        urlString = [[NSString stringWithFormat:@"http://184.107.218.58/~lingapps/api/v1/?key=0694ca6ec483864e11d4e8867d0ca4db&method=searchWord&word=%@", word] mutableCopy];
-    }
+- (void)viewDidLoad
+{
+    
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = NO;
-    
-    url = [NSURL URLWithString:urlString];
-        // Setup the URL with the JSON URL.
-        //NSLog(@"urlString = %@", urlString);
-    //NSLog(@"url = %@", url);
+    NSLog(@"test %@", wordArray);
+    NSLog(@"url = %@", url);
     [self parseJSONWithURL:url];
-    while (wordArray == nil) {
-            //waiting for array to load
-    }
-
-   
-    
+    NSLog(@"%@", word);
 }
-
 
 
 - (void) parseJSONWithURL:(NSURL *) jsonURL
-{
+{    // NSLog(@"jsonURL = %@", jsonURL);
     jsonDict = [[NSDictionary alloc] init];
     wordArray = [[NSMutableArray alloc] init];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -96,14 +92,15 @@
         [alertView show];
         
     }
-    
     NSUInteger position;
     NSMutableString *wordWithoutAccentMark;
     
     removedAccentMarkArray = [[NSMutableArray alloc] init];
+    NSLog(@"1removedAccentMarkArray");
     for (i=0; i<[wordArray count]; i++) {
-        
+        NSLog(@"i = %d", i);
         NSMutableString *temp = wordArray[i][@"word"];
+        NSLog(@"temp %@", temp);
         wordWithoutAccentMark= [temp mutableCopy];
         if((position = NSNotFound)) {
             position = [wordWithoutAccentMark rangeOfString:@"á"].location;
@@ -150,81 +147,91 @@
                 range1.length = 1;
                 [wordWithoutAccentMark replaceCharactersInRange:range1 withString:@"u"];
             }
+                //   NSLog(@"end");
         }//end  if((position = NSNotFound)) for u
         
         [removedAccentMarkArray addObject: wordWithoutAccentMark];
     }//end for loop
-    //NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
-    //NSLog(@"Test");
+     // NSLog(@"removedAccentMarkArray = %@", removedAccentMarkArray);
+     // NSLog(@"Test");
     [self.tableView reloadData];
 }
+
 
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+        // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [removedAccentMarkArray count];
+        // Return the number of rows in the section.
+    return [wordArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MainCell"];
     }
     cell.textLabel.text = removedAccentMarkArray[indexPath.row];
+        //cell.textLabel.text = wordArray[indexPath.row][@"word"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
     return cell;
-
+    
 }
-
-
+    //
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // _back = @"choose";
-    if ( ([wordArray[indexPath.row][@"category"] isEqualToString: @"13"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"19"]) || ([wordArray[indexPath.row][@"category"] isEqualToString: @"20"]) ) {
+    
+    if (cat == 13 || cat == 19 || cat == 20) {
         EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
         wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
         wordResults.cat = wordArray[indexPath.row][@"category"];
         wordResults->word = wordArray[indexPath.row][@"word"];
-        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
         wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
-        wordResults->presentingSeque = 1;
-      //   [self.navigationController popViewController Animated: NO];
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        wordResults.cata = (int)wordArray[indexPath.row][@"category"];
         [self.navigationController pushViewController:wordResults animated:NO];
     } else {
         EnterAccentViewController *wordResults = [self.storyboard instantiateViewControllerWithIdentifier:@"wordResults"];
         wordResults->audioUrl = wordArray[indexPath.row][@"audioURL"];
         wordResults.cat = wordArray[indexPath.row][@"category"];
-        
         wordResults->word = wordArray[indexPath.row][@"word"];
-        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
         wordResults->modifiedWord=removedAccentMarkArray[indexPath.row];
-        wordResults->presentingSeque = 1;        
+        wordResults->wordGroup = wordArray[indexPath.row][@"word_group"];
+        wordResults.cata = (int)wordArray[indexPath.row][@"category"];
         [self.navigationController pushViewController:wordResults animated:NO];
     }
 }
- 
-    
-    
-- (IBAction)BackButtonAction:(UIBarButtonItem *)sender {
+
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender {
     [[self navigationController] popViewControllerAnimated:YES];
 }
-    @end
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

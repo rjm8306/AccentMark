@@ -42,8 +42,13 @@
     
 }
 
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"testing  prepare to seque");
     
     input = [_userInput.text mutableCopy];
     EnterWordResultsViewController *dest = (EnterWordResultsViewController *)[segue destinationViewController];

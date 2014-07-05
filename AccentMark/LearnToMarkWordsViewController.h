@@ -28,4 +28,7 @@
     //NSInteger *cat;
     int cat;
 }
+
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender;
+
 @end

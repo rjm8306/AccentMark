@@ -26,12 +26,13 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
-{
+{    self.navigationController.navigationBar.hidden = YES;
     [super viewDidLoad];
     //list contains table view items
     arrItems = [[NSArray alloc] initWithObjects:@"Hiatus",@"Unique Hiatus",@"Diphthong",@"More Diphthong", nil];
@@ -76,6 +77,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.navigationController.navigationBar.hidden = NO;
     if (indexPath.row ==0) {
         HelpScreenOneViewController *HelpScreenOne = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpScreenOne"];
         
@@ -94,4 +96,8 @@
     [self.navigationController pushViewController:HelpScreenFour animated:NO];
 }}
 
+- (IBAction)backButtonAction:(UIBarButtonItem *)sender {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+
+}
 @end
